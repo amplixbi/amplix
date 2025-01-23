@@ -2214,7 +2214,7 @@
     "value" : "전체 시트로 필터링"
   }, {
     "name" : "L_EN_DRILL_DESC",
-    "value" : "전체 시트에 필터적용할 경우 선택해 주십시오."
+    "value" : "전체 시트에 필터적용"
   }, {
     "name" : "L_CFIT_SS",
     "value" : "전체 시리즈 분석"

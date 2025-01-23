@@ -15,6 +15,10 @@
 				{
 					"name": "New FormBuilder",
 					"cls": "ig_menu_formbuilder"
+				},
+				{
+					"name": "New Finance Report",
+					"cls": "ig_menu_rpt_fin"
 				}
 			]
 		},

@@ -51,3 +51,5 @@ A;F_PMT;Periodic Payment for an annuity
 A;F_NPER;Number of periods for an investment
 A;L_OPTION_VALUE;설정값
 A;L_V_PIVOT_CLS;클러스터링 피벗
+
+A;L_EN_DRILL_DESC;전체 시트에 필터적용

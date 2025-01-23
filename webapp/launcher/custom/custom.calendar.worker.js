@@ -300,7 +300,7 @@ IG$.cVis.calendar.prototype.draw = function(results) {
 			}
 		}
 		
-		df = cop.s_t_fo;
+		df = cop.s_t_fo || "epoch";
 		
 		for (i=0; i < series.length; i++)
 		{
@@ -308,6 +308,11 @@ IG$.cVis.calendar.prototype.draw = function(results) {
 			{
 				series[i].type = IG$.getSeriesType(cop.renderas[i]);
 			}
+		}
+
+		for (i=0; i < rowfix; i++)
+		{
+			series.name = (i == 0 ? data[i][colfix].text : series.name + " " + data[i][colfix].text);
 		}
 		
 		for (i=rowfix; i < rows; i++)
@@ -386,6 +391,7 @@ IG$.cVis.calendar.prototype.draw = function(results) {
 					}
 					
 					dr.label = data[i][colfix].text;
+					dr.drname = data[i][dtcol].text || data[i][dtcol].code;
 				}
 				
 				if (isNaN(vmin))
@@ -489,7 +495,7 @@ IG$.cVis.calendar.prototype.draw = function(results) {
 		hchart.on("click", function(params) {
 			if (params.componentType == "series")
 			{
-				_chartview.procClickEvent(
+				chartview.procClickEvent(
 					{
 						series: {
 							name: params.seriesName,
