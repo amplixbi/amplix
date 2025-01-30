@@ -8472,7 +8472,7 @@
   }, {
     "group" : "locale_zh_TW_0020",
     "name" : "L_AI_PIVOT_REQ",
-    "value" : "Pivot AI Questions"
+    "value" : "AI Pivot Query"
   }, {
     "group" : "locale_zh_TW_0020",
     "name" : "L_AI_SUMMARY",
@@ -8537,5 +8537,21 @@
     "group" : "locale_zh_TW_0020",
     "name" : "L_V_PIVOT_CLS",
     "value" : "Pivot with Cluster"
+  }, {
+    "group" : "locale_zh_TW_0020",
+    "name" : "L_TWOFA_TOTP",
+    "value" : "Time-based One-Time Password"
+  }, {
+    "group" : "locale_zh_TW_0020",
+    "name" : "L_TWOFA_EMAIL",
+    "value" : "Email Validation Key"
+  }, {
+    "group" : "locale_zh_TW_0020",
+    "name" : "L_IMG_CMD",
+    "value" : "Image Command"
+  }, {
+    "group" : "locale_zh_TW_0020",
+    "name" : "L_SEC_2FA",
+    "value" : "2 Factor Authentication"
   } ]
 }

@@ -53,3 +53,9 @@ A;L_OPTION_VALUE;설정값
 A;L_V_PIVOT_CLS;클러스터링 피벗
 
 A;L_EN_DRILL_DESC;전체 시트에 필터적용
+
+A;L_TWOFA_TOTP;시간 기반 일회용 패스워드(OTP)
+A;L_TWOFA_EMAIL;이메일 보안 인증
+A;L_AI_PIVOT_REQ;AI 피벗 질의문
+A;L_IMG_CMD;이미지 생성명령
+A;L_SEC_2FA;2차 보안 인증

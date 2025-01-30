@@ -50,3 +50,9 @@ A;F_PMT;Periodic Payment for an annuity
 A;F_NPER;Number of periods for an investment
 A;L_OPTION_VALUE;Option Value
 A;L_V_PIVOT_CLS;Pivot with Cluster
+
+A;L_TWOFA_TOTP;Time-based One-Time Password
+A;L_TWOFA_EMAIL;Email Validation Key
+A;L_AI_PIVOT_REQ;AI Pivot Query
+A;L_IMG_CMD;Image Command
+A;L_SEC_2FA;2 Factor Authentication

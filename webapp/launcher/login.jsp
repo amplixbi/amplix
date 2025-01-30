@@ -62,12 +62,12 @@ body, div {
 	overflow: hidden;
 }
 </style>
-<link rel="stylesheet" href="./css/appsl.min.css?_dc=202501232025" type="text/css">
-<link rel="stylesheet" type="text/css" href="./css/custom_lang_<%=lang.toLowerCase()%>.css?_dc=202501232025" />
-<link rel="stylesheet" type="text/css" href="./css/custom.css?_dc=202501232025" />
+<link rel="stylesheet" href="./css/appsl.min.css?_dc=202501301227" type="text/css">
+<link rel="stylesheet" type="text/css" href="./css/custom_lang_<%=lang.toLowerCase()%>.css?_dc=202501301227" />
+<link rel="stylesheet" type="text/css" href="./css/custom.css?_dc=202501301227" />
 <script type="text/javascript" src="./js/jquery-3.6.4.min.js"></script>
-<script type="text/javascript" src="../config.js?_dc=202501232025"></script>
-<script type="text/javascript" src="./js/igc8<%=(is_debug ? "" : ".min")%>.js?_dc=202501232025"></script>
+<script type="text/javascript" src="../config.js?_dc=202501301227"></script>
+<script type="text/javascript" src="./js/igc8<%=(is_debug ? "" : ".min")%>.js?_dc=202501301227"></script>
 
 <script type="text/javascript">
 var useLocale = "en_US";
@@ -279,6 +279,55 @@ function initPage() {
 		
 		return true;
 	});
+
+	$("#twoway_validate" + (instance.id)).bind("click", function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        var twoway_key = $("#twoway_key" + (instance.id)).val();
+        $("#twoway_key" + (instance.id)).val("");
+        $(this).blur();
+        
+        if (!twoway_key)
+        {
+            IG$.ShowError(IRm$.r1("L_BLANK_TWOWAY_KEY"));
+            return false;
+        }
+        
+        IG$.val2FA(twoway_key, null, window.m$mts);
+        return false;
+    });
+
+    $("#twoway_key" + (instance.id)).bind("keyup", function(e) {
+        if (e.keyCode == 13)
+        {
+            e.preventDefault();
+            e.stopPropagation();
+
+            var twoway_key = $("#twoway_key" + (instance.id)).val();
+            $("#twoway_key" + (instance.id), loginWindow).val("");
+            $(this).blur();
+            
+            if (!twoway_key)
+            {
+                IG$.ShowError(IRm$.r1("L_BLANK_TWOWAY_KEY"));
+                return false;
+            }
+            
+            IG$.val2FA(twoway_key, null, window.m$mts);
+            return false;
+        }
+    });
+
+    $("#twoway_retry" + (instance.id)).bind("click", function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        $("#login_path").show();
+        $("#twoway_form").hide();
+
+        return false;
+    });
 
 	IRm$.r2/*loadResources*/({
         func: function() {

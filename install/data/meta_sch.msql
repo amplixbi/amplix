@@ -343,6 +343,8 @@ CREATE TABLE igcusers (
   uname #VARCHAR#(100) NOT NULL,
   upasswd #VARCHAR#(256) NOT NULL,
   email #VARCHAR#(100) #NULL#,
+  twofa #VARCHAR#(100) #NULL#,
+  twofa_option #VARCHAR#(100) #NULL#,
   active #NUMBER#(4) #NULL#,
   mdate #LONG# #NULL#,
   gid #CHAR#(17) NOT NULL,

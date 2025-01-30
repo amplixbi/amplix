@@ -2213,6 +2213,7 @@
     "name" : "L_EN_DRILL",
     "value" : "전체 시트로 필터링"
   }, {
+    "group" : "locale_ko_KR_0020",
     "name" : "L_EN_DRILL_DESC",
     "value" : "전체 시트에 필터적용"
   }, {
@@ -8605,5 +8606,25 @@
     "group" : "locale_ko_KR_0020",
     "name" : "L_V_PIVOT_CLS",
     "value" : "클러스터링 피벗"
+  }, {
+    "group" : "locale_ko_KR_0020",
+    "name" : "L_TWOFA_TOTP",
+    "value" : "시간 기반 일회용 패스워드(OTP)"
+  }, {
+    "group" : "locale_ko_KR_0020",
+    "name" : "L_TWOFA_EMAIL",
+    "value" : "이메일 보안 인증"
+  }, {
+    "group" : "locale_ko_KR_0020",
+    "name" : "L_AI_PIVOT_REQ",
+    "value" : "AI 피벗 질의문"
+  }, {
+    "group" : "locale_ko_KR_0020",
+    "name" : "L_IMG_CMD",
+    "value" : "이미지 생성명령"
+  }, {
+    "group" : "locale_ko_KR_0020",
+    "name" : "L_SEC_2FA",
+    "value" : "2차 보안 인증"
   } ]
 }
