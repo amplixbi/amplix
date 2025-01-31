@@ -62,12 +62,12 @@ body, div {
 	overflow: hidden;
 }
 </style>
-<link rel="stylesheet" href="./css/appsl.min.css?_dc=202501301227" type="text/css">
-<link rel="stylesheet" type="text/css" href="./css/custom_lang_<%=lang.toLowerCase()%>.css?_dc=202501301227" />
-<link rel="stylesheet" type="text/css" href="./css/custom.css?_dc=202501301227" />
+<link rel="stylesheet" href="./css/appsl.min.css?_dc=202501311110" type="text/css">
+<link rel="stylesheet" type="text/css" href="./css/custom_lang_<%=lang.toLowerCase()%>.css?_dc=202501311110" />
+<link rel="stylesheet" type="text/css" href="./css/custom.css?_dc=202501311110" />
 <script type="text/javascript" src="./js/jquery-3.6.4.min.js"></script>
-<script type="text/javascript" src="../config.js?_dc=202501301227"></script>
-<script type="text/javascript" src="./js/igc8<%=(is_debug ? "" : ".min")%>.js?_dc=202501301227"></script>
+<script type="text/javascript" src="../config.js?_dc=202501311110"></script>
+<script type="text/javascript" src="./js/igc8<%=(is_debug ? "" : ".min")%>.js?_dc=202501311110"></script>
 
 <script type="text/javascript">
 var useLocale = "en_US";
@@ -317,6 +317,21 @@ function initPage() {
             IG$.val2FA(twoway_key, null, window.m$mts);
             return false;
         }
+    });
+
+	$("#twoway_key" + (instance.id)).bind("done", function(e) {
+		var twoway_key = $("#twoway_key" + (instance.id)).val();
+		$("#twoway_key" + (instance.id), loginWindow).val("");
+		$(this).blur();
+		
+		if (!twoway_key)
+		{
+			IG$.ShowError(IRm$.r1("L_BLANK_TWOWAY_KEY"));
+			return false;
+		}
+		
+		IG$.val2FA(twoway_key, null, window.m$mts);
+		return false;
     });
 
     $("#twoway_retry" + (instance.id)).bind("click", function(e) {
