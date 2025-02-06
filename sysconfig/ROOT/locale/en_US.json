@@ -47,7 +47,7 @@
     "value" : "About @"
   }, {
     "name" : "E_D_EVNT",
-    "value" : "Error while processing event @."
+    "value" : "Error while processing evnet @."
   }, {
     "name" : "L_C_TOTAL",
     "value" : "Total @"
@@ -63,6 +63,9 @@
   }, {
     "name" : "L_DUAL_AXIS",
     "value" : "Dual YAxis"
+  }, {
+    "name" : "L_CONTACT_CRED",
+    "value" : "Copyright &copy; 1996-2010"
   }, {
     "name" : "L_EXPORT_CSV",
     "value" : "CSV"
@@ -947,11 +950,16 @@
     "name" : "L_L_TAB",
     "value" : "Load last tab only"
   }, {
-    "group" : "locale_en_US_0019",
     "name" : "D_CUBEMODEL",
-    "value" : "Business Model"
+    "value" : "ROLAP Cube Model"
+  }, {
+    "name" : "L_ROLAP_CUBE_MODEL",
+    "value" : "ROLAP Cube Model"
   }, {
     "name" : "D_CUBE",
+    "value" : "ROLAP Cube"
+  }, {
+    "name" : "L_ROLAP_CUBE",
     "value" : "ROLAP Cube"
   }, {
     "name" : "B_EVERY",
@@ -1530,11 +1538,8 @@
     "name" : "M_ERR_CONNECT",
     "value" : "Failed to get connection on server! Please retry later"
   }, {
-    "name" : "L_P_servercall",
+    "name" : "L_P_inv_svc",
     "value" : "Invoke Service"
-  }, {
-    "name" : "L_P_restcall",
-    "value" : "Invoke REST Service"
   }, {
     "name" : "B_SEL",
     "value" : "Select"
@@ -3130,7 +3135,7 @@
     "name" : "L_C_CUR",
     "value" : "Current,"
   }, {
-    "name" : "L_P_close",
+    "name" : "L_P_cls",
     "value" : "Close Window"
   }, {
     "name" : "L_APPL_TMPL",
@@ -3285,7 +3290,7 @@
     "value" : "Select Dashboard"
   }, {
     "name" : "L_DESIGN",
-    "value" : "Design"
+    "value" : "Design mode"
   }, {
     "name" : "L_APPL_THEME",
     "value" : "Application Theme"
@@ -3596,7 +3601,7 @@
   }, {
     "group" : "locale_en_US_0001",
     "name" : "T_ANAL_WIZARD",
-    "value" : "Analysis Stat Wizard"
+    "value" : "Analyis Stat Wizard"
   }, {
     "group" : "locale_en_US_0001",
     "name" : "L_ASTEP_1",
@@ -4180,7 +4185,7 @@
   }, {
     "group" : "locale_en_US_0012",
     "name" : "L_HOME_APP_TITLE",
-    "value" : "<h1>Augmented Analytics for your business - AMPLIX.</h1>"
+    "value" : "<h1>amplix Business Analytics for your business.</h1>"
   }, {
     "group" : "locale_en_US_0012",
     "name" : "L_HOME_APP_DESC",
@@ -4895,6 +4900,10 @@
     "value" : "Programs"
   }, {
     "group" : "locale_en_US_0014",
+    "name" : "L_REG_SCHEDULE",
+    "value" : "Register Schedule"
+  }, {
+    "group" : "locale_en_US_0014",
     "name" : "L_JOB_TYPE",
     "value" : "Job Type"
   }, {
@@ -5321,14 +5330,6 @@
     "group" : "locale_en_US_0014",
     "name" : "L_THEMES",
     "value" : "Themes"
-  }, {
-    "group" : "locale_zh_TW_0014",
-    "name" : "B_ACTION",
-    "value" : "Actions"
-  }, {
-    "group" : "locale_en_US_0014",
-    "name" : "L_NEW_ACTION_GROUP",
-    "value" : "New Action Group"
   }, {
     "group" : "locale_en_US_0014",
     "name" : "L_NEW_ACTION",
@@ -7122,7 +7123,7 @@
     "name" : "L_HIDE_PROGRESS",
     "value" : "Hide Progressbar"
   }, {
-    "group" : "locale_en_US_0019",
+    "group" : "locale_en_US_0018",
     "name" : "L_DEFAULT_VALUE",
     "value" : "Default Value"
   }, {
@@ -8041,597 +8042,5 @@
     "group" : "locale_en_US_0019",
     "name" : "B_PG_PREV",
     "value" : "&lt;&lt;"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_OCR",
-    "value" : "Optical Character Recognition"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_OCR_ENGINE",
-    "value" : "OCR Engine"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_TESS_LOC",
-    "value" : "Tessaract location"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_BPMN",
-    "value" : "BPMN"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_BPMN_MGR",
-    "value" : "BPMN Manager"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_BPMN_TASKS",
-    "value" : "BPMN Tasks"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_BPMN_MODELER",
-    "value" : "BPMN Moduler"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_MULTI_LINE",
-    "value" : "MultiLine"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_MAX_CHAR",
-    "value" : "Maximum Characters"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_HIDE_OVERLAP",
-    "value" : "Hide Overlap"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_RANGE",
-    "value" : "Ranges"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_HIDDEN_SELECTOR",
-    "value" : "Hide VisualMap"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_JMOD",
-    "value" : "Java Module"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_REST",
-    "value" : "RESTful Service"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_SCI_LIC",
-    "value" : "Data Science Licenses"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_LIC_KEY",
-    "value" : "License Keys"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_WIDGET",
-    "value" : "Widget"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_ADD_LABEL",
-    "value" : "Add Label"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_FLT_HEIGHT",
-    "value" : "Filter Height"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_FULL_HEIGHT",
-    "value" : "Full Height"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "D_BPMN",
-    "value" : "BPMN"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_ADD_REST",
-    "value" : "Add RESTful Service"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_SVC_URL",
-    "value" : "Service URL"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_BASE_URL",
-    "value" : "Base URL"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_HOST",
-    "value" : "Hostname"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "B_SUMMARY",
-    "value" : "Summary"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_AUTH_TOKEN",
-    "value" : "Auth Token"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_AUTH_URL",
-    "value" : "Auth URL"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_REST_MGR",
-    "value" : "RESTful Management"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "B_FIELD",
-    "value" : "Field"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_JSON_FORMAT",
-    "value" : "JSON Format"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "B_PARAM_IN",
-    "value" : "Param In"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_REF",
-    "value" : "Reference"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_ENUM",
-    "value" : "Enumerator"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "D_BAYESNET",
-    "value" : "ML Report"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_P_thread_start",
-    "value" : "Thread Start"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_P_thread_end",
-    "value" : "Thread End"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_P_cond_if",
-    "value" : "IF"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_P_cond_else",
-    "value" : "ELSE IF"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_P_cond_end",
-    "value" : "END IF"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_MONGO_SCH",
-    "value" : "Mongo Schedule"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_MR_SRC",
-    "value" : "Data Source"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_MR_TGT",
-    "value" : "Data Target"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "ROBO_ERR_TAB",
-    "value" : "Oh, current tab cannot handle request! Please open and let me process that later."
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "ROBO_ERR_NO_MAINPANEL",
-    "value" : "Oh, cannot handle process on current application!"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "ROBO_ERR_PROCESSING",
-    "value" : "Sorry for saying that. Had error while processing your requests."
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "ROBO_ERR_FIELD",
-    "value" : "Field need to be specified to handle your request. Please provide me field information."
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "ROBO_ERR_TAB_REPORT",
-    "value" : "Oh, currently active viewer is not report. Please open report and try again."
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "ROBO_SUCCESS",
-    "value" : "Yeah, I did what you asked for. Let me help you more."
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_C_LIST",
-    "value" : "Multi List Selection"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_ADD_SENTENCE",
-    "value" : "Add Sentence"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "B_INTENTS",
-    "value" : "Intents"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_UTTERANCE",
-    "value" : "Utterance"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_ANSWERS",
-    "value" : "Answers"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_TRIM_ENTRY_TYPE",
-    "value" : "Trim Entity Type"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_TEXTS",
-    "value" : "Texts"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "B_REGEX",
-    "value" : "RegEx"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_LEFT_WORDS",
-    "value" : "Left Words"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_RIGHT_WORDS",
-    "value" : "Right Words"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_WORDS",
-    "value" : "Words"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_SKIP_WORDS",
-    "value" : "Skip Words"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_MANDATORY",
-    "value" : "Mandatory"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_MESSAGES",
-    "value" : "Messages"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "B_CONTENTS",
-    "value" : "Contents"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_SRCH_RULES",
-    "value" : "Search Rules"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_EXP_RULES",
-    "value" : "Export Rules"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_IMP_RULES",
-    "value" : "Import Rules"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_RECOMMEND",
-    "value" : "Recommend"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "T_PV_RECOM",
-    "value" : "Pivot Recommend"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "B_FILE",
-    "value" : "File"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_IGNORE_BOTTOM",
-    "value" : "Ignore Bottom"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_HEADER_COLNAME",
-    "value" : "Use Physical Header"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_REG_RECOM",
-    "value" : "Register Recommend"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_C_REGRECOM",
-    "value" : "Do you want to register this sheet as Recommend?"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_NEW_FBV",
-    "value" : "FormBuilder Viewer"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_C_UPD_RECOM",
-    "value" : "Do you want to replace current pivot to recommended suggestions?"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_PRECISION",
-    "value" : "Precision"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_WELCOME",
-    "value" : "Welcome!"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_VOTING",
-    "value" : "Voting"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_TB_ALIASES",
-    "value" : "Table Aliases"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_TB_ALIAS_DB",
-    "value" : "Target Databases"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_TB_ALIAS_TBSQL",
-    "value" : "Table Alias Query"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_TB_ALIAS_TBSQL_EX",
-    "value" : "SELECT TB_NM, TB_ALIAS FROM TABLEMETA"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_TB_ALIAS_COLSQL",
-    "value" : "Column Alias Query"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_TB_ALIAS_COLSQL_EX",
-    "value" : "SELECT COL_NM, COL_ALIAS FROM COLUMNMETA WHERE TB_NM=?"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_NLP_SVR_ENABLE",
-    "value" : "Enable NLP Server"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_GPT_API_KEY",
-    "value" : "ChatGPT API Key"
-  }, {
-    "group" : "locale_en_US_0020",
-    "name" : "L_KAKAO",
-    "value" : "Kakao"
-  }, {
-    "group" : "locale_en_US_0020",
-    "name" : "L_K_ENABLED",
-    "value" : "Enable Kakao API"
-  }, {
-    "group" : "locale_en_US_0020",
-    "name" : "L_K_REST_API_KEY",
-    "value" : "Rest API Key"
-  }, {
-    "group" : "locale_en_US_0020",
-    "name" : "L_K_REDIRECT_URI",
-    "value" : "Redirect URL"
-  }, {
-    "group" : "locale_en_US_0020",
-    "name" : "L_K_CLIENT_SECRET",
-    "value" : "Client Secret"
-  }, {
-    "group" : "locale_en_US_0020",
-    "name" : "L_K_TOKEN_URI",
-    "value" : "Token URL"
-  }, {
-    "group" : "locale_en_US_0020",
-    "name" : "L_K_AUTH_URI",
-    "value" : "Authenticate URL"
-  }, {
-    "group" : "locale_en_US_0020",
-    "name" : "L_K_API_HOST",
-    "value" : "API Hostname"
-  }, {
-    "group" : "locale_en_US_0020",
-    "name" : "L_K_OAUTH_TOKEN",
-    "value" : "OAuth Token"
-  }, {
-    "group" : "locale_en_US_0020",
-    "name" : "L_K_GET_TOKEN",
-    "value" : "Get OAuth Token"
-  }, {
-    "group" : "locale_en_US_0020",
-    "name" : "L_NLP_BO",
-    "value" : "Enable NLP"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_DE_LABEL",
-    "value" : "End Label"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_DE_FORMAT",
-    "value" : "End Label Format"
-  }, {
-    "group" : "locale_en_US_0019",
-    "name" : "L_ANIM_DUR",
-    "value" : "Animation Duration"
-  }, {
-    "group" : "locale_en_US_0020",
-    "name" : "L_CUSTOM_CSS",
-    "value" : "Custom CSS"
-  }, {
-    "group" : "locale_en_US_0016",
-    "name" : "L_DISCUSSIONS",
-    "value" : "Discussions"
-  }, {
-    "group" : "locale_en_US_0016",
-    "name" : "L_DS_TARGET",
-    "value" : "DataSource File Upload"
-  }, {
-    "group" : "locale_en_US_0016",
-    "name" : "L_DS_LD_OPT",
-    "value" : "Data Options"
-  }, {
-    "group" : "locale_en_US_0016",
-    "name" : "L_COLUMNS",
-    "value" : "Columns"
-  }, {
-    "group" : "locale_en_US_0016",
-    "name" : "L_DS_FINISH",
-    "value" : "Completed Data Loading."
-  }, {
-    "group" : "locale_en_US_0016",
-    "name" : "L_CREATE_DTB",
-    "value" : "Create New DataSet"
-  }, {
-    "group" : "locale_en_US_0016",
-    "name" : "L_APPEND_DTB",
-    "value" : "Append on DataSet"
-  }, {
-    "group" : "locale_en_US_0016",
-    "name" : "L_UPLOAD_MODE",
-    "value" : "Upload Mode"
-  }, {
-    "group" : "locale_en_US_0016",
-    "name" : "L_DS_TITLE",
-    "value" : "DataWorks DataLoader Wizard"
-  }, {
-    "group" : "locale_en_US_0016",
-    "name" : "T_DATA_UPLOAD_DESC",
-    "value" : "Create report and analysis after upload data file or load data from URL."
-  }, {
-    "group" : "locale_en_US_0020",
-    "name" : "L_BASE_LIB",
-    "value" : "Base Library"
-  }, {
-    "group" : "locale_en_US_0020",
-    "name" : "L_INTERFACES",
-    "value" : "Interfaces"
-  }, {
-    "group" : "locale_en_US_0020",
-    "name" : "L_DELIVERY_CHANNELS",
-    "value" : "Delivery Channels"
-  }, {
-    "group" : "locale_en_US_0020",
-    "name" : "L_NOTI_KAKAO",
-    "value" : "Notify on Kakao"
-  }, {
-    "group" : "locale_en_US_0020",
-    "name" : "L_NOTI_DELI",
-    "value" : "Notify Delivery"
-  }, {
-    "group" : "locale_en_US_0020",
-    "name" : "L_SC_TRIGGER",
-    "value" : "Notify Trigger"
-  }, {
-    "group" : "locale_en_US_0020",
-    "name" : "B_ATTACHMENTS",
-    "value" : "Attachments"
-  }, {
-    "group" : "locale_en_US_0020",
-    "name" : "L_AI",
-    "value" : "AI"
-  }, {
-    "group" : "locale_en_US_0020",
-    "name" : "L_AI_TYPE",
-    "value" : "AI Provider"
-  }, {
-    "group" : "locale_en_US_0020",
-    "name" : "L_AI_GPT_API",
-    "value" : "OpenAI API Key"
-  }, {
-    "group" : "locale_en_US_0020",
-    "name" : "L_AI_GPT_ORG",
-    "value" : "OpenAI Org ID"
-  }, {
-    "group" : "locale_en_US_0020",
-    "name" : "L_AI_GPT_PRJ",
-    "value" : "OpenAI Project ID"
-  }, {
-    "group" : "locale_en_US_0020",
-    "name" : "L_AI_GPT_MODEL",
-    "value" : "ChatGPT Model"
-  }, {
-    "group" : "locale_en_US_0020",
-    "name" : "L_AI_LLAMA_HOST",
-    "value" : "Llama API EndPoint"
-  }, {
-    "group" : "locale_en_US_0020",
-    "name" : "L_AI_Q",
-    "value" : "AI Questions"
-  }, {
-    "group" : "locale_en_US_0020",
-    "name" : "L_AI_PIVOT_REQ",
-    "value" : "AI Pivot Query"
-  }, {
-    "group" : "locale_en_US_0020",
-    "name" : "L_AI_SUMMARY",
-    "value" : "AI StoryIt"
-  }, {
-    "group" : "locale_en_US_0020",
-    "name" : "L_AI_TREND_REQ",
-    "value" : "AI Trend Questions"
-  }, {
-    "group" : "locale_en_US_0020",
-    "name" : "L_ADD",
-    "value" : "Click to Add or Replace"
-  }, {
-    "group" : "locale_en_US_0020",
-    "name" : "L_AI_LLAMA_API",
-    "value" : "Llama API Key"
-  }, {
-    "group" : "locale_en_US_0020",
-    "name" : "L_AI_LLAMA_MODEL",
-    "value" : "Llama Model"
-  }, {
-    "group" : "locale_en_US_0008",
-    "name" : "F_STDDEV",
-    "value" : "Standard Deviation"
-  }, {
-    "group" : "locale_en_US_0008",
-    "name" : "F_STDDEVP",
-    "value" : "Standard Deviation P"
-  }, {
-    "group" : "locale_en_US_0020",
-    "name" : "S_STDDEV",
-    "value" : "Std Dev"
-  }, {
-    "group" : "locale_en_US_0020",
-    "name" : "F_IRR",
-    "value" : "Internal Rate of Return"
-  }, {
-    "group" : "locale_en_US_0020",
-    "name" : "F_NPV",
-    "value" : "Net present value of investment"
-  }, {
-    "group" : "locale_en_US_0020",
-    "name" : "F_PV",
-    "value" : "Present value of investment"
-  }, {
-    "group" : "locale_en_US_0020",
-    "name" : "F_FV",
-    "value" : "Future value of investment"
-  }, {
-    "group" : "locale_en_US_0020",
-    "name" : "F_PMT",
-    "value" : "Periodic Payment for an annuity"
-  }, {
-    "group" : "locale_en_US_0020",
-    "name" : "F_NPER",
-    "value" : "Number of periods for an investment"
-  }, {
-    "group" : "locale_en_US_0020",
-    "name" : "L_OPTION_VALUE",
-    "value" : "Option Value"
-  }, {
-    "group" : "locale_en_US_0020",
-    "name" : "L_V_PIVOT_CLS",
-    "value" : "Pivot with Cluster"
-  }, {
-    "group" : "locale_en_US_0020",
-    "name" : "L_TWOFA_TOTP",
-    "value" : "Time-based One-Time Password"
-  }, {
-    "group" : "locale_en_US_0020",
-    "name" : "L_TWOFA_EMAIL",
-    "value" : "Email Validation Key"
-  }, {
-    "group" : "locale_en_US_0020",
-    "name" : "L_IMG_CMD",
-    "value" : "Image Command"
-  }, {
-    "group" : "locale_en_US_0020",
-    "name" : "L_SEC_2FA",
-    "value" : "2 Factor Authentication"
   } ]
 }

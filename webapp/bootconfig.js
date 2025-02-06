@@ -1,8 +1,7 @@
 ﻿ig$.bootconfig = {
-	"cache": "202501311110",
+	"cache": "202502070045",
     "boot": {
         "framework": [
-            "./js/material_web.js",
             "./js/framework.min.js"
         ],
         "vis": [
@@ -23,12 +22,6 @@
 			"./js/echarts_themes/darkbrown.js",
 			"./js/echarts_themes/amplix.js"
         ],
-        "vis_hc": [
-        	"./js/vis_hc.min.js",
-        ],
-        "vis_ac": [
-        	"./js/vis_ac.min.js",
-        ],
         "app": [
             "./js/app.min.js"
         ],
@@ -38,23 +31,14 @@
         "app_dashboard": [
             "./js/app_dashboard.min.js"
         ],
-        "app_dataworks": [
-            "./js/app_dataworks.min.js"
-        ],
         "app_viewer": [
             "./js/app_viewer.min.js",
             "./js/custom_viewer.min.js"
         ],
-        "dataworks_main": [
-            "./js/dataworks_main.min.js"
-        ],
         "custom": [
-            "./js/customer_specific.js",
-            
 			"./custom/custom.chart.options.js",
 			"./custom/custom.map.common.js",
 			"./custom/custom.map.google.js",
-            "./custom/custom.map.openstreet.js",
 			"./custom/custom.map.daum.js",
 			"./custom/custom.map.esri.js",
 			"./custom/custom.map.naver.js",
@@ -116,9 +100,6 @@
         ],
 		"mg_meta": [
 			"./js/mg_meta.min.js"
-		],
-        "mongo": [
-            "./js/mongo.min.js"
-        ]
+		]
     }
 };

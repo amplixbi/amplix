@@ -10,12 +10,15 @@ IG$.__chartoption.charttype.push(
 	}
 );
 
-IG$.cVis.svgmap = $s.extend(IG$.cVis.base, {
-	draw: function(results) {
+IG$.__chartoption.chartext.svgmap = function(owner) {
+	this.owner = owner;
+};
+
+IG$.__chartoption.chartext.svgmap.prototype = {
+	drawChart: function(owner, results) {
 		var me = this,
-			chartview = me.chartview,
-			container = chartview.container,
-			cop = chartview.cop,
+			container = owner.container,
+			cop = owner.cop,
 			copsettings = cop.settings,
 			m_svgtype = copsettings ? copsettings.m_svgtype : "",
 			svgmap,
@@ -50,7 +53,7 @@ IG$.cVis.svgmap = $s.extend(IG$.cVis.base, {
 			});
 		}
 		
-		me.map = svgmap = new IG$.SVGLoader($(container), me, chartview);
+		me.map = svgmap = new IG$.SVGLoader($(container), me, owner);
 		svgmap.idfield = renderer ? renderer.idfield : null;
 		svgmap.load(m_svgtype);
 
@@ -61,7 +64,7 @@ IG$.cVis.svgmap = $s.extend(IG$.cVis.base, {
 		svgmap.container.bind("region_clicked", function(e, opt) {
 			if (opt.sender && opt.param)
 			{
-				chartview.procClickEvent.call(chartview, opt.sender, opt.param);
+				owner.procClickEvent.call(owner, opt.sender, opt.param);
 			}
 		}); 
 
@@ -168,21 +171,20 @@ IG$.cVis.svgmap = $s.extend(IG$.cVis.base, {
 		});
 	},
 
-	updatedisplay: function(w, h) {
+	updatedisplay: function(owner, w, h) {
 		var me = this,
 			map = me.map;
 			
 		map.resizeTo.call(map);
 	},
 	getExportData: IG$.__chartoption.chartext.$export_html,
-
 	dispose: function() {
 		var me = this,
-			chartview = me.chartview;
+			owner = me.owner;
 			
-		if (chartview && chartview.container)
+		if (owner && owner.container)
 		{
-			$(chartview.container).empty();
+			$(owner.container).empty();
 		}
 	}
-});
+};

@@ -10,12 +10,15 @@ IG$.__chartoption.charttype.push(
 	}
 );
 
-IG$.cVis.htmltable = $s.extend(IG$.cVis.base, {
-	draw: function(results) {
+IG$.__chartoption.chartext.htmltable = function(owner) {
+	this.owner = owner;
+};
+
+IG$.__chartoption.chartext.htmltable.prototype = {
+	drawChart: function(owner, results) {
 		var me = this,
-			chartview = me.chartview,
-			container = chartview.container,
-			cop = chartview.cop,
+			container = owner.container,
+			cop = owner.cop,
 			copsettings = cop.settings || {},
 			m_html_basestyle = copsettings.m_html_basestyle || "",
 			html = me.html,
@@ -45,7 +48,7 @@ IG$.cVis.htmltable = $s.extend(IG$.cVis.base, {
 				rowcnt = results.rowcnt,
 				i, j, k, row, cell, celltext,
 				p, idx, sn, title,
-				sheetoption = chartview.sheetoption ? chartview.sheetoption.model : null,
+				sheetoption = owner.sheetoption ? owner.sheetoption.model : null,
 				headers = {},
 				tname,
 				cspan, rspan,
@@ -142,7 +145,7 @@ IG$.cVis.htmltable = $s.extend(IG$.cVis.base, {
 							{
 								sn = sn.toLowerCase();
 								sn = IG$.replaceAll(sn, " ", "_");
-								sn = IG$.replaceAll(sn, "&#x2f;", "_");
+								sn = IG$.replaceAll(sn, "&#x2044;", "_");
 							}
 							
 							sn = "ig-dvcell-" + sn;
@@ -158,7 +161,7 @@ IG$.cVis.htmltable = $s.extend(IG$.cVis.base, {
 									amplix_selected: [cell]
 								};
 							
-								chartview.procClickEvent.call(chartview, sender, {});
+								owner.procClickEvent.call(owner, sender, {});
 							});
 						}
 					}
@@ -176,16 +179,16 @@ IG$.cVis.htmltable = $s.extend(IG$.cVis.base, {
 		}
 	},
 
-	updatedisplay: function(w, h) {
+	updatedisplay: function(owner, w, h) {
 		var me = this;
 	},
 	dispose: function() {
 		var me = this,
-			chartview = me.chartview;
+			owner = me.owner;
 			
-		if (chartview && chartview.container)
+		if (owner && owner.container)
 		{
-			$(chartview.container).empty();
+			$(owner.container).empty();
 		}
 	}
-});
+};

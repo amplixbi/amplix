@@ -523,13 +523,13 @@ Object.defineProperty(exports, '__esModule', { value: true });
 },{}]},{},[1])(1)
 });
 
-IG$.cVis.wordcloud.prototype.drawWordcloud = function() {
+IG$.__chartoption.chartext.wordcloud.prototype.drawWordcloud = function() {
 	var me = this,
-		chartview = me.chartview,
+		owner = me.owner,
 		results = me.results,
-		container = $(chartview.container),
-		// sop = chartview._ILb,
-		cop = chartview.cop,
+		container = $(owner.container),
+		// sop = owner._ILb,
+		cop = owner.cop,
 		i, j,
 		rdata = results._tabledata,
 		jcontainer,
@@ -570,10 +570,6 @@ IG$.cVis.wordcloud.prototype.drawWordcloud = function() {
 		rec = rdata[i];
 		d = {};
 		d.text = rec[colfix-1].text || rec[colfix-1].code;
-    if (d.text.length > 20)
-    {
-      d.text = d.text.substring(0, 20) + "...";
-    }
 
 		if (rec[colfix])
 		{
@@ -584,8 +580,6 @@ IG$.cVis.wordcloud.prototype.drawWordcloud = function() {
 			
 			if (isNaN(d.size))
 				continue;
-
-      d.size = Math.abs(d.size);
 				
 			if (isNaN(vmin))
 			{
@@ -675,6 +669,7 @@ IG$.cVis.wordcloud.prototype.drawWordcloud = function() {
 			.attr("width", width)
 			.attr("height", height)
 			.attr("font-size", 10)
+			.attr("font-family", "sans-serif")
 			.attr("text-anchor", "middle");
 			
 		var fill = function(t) {
@@ -705,7 +700,7 @@ IG$.cVis.wordcloud.prototype.drawWordcloud = function() {
 			.attr("text-anchor", "middle")
 			.attr("transform", function(d) {
 				var r = "translate(" + [d.x, d.y] + ")";
-				r += "rotate(" + d.rotate + ")";
+				//r += "rotate(" + d.rotate + ")";
 				return r;
 			})
 			.text(function(d) {return d.text;})
@@ -715,7 +710,7 @@ IG$.cVis.wordcloud.prototype.drawWordcloud = function() {
 		.words(fdata)
 		.padding(padding)
 		.size([width, height])
-		.rotate(function() { return (~~(Math.random() * 6) - 3) * 30; }) // {return ~~(Math.random() * 2) * 90})
+		.rotate(function() {return ~~(Math.random() * 2) * 90})
 		.font(fontFamily)
 		.fontSize(function(d) {
 			var r = 10;
@@ -730,28 +725,29 @@ IG$.cVis.wordcloud.prototype.drawWordcloud = function() {
 	layout.start();
 }
 
-IG$.cVis.wordcloud.prototype.draw = function(results) {
+IG$.__chartoption.chartext.wordcloud.prototype.drawChart = function(owner, results) {
 	var me = this;
+	me.owner = owner;
 	me.results = results;
 	
 	me.drawWordcloud();
 };
 	
-IG$.cVis.wordcloud.prototype.updatedisplay = function(w, h) {
+IG$.__chartoption.chartext.wordcloud.prototype.updatedisplay = function(owner, w, h) {
 	var me = this;
 	
-	if (me.chartview && me.results)
+	if (me.owner && me.results)
 	{
 		me.drawWordcloud();
 	}
 };
 
-IG$.cVis.wordcloud.prototype.destroy = function() {
+IG$.__chartoption.chartext.wordcloud.prototype.destroy = function(owner, w, h) {
 	var me = this,
-		chartview = me.chartview;
+		owner = me.owner;
 		
-	if (chartview && chartview.container)
+	if (owner && owner.container)
 	{
-		$(chartview.container).empty();
+		$(owner.container).empty();
 	}
 };

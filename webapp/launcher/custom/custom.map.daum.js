@@ -10,24 +10,19 @@ IG$.__chartoption.charttype.push(
 	}
 );
 
-IG$.cVis.daummap = $s.extend(IG$.cVis.base, {
-	draw: function(results) {
+IG$.__chartoption.chartext.daummap = function(owner) {
+	this.owner = owner;
+};
+
+IG$.__chartoption.chartext.daummap.prototype = {
+	drawChart: function(owner, results) {
 		var me = this,
-			chartview = me.chartview,
-			container = chartview.container,
+			container = owner.container,
 			jcontainer = $(container),
 			map,
-			i, j,
-			p;
+			i, j;
 		
 		jcontainer.empty();
-
-		if (!window.daum) 
-		{
-			IG$.ShowError(IRm$.r1("E_CHART_DRAWING") + " Map Library not loaded properly!");
-			return;
-		}
-
 		map = new daum.maps.Map(jcontainer[0], {
 			center: new daum.maps.LatLng(37.537123, 127.005523),
 			level: 3
@@ -45,15 +40,17 @@ IG$.cVis.daummap = $s.extend(IG$.cVis.base, {
 		{
 			for (i=0; i < results.geodata.length; i++)
 			{
-				p = results.geodata[i];
-				minLng = (i == 0) ? Number(p.lng) : Math.min(minLng, Number(p.lng));
-				maxLng = (i == 0) ? Number(p.lng) : Math.max(maxLng, Number(p.lng));
-				minLat = (i == 0) ? Number(p.lat) : Math.min(minLat, Number(p.lat));
-				maxLat = (i == 0) ? Number(p.lat) : Math.max(maxLat, Number(p.lat));
+				minLng = (i == 0) ? Number(results.geodata[i].lng) : Math.min(minLng, Number(results.geodata[i].lng));
+				maxLng = (i == 0) ? Number(results.geodata[i].lng) : Math.max(maxLng, Number(results.geodata[i].lng));
+				minLat = (i == 0) ? Number(results.geodata[i].lat) : Math.min(minLat, Number(results.geodata[i].lat));
+				maxLat = (i == 0) ? Number(results.geodata[i].lat) : Math.max(maxLat, Number(results.geodata[i].lat));
 			}
 			
 			mlon = (maxLng - minLng) / 2;
 			mlat = (maxLat - minLat) / 2;
 		}
+	},
+
+	updatedisplay: function(owner, w, h) {
 	}
-});
+}

@@ -16,7 +16,6 @@ IG$._customChartPanels = function() {
 			type: "vbox",
 			align: "stretch"
 		},
-		name: "_cust_options",
 		border: 0,
 		title: IRm$.r1("L_MAP_OPTIONS"), // "Extra Options",
 		defaults: {
@@ -39,8 +38,11 @@ IG$._customChartPanels = function() {
 					d3 = [{name: "Select Value", value: ""}],
 					d4 = [{name: "Select Value", value: ""}],
 					d5 = [{name: "Select Value", value: ""}],
-					
+					maptype = me.down("[name=maptype]"),
 					d1val = "", d2val = "", d3val = "";
+					
+				maptype.store.loadData(IG$.mLU ? IG$.mLU.maptype : []);
+				maptype.setValue(option.maptype);
 				
 				$.each(ma.sheetoption.model.rows, function(i, row) {
 					d1.push({
@@ -90,8 +92,6 @@ IG$._customChartPanels = function() {
 				me.down("[name=m_geofield]").store.loadData(d4);
 				me.down("[name=mapcategory]").store.loadData(d5);
 				me.down("[name=mapcategory]").setValue(option.mapcategory);
-
-				option.cdata_m_tmpl = IG$._decodeVal(option.cdata_m_tmpl);
 				
 				option.cdata_m_tmpl = option.cdata_m_tmpl || [
 					"{",
@@ -111,6 +111,8 @@ IG$._customChartPanels = function() {
 					"	]",
 					"}"
 				].join("\n");
+				
+				option.cdata_m_tmpl = IG$._decodeVal(option.cdata_m_tmpl);
 				
 				me.down("[name=m_zoom_level]").setValue(option.m_zoom_level || "8");
 				me.down("[name=m_marker]").setValue(option.m_marker || "marker");
@@ -298,11 +300,7 @@ IG$._customChartPanels = function() {
 		},
 		
 		invalidateFields: function(opt) {
-			var me = this, 
-				ma = me.__main__,
-				option = (ma.sheetoption && ma.sheetoption.model ? ma.sheetoption.model.chart_option : null),
-				maptype = me.down("[name=maptype]"),
-				subtype = opt.subtype;
+			var me = this, subtype = opt.subtype;
 			
 			var _esri_version = ig$.arcgis_version || "0";
 			
@@ -315,20 +313,8 @@ IG$._customChartPanels = function() {
 				subtype == "esri" ||
 				subtype == "vworldmap");
 			*/
-
-			if (subtype == "koreamap" || subtype == "kr_drill_map" || subtype == "changwon_pop_map")
-			{
-				var maptypes = IG$.cVis.koreaMapTypes();
-				maptype.store.loadData(maptypes.sido);
-			}
-			else
-			{
-				maptype.store.loadData(IG$.mLU ? IG$.mLU.maptype : []);
-			}
-
-			maptype.setValue(option ? option.maptype : null);
 			
-			me.down("[name=mapoptions]").setVisible(subtype == "map" || subtype == "koreamap" || subtype == "kr_drill_map" || subtype == "changwon_pop_map");
+			me.down("[name=mapoptions]").setVisible(subtype == "map");
 			me.down("[name=m_xypos]").setVisible(subtype == "vworldmap");
 			me.down("[name=m_arc_basemap]").setVisible(subtype == "esri");
 			me.down("[name=m_arc_view]").setVisible(subtype == "esri" && _esri_version > 3);
@@ -444,8 +430,8 @@ IG$._customChartPanels = function() {
 								name: "m_zoom_level",
 								fieldLabel: IRm$.r1("L_ZOOM_LEVEL"), // "Zoom Level",
 								minValue: 1,
-								maxValue: 20
-							}
+								maxValue: 10
+							} 
 						]
 					},
 					{
@@ -505,11 +491,7 @@ IG$._customChartPanels = function() {
 										{
 											name: "Info",
 											value: "info"
-										},
-										{
-											name: "Pie",
-											value: "pie"
-										}
+										} 
 									]
 								},
 								listeners: {
@@ -1106,7 +1088,6 @@ IG$._customChartPanels = function() {
 				settings.m_svg_line_width = "" + me.down("[name=m_svg_line_width]").getValue();
 				settings.m_svg_font_color = me.down("[name=m_svg_font_color]").getValue();
 				settings.m_svg_font_size = "" + me.down("[name=m_svg_font_size]").getValue();
-				delete option["m_svg_label_option"];
 				settings.m_svg_label_option = IG$._encodeVal(me.down("[name=m_svg_label_option]").getValue());
 				
 				settings.m_h_min = "" + me.down("[name=m_h_min]").getValue();

@@ -8,40 +8,44 @@
 	}
 );
 
-IG$.cVis.bubblecloud = $s.extend(IG$.cVis.base, {
-	draw: function(results) {
+IG$.__chartoption.chartext.bubblecloud = function(owner) {
+	this.owner = owner;
+}
+
+IG$.__chartoption.chartext.bubblecloud.prototype = {
+	drawChart: function(owner, results) {
 		var me = this;
 		
-		if (IG$.cVis.bubblecloud._loading)
+		if (IG$.__chartoption.chartext.bubblecloud._loading)
 		{
 			setTimeout(function() {
-				me.draw(results);
+				me.drawChart.call(me, owner, results);
 			}, 500);
 			
 			return;
 		}
 		
-		if (!IG$.cVis.bubblecloud._loaded)
+		if (!IG$.__chartoption.chartext.bubblecloud._loaded)
 		{
 			var js = [
 					"./custom/custom.bubblecloud.worker.js"
 				];
 			
-			IG$.cVis.bubblecloud._loading = 1;
+			IG$.__chartoption.chartext.bubblecloud._loading = 1;
 			
 			IG$.getScriptCache(
 				js, 
 				new IG$.callBackObj(this, function() {
-					IG$.cVis.bubblecloud._loaded = 1;
-					me.draw(results);
+					IG$.__chartoption.chartext.bubblecloud._loaded = 1;
+					me.drawChart.call(me, owner, results);
 				})
 			);
 		}
 	},
-	updatedisplay: function(w, h) {
+	updatedisplay: function(owner, w, h) {
 	},
 
-	dispose: function() {
+	destroy: function() {
 		var me = this;
 
 		if (me.hchart && me.hchart.dispose)
@@ -50,4 +54,4 @@ IG$.cVis.bubblecloud = $s.extend(IG$.cVis.base, {
 			me.hchart = null;
 		}
 	}
-});
+}

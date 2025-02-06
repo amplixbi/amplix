@@ -10,17 +10,21 @@ IG$.__chartoption.charttype.push(
 	}
 );
 
-IG$.cVis.runchart = $s.extend(IG$.cVis.base, {
-	theight: 400,
-	symbolsize: 12,
-	getStat: function(results) {
+IG$.__chartoption.chartext.runchart = function(owner) {
+	var me = this;
+	
+	me.theight = 400;
+	me.symbolsize = 12;
+};
+
+IG$.__chartoption.chartext.runchart.prototype = {
+	getStat: function(owner, results) {
 		var me = this,
-			chartview = me.chartview,
-			cop = chartview.cop,
-			mctrl = chartview.rpc.ownerCt,
+			cop = owner.cop,
+			mctrl = owner.rpc.ownerCt,
 			req = new IG$._rpc$(),
-			rpt = chartview.reportoption.getCurrentPivot(),
-			rsheet = chartview.sheetoption.model,
+			rpt = owner.reportoption.getCurrentPivot(),
+			rsheet = owner.sheetoption.model,
 			anal_options,
 			n_options = [];
 		
@@ -46,47 +50,46 @@ IG$.cVis.runchart = $s.extend(IG$.cVis.base, {
 			{
 				ack: "olapservice",
 				payload: {
-					jobid: chartview.jobid,
+					jobid: owner.jobid,
 					option: "pivot",
-					active: "" + chartview.sheetoption.si,
+					active: "" + owner.sheetoption.si,
 					pivotresult: "F",
 					analysisresult: "T"
 				},
 				mbody: rpt,
-				meta_type: chartview.meta_type || "report"
+				meta_type: owner.meta_type || "report"
 			}, mctrl, function(jdoc) {
 				rsheet.anal_options = anal_options;
 				me.quality_stat = jdoc;
-				me.getStatInternal(chartview, results);
+				me.getStatInternal(owner, results);
 			}, function(jdoc) {
 				rsheet.anal_options = anal_options;
 			});
 		req.send();
 	},
 	
-	getStatInternal: function(chartview, results) {
+	getStatInternal: function(owner, results) {
 		var me = this,
-			mctrl = chartview.rpc.ownerCt,
+			mctrl = owner.rpc.ownerCt,
 			req = new IG$._rpc$();
 			
 		req.init(mctrl, {
 			ack: "olapservice",
 			payload: { 
 				option: "statistics",
-				active: "" + chartview.sheetoption.si,
-				jobid: chartview.jobid
+				active: "" + owner.sheetoption.si,
+				jobid: owner.jobid
 			},
 			mbody: {}
 		}, mctrl, function(sdoc) {
 			results.statistics = sdoc.statistics;
-			me.drawStatResult(chartview, results);
+			me.drawStatResult.call(me, owner, results);
 		});
 		req.send();
 	},
 	
-	draw: function(results) {
+	drawChart: function(owner, results) {
 		var me = this,
-			chartview = me.chartview,
 			data = results._tabledata,
 			colfix = results.colfix,
 			colcnt = results.colcnt,
@@ -112,15 +115,15 @@ IG$.cVis.runchart = $s.extend(IG$.cVis.base, {
 			return;
 		}
 		
-		me.getStat(results);
+		me.getStat(owner, results);
 	},
 	
-	drawStatResult: function(chartview, results) {
+	drawStatResult: function(owner, results) {
 		var me = this,
 			quality_stat = me.quality_stat,
-			container = chartview.container,
+			container = owner.container,
 			jcontainer = $(container),
-			cop = chartview.cop,
+			cop = owner.cop,
 			data = results._tabledata,
 			colfix = results.colfix,
 			colcnt = results.colcnt,
@@ -138,7 +141,7 @@ IG$.cVis.runchart = $s.extend(IG$.cVis.base, {
 			statistics = results.statistics,
 			qstatistics = quality_stat.table_data;
 		
-		me.dispose();
+		me.destroy();
 		
 		jcontainer.empty();
 		
@@ -412,7 +415,7 @@ IG$.cVis.runchart = $s.extend(IG$.cVis.base, {
 		return masterChart;
 	},
 	
-	updatedisplay: function(w, h) {
+	updatedisplay: function(owner, w, h) {
 		var me = this,
 			dmain;
 		
@@ -454,7 +457,7 @@ IG$.cVis.runchart = $s.extend(IG$.cVis.base, {
 		}
 	},
 	
-	dispose: function() {
+	destroy: function() {
 		var me = this,
 			_charts = me._charts;
 			
@@ -471,4 +474,4 @@ IG$.cVis.runchart = $s.extend(IG$.cVis.base, {
 		
 		me._charts = [];
 	}
-});
+};

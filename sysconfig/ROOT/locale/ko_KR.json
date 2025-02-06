@@ -64,6 +64,9 @@
     "name" : "L_DUAL_AXIS",
     "value" : "2개 Y축"
   }, {
+    "name" : "L_CONTACT_CRED",
+    "value" : "Copyright &copy; 1996-2010"
+  }, {
     "name" : "L_EXPORT_CSV",
     "value" : "CSV"
   }, {
@@ -948,11 +951,16 @@
     "name" : "L_L_TAB",
     "value" : "마지막 탭만 로드하기"
   }, {
-    "group" : "locale_ko_KR_0019",
     "name" : "D_CUBEMODEL",
-    "value" : "비즈니스 모델"
+    "value" : "마트분석 모델"
+  }, {
+    "name" : "L_ROLAP_CUBE_MODEL",
+    "value" : "마트분석 모델"
   }, {
     "name" : "D_CUBE",
+    "value" : "마트분석 큐브"
+  }, {
+    "name" : "L_ROLAP_CUBE",
     "value" : "마트분석 큐브"
   }, {
     "name" : "B_EVERY",
@@ -1531,11 +1539,8 @@
     "name" : "M_ERR_CONNECT",
     "value" : "서버 접속에 실패하였습니다. 다시 시도해 주십시오."
   }, {
-    "name" : "L_P_servercall",
+    "name" : "L_P_inv_svc",
     "value" : "서비스 호출"
-  }, {
-    "name" : "L_P_restcall",
-    "value" : "REST 서비스 호출"
   }, {
     "name" : "B_SEL",
     "value" : "선택"
@@ -2213,9 +2218,8 @@
     "name" : "L_EN_DRILL",
     "value" : "전체 시트로 필터링"
   }, {
-    "group" : "locale_ko_KR_0020",
     "name" : "L_EN_DRILL_DESC",
-    "value" : "전체 시트에 필터적용"
+    "value" : "전체 시트에 필터적용할 경우 선택해 주십시오."
   }, {
     "name" : "L_CFIT_SS",
     "value" : "전체 시리즈 분석"
@@ -3132,7 +3136,7 @@
     "name" : "L_C_CUR",
     "value" : "현재,"
   }, {
-    "name" : "L_P_close",
+    "name" : "L_P_cls",
     "value" : "화면 닫기"
   }, {
     "name" : "L_APPL_TMPL",
@@ -3287,7 +3291,7 @@
     "value" : "대시 보드 선택"
   }, {
     "name" : "L_DESIGN",
-    "value" : "디자인"
+    "value" : "디자인 모드"
   }, {
     "name" : "L_APPL_THEME",
     "value" : "응용 프로그램 테마"
@@ -4185,7 +4189,7 @@
   }, {
     "group" : "locale_ko_KR_0012",
     "name" : "L_HOME_APP_TITLE",
-    "value" : "<h1>Augmented Analytics - AMPLIX</h1>"
+    "value" : "<h1>AMPLIX 비즈니스 분석 솔류션</h1>"
   }, {
     "group" : "locale_ko_KR_0012",
     "name" : "L_HOME_APP_DESC",
@@ -4896,6 +4900,10 @@
     "value" : "프로그램"
   }, {
     "group" : "locale_ko_KR_0014",
+    "name" : "L_REG_SCHEDULE",
+    "value" : "스케쥴 등록"
+  }, {
+    "group" : "locale_ko_KR_0014",
     "name" : "L_JOB_TYPE",
     "value" : "작업 유형"
   }, {
@@ -5322,14 +5330,6 @@
     "group" : "locale_ko_KR_0014",
     "name" : "L_THEMES",
     "value" : "테마"
-  }, {
-    "group" : "locale_zh_TW_0014",
-    "name" : "B_ACTION",
-    "value" : "액션"
-  }, {
-    "group" : "locale_en_US_0014",
-    "name" : "L_NEW_ACTION_GROUP",
-    "value" : "신규 액션 그룹"
   }, {
     "group" : "locale_ko_KR_0014",
     "name" : "L_NEW_ACTION",
@@ -8030,601 +8030,5 @@
     "group" : "locale_ko_KR_0019",
     "name" : "B_PG_PREV",
     "value" : "&lt;&lt;"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_OCR",
-    "value" : "Optical Character Recognition"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_OCR_ENGINE",
-    "value" : "OCR Engine"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_TESS_LOC",
-    "value" : "Tessaract 설치위치"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_BPMN",
-    "value" : "BPMN"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_BPMN_MGR",
-    "value" : "BPMN 관리자"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_BPMN_TASKS",
-    "value" : "BPMN 작업"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_BPMN_MODELER",
-    "value" : "BPMN 모델러"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_MULTI_LINE",
-    "value" : "여러줄표시"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_MAX_CHAR",
-    "value" : "최대 문자수"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_HIDE_OVERLAP",
-    "value" : "중복 숨기기"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_RANGE",
-    "value" : "범위"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_HIDDEN_SELECTOR",
-    "value" : "맵범례 숨김"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_JMOD",
-    "value" : "자바 모듈"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_REST",
-    "value" : "RESTful 서비스"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_SCI_LIC",
-    "value" : "Data Science 라이센스"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_LIC_KEY",
-    "value" : "라이센스 키"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_WIDGET",
-    "value" : "위젯"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_ADD_LABEL",
-    "value" : "레이블 추가"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_FLT_HEIGHT",
-    "value" : "필터 높이"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_FULL_HEIGHT",
-    "value" : "최대 높이로 지정"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "D_BPMN",
-    "value" : "BPMN"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_ADD_REST",
-    "value" : "RESTful 서비스 추가"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_SVC_URL",
-    "value" : "서비스 URL"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_BASE_URL",
-    "value" : "베이스 URL"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_HOST",
-    "value" : "호스트명"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "B_SUMMARY",
-    "value" : "요약"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_AUTH_TOKEN",
-    "value" : "인증토큰"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_AUTH_URL",
-    "value" : "인증 URL"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_REST_MGR",
-    "value" : "RESTful 관리"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "B_FIELD",
-    "value" : "필드"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_JSON_FORMAT",
-    "value" : "JSON 양식"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "B_PARAM_IN",
-    "value" : "입력 파라미터"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_REF",
-    "value" : "참조자"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_ENUM",
-    "value" : "Enumerator"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "D_BAYESNET",
-    "value" : "머신러닝 리포트"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_P_thread_start",
-    "value" : "쓰레드 시작"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_P_thread_end",
-    "value" : "쓰레드 종료"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_P_cond_if",
-    "value" : "IF 조건"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_P_cond_else",
-    "value" : "ELSE IF 조건"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_P_cond_end",
-    "value" : "IF 종료"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_MONGO_SCH",
-    "value" : "Mongo 작업관리자"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_MR_SRC",
-    "value" : "데이터 소스"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_MR_TGT",
-    "value" : "데이터 타겟"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "ROBO_ERR_TAB",
-    "value" : "현재 화면의 탭은 해당 작업을 지원하지 않습니다. 관련된 화면을 선택하신 후 다시 시도해 주세요."
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "ROBO_ERR_NO_MAINPANEL",
-    "value" : "현재 어플리케이션에서 수행할 수 없는 명령입니다."
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "ROBO_ERR_PROCESSING",
-    "value" : "처리중에 오류가 발생하였습니다. 다른 질의를 통해 보다 도움을 드릴수 있도록 해 주십시오."
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "ROBO_ERR_FIELD",
-    "value" : "명령을 수행하기 위해서는 필드를 지정해 주셔야 됩니다. 질의에 필드에 대한 정보를 추가하신 후 다시 시도해 주세요."
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "ROBO_ERR_TAB_REPORT",
-    "value" : "현재 활성 뷰어는 리포트가 아닙니다. 리포트 화면을 여신 후 질의를 다시 시도해 주세요."
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "ROBO_SUCCESS",
-    "value" : "넵. 방금 말씀하신 내용을 성공적으로 반영하였습니다. 보다 필요하신 사항은 언제든 말씀해 주세요."
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_C_LIST",
-    "value" : "다중 선택 리스트"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_ADD_SENTENCE",
-    "value" : "문장 추가하기"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "B_INTENTS",
-    "value" : "인텐츠"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_UTTERANCE",
-    "value" : "구두 문구"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_ANSWERS",
-    "value" : "답변"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_TRIM_ENTRY_TYPE",
-    "value" : "엔티티 트림 유형"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_TEXTS",
-    "value" : "문장"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "B_REGEX",
-    "value" : "RegEx"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_LEFT_WORDS",
-    "value" : "왼쪽 단어 목록"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_RIGHT_WORDS",
-    "value" : "오른쪽 단어 목록"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_WORDS",
-    "value" : "단어 목록"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_SKIP_WORDS",
-    "value" : "스킵 단어 목록"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_MANDATORY",
-    "value" : "필수사항"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_MESSAGES",
-    "value" : "메시지"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "B_CONTENTS",
-    "value" : "컨텐츠"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_SRCH_RULES",
-    "value" : "률 검색하기"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_EXP_RULES",
-    "value" : "률 반출하기"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_IMP_RULES",
-    "value" : "률 가져오기"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_RECOMMEND",
-    "value" : "추천항목"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "T_PV_RECOM",
-    "value" : "피벗 추천"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "B_FILE",
-    "value" : "파일"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_IGNORE_BOTTOM",
-    "value" : "밑단 제외"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_HEADER_COLNAME",
-    "value" : "헤더로 물리명 사용"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_REG_RECOM",
-    "value" : "추천 등록"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_C_REGRECOM",
-    "value" : "해당 쉬트를 추천항목으로 등록하시겠습니까?"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_NEW_FBV",
-    "value" : "폼뷜더 보기"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_C_UPD_RECOM",
-    "value" : "현재 피벗을 제안되는 항목으로 변경하시겠습니까?"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_PRECISION",
-    "value" : "소수점"
-  }, {
-    "group" : "locale_ko_KR_0016",
-    "name" : "L_DISCUSSIONS",
-    "value" : "분석토론"
-  }, {
-    "group" : "locale_ko_KR_0016",
-    "name" : "L_DS_TARGET",
-    "value" : "대상 파일 업로드"
-  }, {
-    "group" : "locale_ko_KR_0016",
-    "name" : "L_DS_LD_OPT",
-    "value" : "데이터 옵션"
-  }, {
-    "group" : "locale_ko_KR_0016",
-    "name" : "L_COLUMNS",
-    "value" : "컬럼항목"
-  }, {
-    "group" : "locale_ko_KR_0016",
-    "name" : "L_DS_FINISH",
-    "value" : "데이터 로딩 완료"
-  }, {
-    "group" : "locale_ko_KR_0016",
-    "name" : "L_CREATE_DTB",
-    "value" : "신규 데이터 집합 생성"
-  }, {
-    "group" : "locale_ko_KR_0016",
-    "name" : "L_APPEND_DTB",
-    "value" : "데이터 집합에 추가"
-  }, {
-    "group" : "locale_ko_KR_0016",
-    "name" : "L_UPLOAD_MODE",
-    "value" : "데이터 유형"
-  }, {
-    "group" : "locale_ko_KR_0016",
-    "name" : "L_DS_TITLE",
-    "value" : "데이터웍스 마법사"
-  }, {
-    "group" : "locale_ko_KR_0016",
-    "name" : "T_DATA_UPLOAD_DESC",
-    "value" : "분석할 데이터의 파일 업로드 혹은 데이터의 URL 을 입력하신 후 리포트를 생성할 수 있습니다."
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_WELCOME",
-    "value" : "방문해주셔서 감사합니다."
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_VOTING",
-    "value" : "투표 참여"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_DEFAULT_VALUE",
-    "value" : "기본 값"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_TB_ALIASES",
-    "value" : "테이블 별칭"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_TB_ALIAS_DB",
-    "value" : "대상 데이터베이스"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_TB_ALIAS_TBSQL",
-    "value" : "테이블 별칭 쿼리"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_TB_ALIAS_TBSQL_EX",
-    "value" : "SELECT TB_NM, TB_ALIAS FROM TABLEMETA"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_TB_ALIAS_COLSQL",
-    "value" : "컬럼 별칭 쿼리"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_TB_ALIAS_COLSQL_EX",
-    "value" : "SELECT COL_NM, COL_ALIAS FROM COLUMNMETA WHERE TB_NM=?"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_NLP_SVR_ENABLE",
-    "value" : "NLP 서버 사용"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_GPT_API_KEY",
-    "value" : "ChatGPT API 키"
-  }, {
-    "group" : "locale_ko_KR_0020",
-    "name" : "L_KAKAO",
-    "value" : "카카오"
-  }, {
-    "group" : "locale_ko_KR_0020",
-    "name" : "L_K_ENABLED",
-    "value" : "카카오 API 사용"
-  }, {
-    "group" : "locale_ko_KR_0020",
-    "name" : "L_K_REST_API_KEY",
-    "value" : "Rest API 키"
-  }, {
-    "group" : "locale_ko_KR_0020",
-    "name" : "L_K_REDIRECT_URI",
-    "value" : "Redirect URL"
-  }, {
-    "group" : "locale_ko_KR_0020",
-    "name" : "L_K_CLIENT_SECRET",
-    "value" : "Client Secret"
-  }, {
-    "group" : "locale_ko_KR_0020",
-    "name" : "L_K_TOKEN_URI",
-    "value" : "토큰 URL"
-  }, {
-    "group" : "locale_ko_KR_0020",
-    "name" : "L_K_AUTH_URI",
-    "value" : "인증 URL"
-  }, {
-    "group" : "locale_ko_KR_0020",
-    "name" : "L_K_API_HOST",
-    "value" : "API 호스트"
-  }, {
-    "group" : "locale_ko_KR_0020",
-    "name" : "L_K_OAUTH_TOKEN",
-    "value" : "OAuth 토큰"
-  }, {
-    "group" : "locale_ko_KR_0020",
-    "name" : "L_K_GET_TOKEN",
-    "value" : "Get OAuth 토큰"
-  }, {
-    "group" : "locale_ko_KR_0020",
-    "name" : "L_NLP_BO",
-    "value" : "NLP AI 활성화"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_DE_LABEL",
-    "value" : "설명 라벨"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_DE_FORMAT",
-    "value" : "설명 라벨 양식"
-  }, {
-    "group" : "locale_ko_KR_0019",
-    "name" : "L_ANIM_DUR",
-    "value" : "에니메이션 시간"
-  }, {
-    "group" : "locale_ko_KR_0020",
-    "name" : "L_CUSTOM_CSS",
-    "value" : "커스텀 CSS"
-  }, {
-    "group" : "locale_ko_KR_0020",
-    "name" : "L_BASE_LIB",
-    "value" : "기반 클래스"
-  }, {
-    "group" : "locale_ko_KR_0020",
-    "name" : "L_INTERFACES",
-    "value" : "외부 인터페이스"
-  }, {
-    "group" : "locale_ko_KR_0020",
-    "name" : "L_DELIVERY_CHANNELS",
-    "value" : "딜리버리 채널"
-  }, {
-    "group" : "locale_ko_KR_0020",
-    "name" : "L_NOTI_KAKAO",
-    "value" : "카카오 알림 메시지"
-  }, {
-    "group" : "locale_ko_KR_0020",
-    "name" : "L_NOTI_DELI",
-    "value" : "알림 전송"
-  }, {
-    "group" : "locale_ko_KR_0020",
-    "name" : "L_SC_TRIGGER",
-    "value" : "알림 트리거"
-  }, {
-    "group" : "locale_ko_KR_0020",
-    "name" : "B_ATTACHMENTS",
-    "value" : "첨부파일"
-  }, {
-    "group" : "locale_ko_KR_0020",
-    "name" : "L_AI",
-    "value" : "AI"
-  }, {
-    "group" : "locale_ko_KR_0020",
-    "name" : "L_AI_TYPE",
-    "value" : "AI 제공자"
-  }, {
-    "group" : "locale_ko_KR_0020",
-    "name" : "L_AI_GPT_API",
-    "value" : "OpenAI API 키"
-  }, {
-    "group" : "locale_ko_KR_0020",
-    "name" : "L_AI_GPT_ORG",
-    "value" : "OpenAI Org ID"
-  }, {
-    "group" : "locale_ko_KR_0020",
-    "name" : "L_AI_GPT_PRJ",
-    "value" : "OpenAI Project ID"
-  }, {
-    "group" : "locale_ko_KR_0020",
-    "name" : "L_AI_GPT_MODEL",
-    "value" : "ChatGPT 모델"
-  }, {
-    "group" : "locale_ko_KR_0020",
-    "name" : "L_AI_LLAMA_HOST",
-    "value" : "Llama API 접속경로"
-  }, {
-    "group" : "locale_ko_KR_0020",
-    "name" : "L_AI_Q",
-    "value" : "AI 질의문"
-  }, {
-    "group" : "locale_ko_KR_0020",
-    "name" : "L_AI_SUMMARY",
-    "value" : "AI 요약 보고서 보기"
-  }, {
-    "group" : "locale_ko_KR_0020",
-    "name" : "L_AI_TREND_REQ",
-    "value" : "AI 트랜드 질의문"
-  }, {
-    "group" : "locale_ko_KR_0020",
-    "name" : "L_ADD",
-    "value" : "항목 추가 변경하시려면 클릭해 주세요"
-  }, {
-    "group" : "locale_ko_KR_0020",
-    "name" : "L_AI_LLAMA_API",
-    "value" : "Llama API 키"
-  }, {
-    "group" : "locale_ko_KR_0020",
-    "name" : "L_AI_LLAMA_MODEL",
-    "value" : "Llama 모델"
-  }, {
-    "group" : "locale_ko_KR_0008",
-    "name" : "F_STDDEV",
-    "value" : "표준편차"
-  }, {
-    "group" : "locale_ko_KR_0008",
-    "name" : "F_STDDEVP",
-    "value" : "표준편차 P"
-  }, {
-    "group" : "locale_ko_KR_0020",
-    "name" : "S_STDDEV",
-    "value" : "표준편차"
-  }, {
-    "group" : "locale_ko_KR_0020",
-    "name" : "F_IRR",
-    "value" : "Internal Rate of Return"
-  }, {
-    "group" : "locale_ko_KR_0020",
-    "name" : "F_NPV",
-    "value" : "Net present value of investment"
-  }, {
-    "group" : "locale_ko_KR_0020",
-    "name" : "F_PV",
-    "value" : "Present value of investment"
-  }, {
-    "group" : "locale_ko_KR_0020",
-    "name" : "F_FV",
-    "value" : "Future value of investment"
-  }, {
-    "group" : "locale_ko_KR_0020",
-    "name" : "F_PMT",
-    "value" : "Periodic Payment for an annuity"
-  }, {
-    "group" : "locale_ko_KR_0020",
-    "name" : "F_NPER",
-    "value" : "Number of periods for an investment"
-  }, {
-    "group" : "locale_ko_KR_0020",
-    "name" : "L_OPTION_VALUE",
-    "value" : "설정값"
-  }, {
-    "group" : "locale_ko_KR_0020",
-    "name" : "L_V_PIVOT_CLS",
-    "value" : "클러스터링 피벗"
-  }, {
-    "group" : "locale_ko_KR_0020",
-    "name" : "L_TWOFA_TOTP",
-    "value" : "시간 기반 일회용 패스워드(OTP)"
-  }, {
-    "group" : "locale_ko_KR_0020",
-    "name" : "L_TWOFA_EMAIL",
-    "value" : "이메일 보안 인증"
-  }, {
-    "group" : "locale_ko_KR_0020",
-    "name" : "L_AI_PIVOT_REQ",
-    "value" : "AI 피벗 질의문"
-  }, {
-    "group" : "locale_ko_KR_0020",
-    "name" : "L_IMG_CMD",
-    "value" : "이미지 생성명령"
-  }, {
-    "group" : "locale_ko_KR_0020",
-    "name" : "L_SEC_2FA",
-    "value" : "2차 보안 인증"
   } ]
 }

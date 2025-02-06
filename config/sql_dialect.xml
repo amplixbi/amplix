@@ -116,7 +116,7 @@
 				DATEPART(d, {field})
 			</extract>
 			<extract type="weekmonth">
-				DATEDIFF(week, DATEADD(week, DATEDIFF(week, 0, DATEADD(month, DATEDIFF(month, 0, {field}), 0)), 0), {field}) + 1
+				DATEDIFF(week, DATEADD(week, DATEDIFF(week, 0, DATEADD(month, DATEDIFF(month, 0, {field}), 0)), 0), {field} - 1) + 1
 			</extract>
 			<extract type="week" begin="0">
 				DATEPART(weekday, {field})
@@ -378,7 +378,6 @@
 			<separator><![CDATA[[]]]></separator>
 			<tablealias>AS</tablealias>
 			<dualtable></dualtable>
-			<enclosed><![CDATA[[]]]></enclosed>
 		</item>
 		<item type="db2">
 			<separator><![CDATA[[]]]></separator>

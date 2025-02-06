@@ -50,21 +50,22 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
 <link rel="icon" href="../favicon.png" type="image/png">
-<link rel="stylesheet" type="text/css" href="./css/apps.min.css?_dc=202501311110" />
-<link rel="stylesheet" type="text/css" href="./css/mdb.min.css?_dc=202501311110" />
-<link rel="stylesheet" type="text/css" href="./css/custom_lang_<%=lang.toLowerCase()%>.css?_dc=202501311110" />
+<link rel="stylesheet" type="text/css" href="./css/apps.min.css?_dc=202502070045" />
+<% if (lang.equals("ko_KR")) {%>
+<link rel="stylesheet" type="text/css" href="./fonts/hangul_nanum.css?_dc=202502070045" />
+<% } %>
 <%
 if (theme != null && theme.length() > 0)
 {
-	out.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"./css/" + theme.toLowerCase() + ".css?_dc=202501311110\" />");
+	out.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"./css/" + theme.toLowerCase() + ".css?_dc=202502070045\" />");
 }
 %>
-<link rel="stylesheet" type="text/css" href="./css/custom.css?_dc=202501311110" />
+<link rel="stylesheet" type="text/css" href="./css/custom.css?_dc=202502070045" />
 
-<script type="text/javascript" src="./js/jquery-3.6.4.min.js"></script>    
-<script type="text/javascript" src="../config.js?_dc=202501311110"></script>
-<script type="text/javascript" src="../bootconfig<%=(is_debug ? "_debug" : "")%>.js?_dc=202501311110"></script>
-<script type="text/javascript" src="./js/igca<%=(is_debug ? "" : ".min")%>.js?_dc=202501311110"></script>
+<script type="text/javascript" src="./js/jquery-3.5.1.min.js"></script>    
+<script type="text/javascript" src="../config.js?_dc=202502070045"></script>
+<script type="text/javascript" src="../bootconfig<%=(is_debug ? "_debug" : "")%>.js?_dc=202502070045"></script>
+<script type="text/javascript" src="./js/igca<%=(is_debug ? "" : ".min")%>.js?_dc=202502070045"></script>
 
 <script type="text/javascript">
 var useLocale = "<%=lang%>";
@@ -114,7 +115,7 @@ if (theme != null && theme.length() > 0)
 }
 %>
 
-var init_dashboard = function(instance) {
+var init_dashboard = function() {
 	var menu_logout = new IG$._menu_button($(".user-info"), [
 		{
 			nmae: "b_passwd",
@@ -142,7 +143,7 @@ var init_dashboard = function(instance) {
 	], {
 		btn_styles: ["fadeInRight"],
 		menu_position: {
-			top: 40,
+			top: 20,
 			left: "initial",
 			right: 10
 		}
@@ -195,30 +196,15 @@ var init_dashboard = function(instance) {
 	var menu_theme = new IG$._menu_button($("#b_style"), theme_options, {
 		btn_styles: ["fadeInRight"],
 		menu_position: {
-			top: 40,
+			top: 20,
 			left: "initial",
 			right: 10
 		}
 	});
 	menu_theme.create();
-
-	// play dashboard
-	var is_playing = false,
-		b_play = $("#b_play");
-
-	b_play.bind("click", function() {
-		var mainPanel = instance.mainPanel;
-		is_playing = !is_playing;
-		b_play.removeClass("fa-play")
-			.removeClass("fa-pause");
-
-		b_play.addClass(is_playing ? "fa-pause" : "fa-play");
-		mainPanel.stopPlay();
-		is_playing && mainPanel.startPlay();
-	});
 }
 
-var modules = ["framework", "app_dashboard", "appnc", "vis_ec", "vis_ec_theme", "custom"];
+var modules = ["framework", "vis_ec", "vis_ec_theme", "app_dashboard", "appnc", "custom"];
 IG$.__microloader(modules, function() {
 	$s.ready(function() {
 		var dasboard_inst = new IG$.amplix_instance({
@@ -227,78 +213,64 @@ IG$.__microloader(modules, function() {
 		
 		dasboard_inst.onLoad(function() {
 			var me = this;
-			init_dashboard(dashboard_inst);
+			init_dashboard();
 		});
 		
 		dasboard_inst.create();
-
-		_load_cuddler(dashboard_inst);
 	});
 });
 </script>
-<!-- start ai data explorer -->
-<link rel="stylesheet" href="./css/igccud.min.css?_dc=202501311110"></link>
+<!-- start cuddler -->
+<link rel="stylesheet" href="./css/igccud.min.css?_dc=202502070045"></link>
 <script type="text/javascript">
-function _load_cuddler(instance) {
-	var assist_message = [
-		"Welcome to amplixbi! <br/>I am here to assit you!",
-		"We have agents to help you. <br/> Just click me!"
-	];
+var assist_message = [
+	"Welcome to amplixbi! <br/>I am here to assit you!",
+	"We have agents to cuddle you. <br/> Just click me!"
+];
 
-	function rotate_msg() {
-		if (window.assist_message && assist_message.length > 0)
+function rotate_msg() {
+	if (window.assist_message && assist_message.length > 0)
+	{
+		var mindex = window._curmsg || 0;
+		
+		$("#assist_message").fadeIn();
+		$("#assist_message").html(assist_message[mindex % assist_message.length]);
+		
+		window._curmsg = mindex + 1;
+		
+		if (assist_message.length > 1)
 		{
-			var mindex = window._curmsg || 0;
-			
-			$("#assist_message").fadeIn();
-			$("#assist_message").html(assist_message[mindex % assist_message.length]);
-			
-			window._curmsg = mindex + 1;
-			
-			if (assist_message.length > 1)
-			{
-				setTimeout(function() {
-					$("#assist_message").fadeOut();
-					setTimeout(rotate_msg, 2000);
-				}, 3000);
-			}
+			setTimeout(function() {
+				$("#assist_message").fadeOut();
+				setTimeout(rotate_msg, 2000);
+			}, 3000);
 		}
 	}
+}
 
+$(document).ready(function() {
 	rotate_msg();
-
+	
 	$("#robo_wrap").bind("click", function(e) {
 		e.preventDefault();
 		e.stopPropagation();
 		
 		$("#robo_main").show();
 		
-		var robo_inst;
-
-		if (!IG$._robo_inst)
-		{
-			robo_inst = IG$._robo_inst = new IG$._wcollab({
-				instance: instance,
-				_container: $("#robo_embed_area")
-			});
-		}
-		else
-		{
-			robo_inst = IG$._robo_inst;
-		}
-
-		robo_inst.load_app();
+		document.getElementById("roboassist").src = "./roboassist.jsp";
 	});
 	
-	$("#robo_close", "#robo_main").bind("click", function(e) {
+	$("#robo_close").bind("click", function(e) {
 		e.preventDefault();
 		e.stopPropagation();
 		
 		$("#robo_main").fadeOut();
-	});
-}
+		
+		document.getElementById("roboassist").src = "";
+	});	
+});
 </script>
-<!-- end ai data explorer -->
+<!-- end cuddler -->
 </head>
 <body scroll="no">
  	<div id="mainview">
@@ -316,8 +288,8 @@ function _load_cuddler(instance) {
  	<div id="navbar" class="navbar">
  		<div class="navbar-header">
  			<div id="navbar_dmenu" class="igc-nav-btn-menu"></div>
- 			<a class="navbar-brand" id="logo_txt">
- 				Amplix
+ 			<a class="navbar-brand">
+ 				Amplix...
  			</a>
  		</div>
  		<div class="navbar-top-menu">
@@ -326,12 +298,7 @@ function _load_cuddler(instance) {
  			<ul class="navbar-btns">
  				<li class="light-blue">
  					<span class="user-info">
-						<span class="fa fa-play" id="b_play"></span>
- 						<span class="fa fa-tasks" style="font-size:14px;" id="b_style"></span>
-						<span class="igc-uname" id="igc_login_dr">
-							<span id="igc_login_user"></span><b class="caret"></b>
-						</span> 
-						<span id="igc_logout" class="igc-logout fa-sign-out"></span>
+ 						<span class="fa fa-tasks" style="font-size:14px;" id="b_style"></span><span class="igc-uname" id="igc_login_dr"><span id="igc_login_user"></span><b class="caret"></b></span> <span id="igc_logout" class="igc-logout fa-sign-out"></span>
  					</span>
  				</li>
  			</ul>
@@ -369,10 +336,10 @@ function _load_cuddler(instance) {
     <ul id="m_style" class="dropdown-menu animated fadeInRight m-t-xs">
     </ul>
     
-    <!-- start ai data explorer --> 
+    <!-- start cuddler --> 
 	<div class="robo_wrap" id="robo_wrap" style="display:none;">
 		<div class="robo_icon">
-			<img src="./images/cuddler.png" width="55px" height="42px">
+			<img src="./images/cuddler.png" width="120px" height="84px">
 		</div>
 		<div class="assist_message" id="assist_message">
 		</div>
@@ -380,17 +347,18 @@ function _load_cuddler(instance) {
 	<div class="robo_main fadeInRight animated" id="robo_main">
 		<div class="robo_area">
 			<div class="robo_title">
-				<span class="robo_title_text">AI Data Explorer!</span>
+				<span class="robo_title_text">Expert Bot is here for cuddle you!</span>
 				<div class="robo_title_button">
 					<a id="robo_close" class="robo_close">
 						<i class="robo-window-close"></i>
 					</a>
 				</div>
 			</div>
-			<div class="robo_embed_area" id="robo_embed_area">
+			<div class="robo_embed_area">
+				<iframe id="roboassist" src=""></iframe>
 			</div>
 		</div>
 	</div>
-	<!-- end ai data explorer -->
+	<!-- end cuddler -->
 </body>
 </html>

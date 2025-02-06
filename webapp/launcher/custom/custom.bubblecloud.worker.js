@@ -1,10 +1,10 @@
-﻿IG$.cVis.bubblecloud.prototype.drawBubbleCloud = function() {
+﻿IG$.__chartoption.chartext.bubblecloud.prototype.drawBubbleCloud = function() {
 	var me = this,
-		chartview = me.chartview,
+		owner = me.owner,
 		results = me.results,
-		container = $(chartview.container),
-		sop = chartview._ILb,
-		cop = chartview.cop,
+		container = $(owner.container),
+		sop = owner._ILb,
+		cop = owner.cop,
 		i, j,
 		rdata = results._tabledata,
 		jcontainer,
@@ -69,6 +69,7 @@
 	var svg = d3.select(jcontainer[0]).append("svg:svg") 
 		.attr("viewBox", [0, 0, width, height])
 		.attr("font-size", 10)
+		.attr("font-family", "sans-serif")
 		.attr("text-anchor", "middle");
 		
 	var leaf = svg
@@ -124,28 +125,29 @@
 		});
 }
 
-IG$.cVis.bubblecloud.prototype.draw = function(results) {
+IG$.__chartoption.chartext.bubblecloud.prototype.drawChart = function(owner, results) {
 	var me = this;
+	me.owner = owner;
 	me.results = results;
 	
 	me.drawBubbleCloud();
 };
 	
-IG$.cVis.bubblecloud.prototype.updatedisplay = function(w, h) {
+IG$.__chartoption.chartext.bubblecloud.prototype.updatedisplay = function(owner, w, h) {
 	var me = this;
 	
-	if (me.chartview && me.results)
+	if (me.owner && me.results)
 	{
 		me.drawBubbleCloud();
 	}
 };
 
-IG$.cVis.bubblecloud.prototype.dispose = function() {
+IG$.__chartoption.chartext.bubblecloud.prototype.destroy = function(owner, w, h) {
 	var me = this,
-		chartview = me.chartview;
+		owner = me.owner;
 		
-	if (chartview && chartview.container)
+	if (owner && owner.container)
 	{
-		$(chartview.container).empty();
+		$(owner.container).empty();
 	}
 };

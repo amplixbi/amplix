@@ -1,10 +1,10 @@
-﻿IG$.cVis.icicle.prototype.drawIcicle = function() {
+﻿IG$.__chartoption.chartext.icicle.prototype.drawIcicle = function() {
 	var me = this,
-		chartview = me.chartview,
+		owner = me.owner,
 		results = me.results,
-		container = $(chartview.container),
-		sop = chartview._ILb,
-		cop = chartview.cop,
+		container = $(owner.container),
+		sop = owner._ILb,
+		cop = owner.cop,
 		i, j,
 		tabledata = results._tabledata,
 		jcontainer,
@@ -197,14 +197,15 @@
 	});
 }
 
-IG$.cVis.icicle.prototype.draw = function(results) {
+IG$.__chartoption.chartext.icicle.prototype.drawChart = function(owner, results) {
 	var me = this;
+	me.owner = owner;
 	me.results = results;
 	
 	me.drawIcicle();
 }
 
-IG$.cVis.icicle.prototype.updatedisplay = function(w, h) {
+IG$.__chartoption.chartext.icicle.prototype.updatedisplay = function(owner, w, h) {
 	var me = this;
 	
 	if (me.results)
@@ -213,13 +214,13 @@ IG$.cVis.icicle.prototype.updatedisplay = function(w, h) {
 	}
 }
 
-IG$.cVis.icicle.prototype.destroy = function() {
+IG$.__chartoption.chartext.icicle.prototype.destroy = function() {
 	var me = this,
-		chartview = me.chartview;
+		owner = me.owner;
 		
-	if (chartview && chartview.container)
+	if (owner && owner.container)
 	{
-		$(me.chartview.container).empty();
+		$(me.owner.container).empty();
 	}
 	me.vis = null;
 }

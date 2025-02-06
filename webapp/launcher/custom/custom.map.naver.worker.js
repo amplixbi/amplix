@@ -1,4 +1,4 @@
-﻿IG$.cVis.navermap.prototype._tmpl = function(tmpl, dpoint, gmap) {
+﻿IG$.__chartoption.chartext.navermap.prototype._tmpl = function(tmpl, dpoint, gmap) {
 	var r = tmpl,
 		pdata = dpoint.data,
 		k, s, m, c;
@@ -16,13 +16,12 @@
 	return r;
 };
 	
-IG$.cVis.navermap.prototype.draw = function(results) {
+IG$.__chartoption.chartext.navermap.prototype.drawChart = function(owner, results) {
 	var me = this,
-		chartview = me.chartview,
-		container = chartview.container,
+		container = owner.container,
 		jcontainer = $(container),
-		sop = chartview.sheetoption ? chartview.sheetoption.model : null,
-		cop = chartview.cop, // chart option information
+		sop = owner.sheetoption ? owner.sheetoption.model : null,
+		cop = owner.cop, // chart option information
 		copsettings = cop.settings,
 		map,
 		seriesname,
@@ -32,16 +31,18 @@ IG$.cVis.navermap.prototype.draw = function(results) {
 		tabledata = results._tabledata,
 		rowfix = results.rowfix,
 		geodata,
-		i, j, p;
+		i, j,
+		hidden_columns = {};
+		
+	if (results.hidden_columns)
+	{
+		for (i=0; i < results.hidden_columns.length; i++)
+		{
+			hidden_columns[results.hidden_columns[i]] = 1;
+		}
+	}
 	
 	jcontainer.empty();
-
-	if (!window.naver)
-	{
-		IG$.ShowError(IRm$.r1("E_CHART_DRAWING") + " Map library not loaded properly!");
-		return;
-	}
-
 	var defaultLevel = parseInt(cop.m_zoom_level) || 11;
 	
 	var mlng = 126.9773356,
@@ -91,11 +92,10 @@ IG$.cVis.navermap.prototype.draw = function(results) {
 	{
 		for (i=0; i < results.geodata.length; i++)
 		{
-			p = results.geodata[i];
-			minLng = (i == 0) ? Number(p.lng) : Math.min(minLng, Number(p.lng));
-			maxLng = (i == 0) ? Number(p.lng) : Math.max(maxLng, Number(p.lng));
-			minLat = (i == 0) ? Number(p.lat) : Math.min(minLat, Number(p.lat));
-			maxLat = (i == 0) ? Number(p.lat) : Math.max(maxLat, Number(p.lat));
+			minLng = (i == 0) ? Number(results.geodata[i].lng) : Math.min(minLng, Number(results.geodata[i].lng));
+			maxLng = (i == 0) ? Number(results.geodata[i].lng) : Math.max(maxLng, Number(results.geodata[i].lng));
+			minLat = (i == 0) ? Number(results.geodata[i].lat) : Math.min(minLat, Number(results.geodata[i].lat));
+			maxLat = (i == 0) ? Number(results.geodata[i].lat) : Math.max(maxLat, Number(results.geodata[i].lat));
 		}
 		
 		mlng = (maxLng + minLng) / 2;
@@ -106,18 +106,16 @@ IG$.cVis.navermap.prototype.draw = function(results) {
 	
 	map = new naver.maps.Map(jcontainer[0], { 
 		center: mpoint,
-		zoom: defaultLevel,
-		enableWheelZoom : true,
-		enableDragPan : true,
-		enableDblClickZoom : false,
-		mapMode : 0,
-		activateTrafficMap : false,
-		activateBicycleMap : false,
+		zoom: defaultLevel
+		// enableWheelZoom : true,
+		// enableDragPan : true,
+		// enableDblClickZoom : false,
+		// mapMode : 0,
+		// activateTrafficMap : false,
+		// activateBicycleMap : false,
 		// minMaxLevel : [ 1, 14 ]
 	});
 	me.map = map;
-
-	// map.setCenter(mpoint);
 	
 	var colfix = results.colfix,
 		rowfix = results.rowfix,
@@ -214,6 +212,9 @@ IG$.cVis.navermap.prototype.draw = function(results) {
 					
 					for (n=colfix; n<row.length; n++)
 					{
+						if (hidden_columns[n])
+							continue;
+						
 						var t = "";
 						for (k=0; k < rowfix; k++)
 						{
@@ -238,7 +239,7 @@ IG$.cVis.navermap.prototype.draw = function(results) {
 				{
 					mapInfoTestWindow.open(map, marker);
 				}
-				chartview.procClickEvent.call(chartview, sender, param);
+				owner.procClickEvent.call(owner, sender, param);
 			}
 		}
 	}
@@ -336,7 +337,7 @@ IG$.cVis.navermap.prototype.draw = function(results) {
 
 };
 
-IG$.cVis.navermap.prototype.updatedisplay = function(w, h) {
+IG$.__chartoption.chartext.navermap.prototype.updatedisplay = function(owner, w, h) {
 	var me = this,
 		map = me.map;
 		
@@ -346,7 +347,7 @@ IG$.cVis.navermap.prototype.updatedisplay = function(w, h) {
 	}
 };
 	
-IG$.cVis.navermap.prototype.destroy = function() {
+IG$.__chartoption.chartext.navermap.prototype.destroy = function() {
 	var me = this;
 
 	if (me.map)
@@ -354,5 +355,5 @@ IG$.cVis.navermap.prototype.destroy = function() {
 		me.map.destroy();
 	}
 	
-	me.chartview && me.chartview.container && $(me.chartview.container).empty();
+	me.owner && me.owner.container && $(me.owner.container).empty();
 };

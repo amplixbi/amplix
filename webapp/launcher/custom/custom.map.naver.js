@@ -10,8 +10,11 @@ IG$.__chartoption.charttype.push(
 	}
 );
 
-IG$.cVis.navermap = $s.extend(IG$.cVis.base, {
-	draw: function(results) {
+IG$.__chartoption.chartext.navermap = function(owner) {
+};
+
+IG$.__chartoption.chartext.navermap.prototype = {
+	drawChart: function(owner, results) {
 		if (!ig$.naver_map_api_key)
 		{
 			IG$.alertmsg(ig$.appname, "API key is missing!", null, null, 0, "error");
@@ -24,34 +27,34 @@ IG$.cVis.navermap = $s.extend(IG$.cVis.base, {
 				"./custom/custom.map.naver.worker.js"
 			];
 
-		if (IG$.cVis.navermap._loading)
+		if (IG$.__chartoption.chartext.navermap._loading)
 		{
 			setTimeout(function() {
-				me.draw(results);
+				me.drawChart.call(me, owner, results);
 			}, 500);
 			return;
 		}
 
-		if (!IG$.cVis.navermap._loaded)
+		if (!IG$.__chartoption.chartext.navermap._loaded)
 		{
-			IG$.cVis.navermap._loading = true;
+			IG$.__chartoption.chartext.navermap._loading = true;
 			
 			IG$.getScriptCache(
 				js, 
 				new IG$.callBackObj(this, function() {
-					IG$.cVis.navermap._loaded = 1;
-					me.draw(results);
+					IG$.__chartoption.chartext.navermap._loaded = 1;
+					me.drawChart.call(me, owner, results);
 				})
 			);
 		}
 	},
 	
-	updatedisplay: function(w, h) {
+	updatedisplay: function(owner, w, h) {
 		var me = this;
 		
 		if (me.dmain)
 		{
-			me.dmain.updatedisplay.call(me.dmain, w, h);
+			me.dmain.updatedisplay.call(me.dmain, owner, w, h);
 		}
 	}
-});
+};

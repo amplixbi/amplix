@@ -1,10 +1,11 @@
 IG$.__chartoption.charttype = IG$.__chartoption.charttype || [];
 
-IG$.cVis.hierarchialgraph.prototype.initChart = function(data) {
+IG$.__chartoption.chartext.hierarchialgraph.prototype.initChart = function(data) {
     var me = this,
     	myChart = this.customchart,
-    	chartview = me.chartview,
-    	cop = chartview.cop,
+    	
+    	owner = me.owner,
+    	cop = owner.cop,
 		copsettings = cop.settings || {},
 		symbol = [Number(copsettings.m_h_min || "3"), Number(copsettings.m_h_max || "15")],
 		symbol_ratio = Number(copsettings.m_h_ratio || "50") / 100,
@@ -165,14 +166,14 @@ IG$.cVis.hierarchialgraph.prototype.initChart = function(data) {
     myChart.setOption(option);
 }
 
-IG$.cVis.hierarchialgraph.prototype.draw = function(results) {
+IG$.__chartoption.chartext.hierarchialgraph.prototype.drawChart = function(owner, results) {
 	var me = this,
-		chartview = me.chartview,
-		container = $(chartview.container),
-		cop = chartview.cop,
-		sop = chartview.sheetoption ? chartview.sheetoption.model : null,
+		container = $(owner.container),
+		cop = owner.cop,
+		sop = owner.sheetoption ? owner.sheetoption.model : null,
 		copsettings = cop.settings || {};
 	
+	me.owner = owner;
 	me.container = container;
 		
 	if (results)
@@ -183,7 +184,7 @@ IG$.cVis.hierarchialgraph.prototype.draw = function(results) {
 			cols,
 			i, j,
 			data = results._tabledata,
-			cop = chartview.cop,
+			cop = owner.cop,
 			seriesData = [],
 			keymap,
 			base,
@@ -442,7 +443,7 @@ IG$.cVis.hierarchialgraph.prototype.draw = function(results) {
 	}
 };
 
-IG$.cVis.hierarchialgraph.prototype.updatedisplay = function(w, h) {
+IG$.__chartoption.chartext.hierarchialgraph.prototype.updatedisplay = function(owner, w, h) {
 	var me = this,
 		customchart = me.customchart;
 	
@@ -452,7 +453,7 @@ IG$.cVis.hierarchialgraph.prototype.updatedisplay = function(w, h) {
 	}
 }
 
-IG$.cVis.hierarchialgraph.prototype.dispose = function() {
+IG$.__chartoption.chartext.hierarchialgraph.prototype.dispose = function() {
 	var me = this,
 		customchart = me.customchart;
 		

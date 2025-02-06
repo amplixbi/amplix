@@ -8,39 +8,43 @@
 	}
 );
 
-IG$.cVis.calendar = $s.extend(IG$.cVis.base, {	
-	draw: function(results) {
+IG$.__chartoption.chartext.calendar = function(owner) {
+	this.owner = owner;
+}
+
+IG$.__chartoption.chartext.calendar.prototype = {	
+	drawChart: function(owner, results) {
 		var me = this;
 		
-		if (IG$.cVis.calendar._loading)
+		if (IG$.__chartoption.chartext.calendar._loading)
 		{
 			setTimeout(function() {
-				me.draw(results);
+				me.drawChart.call(me, owner, results);
 			}, 500);
 			
 			return;
 		}
 		
-		if (!IG$.cVis.calendar._loaded)
+		if (!IG$.__chartoption.chartext.calendar._loaded)
 		{
 			var js = [
 					"./custom/custom.calendar.worker.js"
 				];
 			
-			IG$.cVis.calendar._loading = 1;
+			IG$.__chartoption.chartext.calendar._loading = 1;
 			
 			IG$.getScriptCache(
 				js, 
 				new IG$.callBackObj(this, function() {
-					IG$.cVis.calendar._loaded = 1;
-					me.draw(results);
+					IG$.__chartoption.chartext.calendar._loaded = 1;
+					me.drawChart.call(me, owner, results);
 				})
 			);
 		}
 	},
-	updatedisplay: function(w, h) {
+	updatedisplay: function(owner, w, h) {
 	},
-	dispose: function() {
+	destroy: function() {
 		var me = this;
 
 		if (me.hchart && me.hchart.dispose)
@@ -49,4 +53,4 @@ IG$.cVis.calendar = $s.extend(IG$.cVis.base, {
 			me.hchart = null;
 		}
 	}
-});
+};

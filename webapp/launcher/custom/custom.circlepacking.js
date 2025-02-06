@@ -8,37 +8,41 @@
 	}
 );
 
-IG$.cVis.circlepacking = $s.extend(IG$.cVis.base, {
-	draw: function(results) {
+IG$.__chartoption.chartext.circlepacking = function(owner) {
+	this.owner = owner;
+}
+
+IG$.__chartoption.chartext.circlepacking.prototype = {
+	drawChart: function(owner, results) {
 		var me = this;
 		
-		if (IG$.cVis.circlepacking._loading)
+		if (IG$.__chartoption.chartext.circlepacking._loading)
 		{
 			setTimeout(function() {
-				me.draw(results);
+				me.drawChart.call(me, owner, results);
 			}, 500);
 			
 			return;
 		}
 		
-		if (!IG$.cVis.circlepacking._loaded)
+		if (!IG$.__chartoption.chartext.circlepacking._loaded)
 		{
 			var js = [
-					"./js/d3-hierarchy.min.js",
+					"./custom/d3-array.v2.min.js",
 					"./custom/custom.circlepacking.worker.js"
 				];
 			
-			IG$.cVis.circlepacking._loading = 1;
+			IG$.__chartoption.chartext.circlepacking._loading = 1;
 			
 			IG$.getScriptCache(
 				js, 
 				new IG$.callBackObj(this, function() {
-					IG$.cVis.circlepacking._loaded = 1;
-					me.draw(results);
+					IG$.__chartoption.chartext.circlepacking._loaded = 1;
+					me.drawChart.call(me, owner, results);
 				})
 			);
 		}
 	},
-	updatedisplay: function(w, h) {
+	updatedisplay: function(owner, w, h) {
 	}
-});
+}

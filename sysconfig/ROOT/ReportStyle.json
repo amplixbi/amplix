@@ -7,8 +7,19 @@
   "writable" : false,
   "manage" : false,
   "is_sub" : false,
-  "sortseq" : 0,
   "attributes" : { },
+  "chart_color_set" : {
+    "office_2013" : [ "#5b9bd5", "#ed7d31", "#a5a5a5", "#ffc000", "#4472c4", "#70ad47", "#255e91", "#9e480e", "#636363", "#997300", "#264478", "#43682b" ],
+    "theme 1" : [ "#5b9bd5", "#a5a5a5", "#4472c4", "#255e91", "#636363", "#264478", "#7cafdd", "#b7b7b7", "#698ed0", "#327dc2", "#848484", "#335aa1", "#9dc3e6", "#c9c9c9" ],
+    "theme 2" : [ "#ed7d31", "#ffc000", "#70ad47", "#9e480e", "#997300", "#43682b", "#f1975a", "#ffcd33", "#8cc168", "#d26012", "#cc9a00", "#5a8a39" ],
+    "theme 3" : [ "#70ad47", "#4472c4", "#ffc000", "#43682b", "#264478", "#997300", "#8cc168", "#698ed0", "#ffcd33", "#5a8a39", "#335aa1", "#cc9a00" ],
+    "signika" : [ "#f45b5b", "#8085e9", "#8d4654", "#7798BF", "#aaeeee", "#ff0066", "#eeaaee", "#55BF3B", "#DF5353", "#7798BF", "#aaeeee" ],
+    "light-color" : [ "#7cb5ec", "#f7a35c", "#90ee7e", "#7798BF", "#aaeeee", "#ff0066", "#eeaaee", "#55BF3B", "#DF5353", "#7798BF", "#aaeeee" ],
+    "dark-color" : [ "#2b908f", "#90ee7e", "#f45b5b", "#7798BF", "#aaeeee", "#ff0066", "#eeaaee", "#55BF3B", "#DF5353", "#7798BF", "#aaeeee" ],
+    "combo1574" : [ "#7A3E48", "#EECD86", "#E18942", "#B95835", "#3D3242", "#06354F" ],
+    "combo1573" : [ "#7C786A", "#8DCDC1", "#D3E397", "#FFF5C3", "#EB6E44" ],
+    "combo1572" : [ "#6194BC", "#A5D1F3", "#D0EAFF", "#E4001B", "#ECECEC", "#606060" ]
+  },
   "themes" : [ {
     "name" : "base_theme",
     "c_cset" : "office_2013",
@@ -22,9 +33,7 @@
       "rptseq" : 0,
       "header" : {
         "autowidth" : true,
-        "autowidthmode" : "F",
-        "wordwrap" : false,
-        "wordwrapmode" : "F",
+        "autowidthmode" : "T",
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : 1,
@@ -34,8 +43,7 @@
         "borderoutbottom" : -1,
         "borderoutright" : -1,
         "borderoutleft" : -1,
-        "columnwidth" : 140,
-        "columnheight" : -1,
+        "columnwidth" : 0,
         "cssname" : "",
         "fontsize" : 11,
         "fontstyle" : 1,
@@ -52,14 +60,12 @@
         "dateformat" : "",
         "template" : "",
         "gradientmode" : -1,
-        "forecolor" : "#575757",
-        "backcolor" : "#D5D5D5"
+        "backcolor" : "#D5D5D5",
+        "forecolor" : "#575757"
       },
       "data" : {
         "autowidth" : true,
-        "autowidthmode" : "F",
-        "wordwrap" : false,
-        "wordwrapmode" : "F",
+        "autowidthmode" : "T",
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : 1,
@@ -69,8 +75,7 @@
         "borderoutbottom" : -1,
         "borderoutright" : -1,
         "borderoutleft" : -1,
-        "columnwidth" : 140,
-        "columnheight" : -1,
+        "columnwidth" : 0,
         "cssname" : "",
         "fontsize" : 11,
         "fontstyle" : 0,
@@ -87,8 +92,8 @@
         "dateformat" : "",
         "template" : "",
         "gradientmode" : -1,
-        "forecolor" : "#00004C",
-        "backcolor" : "#EFEFEF"
+        "backcolor" : "#EFEFEF",
+        "forecolor" : "#00004C"
       }
     }, {
       "fid" : "",
@@ -96,9 +101,7 @@
       "rptseq" : 0,
       "header" : {
         "autowidth" : true,
-        "autowidthmode" : "F",
-        "wordwrap" : false,
-        "wordwrapmode" : "F",
+        "autowidthmode" : "T",
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : 1,
@@ -108,8 +111,7 @@
         "borderoutbottom" : 1,
         "borderoutright" : 1,
         "borderoutleft" : 1,
-        "columnwidth" : 140,
-        "columnheight" : -1,
+        "columnwidth" : 0,
         "cssname" : "",
         "fontsize" : 11,
         "fontstyle" : 1,
@@ -126,14 +128,12 @@
         "dateformat" : "",
         "template" : "",
         "gradientmode" : -1,
-        "forecolor" : "#575757",
-        "backcolor" : "#D5D5D5"
+        "backcolor" : "#D5D5D5",
+        "forecolor" : "#575757"
       },
       "data" : {
         "autowidth" : true,
-        "autowidthmode" : "F",
-        "wordwrap" : false,
-        "wordwrapmode" : "F",
+        "autowidthmode" : "T",
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : 1,
@@ -143,8 +143,7 @@
         "borderoutbottom" : 1,
         "borderoutright" : 1,
         "borderoutleft" : 1,
-        "columnwidth" : 140,
-        "columnheight" : -1,
+        "columnwidth" : 0,
         "cssname" : "",
         "fontsize" : 11,
         "fontstyle" : 0,
@@ -161,8 +160,8 @@
         "dateformat" : "",
         "template" : "",
         "gradientmode" : -1,
-        "forecolor" : "#00004C",
-        "backcolor" : "#D5D5D5"
+        "backcolor" : "#D5D5D5",
+        "forecolor" : "#00004C"
       }
     }, {
       "fid" : "",
@@ -170,9 +169,7 @@
       "rptseq" : 0,
       "header" : {
         "autowidth" : true,
-        "autowidthmode" : "F",
-        "wordwrap" : false,
-        "wordwrapmode" : "F",
+        "autowidthmode" : "T",
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : 1,
@@ -182,8 +179,7 @@
         "borderoutbottom" : -1,
         "borderoutright" : -1,
         "borderoutleft" : -1,
-        "columnwidth" : 140,
-        "columnheight" : -1,
+        "columnwidth" : -1,
         "cssname" : "",
         "fontsize" : 11,
         "fontstyle" : 0,
@@ -200,14 +196,12 @@
         "dateformat" : "",
         "template" : "",
         "gradientmode" : -1,
-        "forecolor" : "#333366",
-        "backcolor" : "#D8D8D8"
+        "backcolor" : "#D8D8D8",
+        "forecolor" : "#333366"
       },
       "data" : {
         "autowidth" : true,
-        "autowidthmode" : "F",
-        "wordwrap" : false,
-        "wordwrapmode" : "F",
+        "autowidthmode" : "T",
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : 1,
@@ -217,8 +211,7 @@
         "borderoutbottom" : -1,
         "borderoutright" : -1,
         "borderoutleft" : -1,
-        "columnwidth" : 140,
-        "columnheight" : -1,
+        "columnwidth" : -1,
         "cssname" : "",
         "fontsize" : 11,
         "fontstyle" : 0,
@@ -235,8 +228,8 @@
         "dateformat" : "",
         "template" : "",
         "gradientmode" : -1,
-        "forecolor" : "#575757",
-        "backcolor" : "#F6F6F6"
+        "backcolor" : "#F6F6F6",
+        "forecolor" : "#575757"
       }
     }, {
       "fid" : "",
@@ -245,7 +238,6 @@
       "basestylename" : "Dimension",
       "header" : {
         "autowidth" : true,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -256,7 +248,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "name" : "Dimension String",
@@ -271,7 +262,6 @@
       },
       "data" : {
         "autowidth" : true,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -282,7 +272,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "name" : "Dimension String",
@@ -302,7 +291,6 @@
       "basestylename" : "Dimension",
       "header" : {
         "autowidth" : true,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -313,7 +301,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "name" : "Dimension Numeric",
@@ -328,7 +315,6 @@
       },
       "data" : {
         "autowidth" : true,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -339,7 +325,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "name" : "Dimension Numeric",
@@ -360,7 +345,6 @@
       "basestylename" : "Dimension",
       "header" : {
         "autowidth" : true,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -371,7 +355,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "name" : "Dimension Date",
@@ -386,7 +369,6 @@
       },
       "data" : {
         "autowidth" : true,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -397,7 +379,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "name" : "Dimension Date",
@@ -417,9 +398,7 @@
       "rptseq" : 0,
       "header" : {
         "autowidth" : true,
-        "autowidthmode" : "F",
-        "wordwrap" : false,
-        "wordwrapmode" : "F",
+        "autowidthmode" : "T",
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : 1,
@@ -429,8 +408,7 @@
         "borderoutbottom" : -1,
         "borderoutright" : -1,
         "borderoutleft" : -1,
-        "columnwidth" : 140,
-        "columnheight" : -1,
+        "columnwidth" : -1,
         "cssname" : "",
         "fontsize" : 11,
         "fontstyle" : 0,
@@ -447,14 +425,12 @@
         "dateformat" : "",
         "template" : "",
         "gradientmode" : -1,
-        "forecolor" : "#333366",
-        "backcolor" : "#D8D8D8"
+        "backcolor" : "#D8D8D8",
+        "forecolor" : "#333366"
       },
       "data" : {
         "autowidth" : true,
-        "autowidthmode" : "F",
-        "wordwrap" : false,
-        "wordwrapmode" : "F",
+        "autowidthmode" : "T",
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : 1,
@@ -464,8 +440,7 @@
         "borderoutbottom" : -1,
         "borderoutright" : -1,
         "borderoutleft" : -1,
-        "columnwidth" : 140,
-        "columnheight" : -1,
+        "columnwidth" : -1,
         "cssname" : "",
         "fontsize" : 11,
         "fontstyle" : 0,
@@ -482,8 +457,8 @@
         "dateformat" : "",
         "template" : "",
         "gradientmode" : -1,
-        "forecolor" : "#575757",
-        "backcolor" : "#F6F6F6"
+        "backcolor" : "#F6F6F6",
+        "forecolor" : "#575757"
       }
     }, {
       "fid" : "",
@@ -491,9 +466,7 @@
       "rptseq" : 0,
       "header" : {
         "autowidth" : true,
-        "autowidthmode" : "F",
-        "wordwrap" : false,
-        "wordwrapmode" : "F",
+        "autowidthmode" : "T",
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : 1,
@@ -503,8 +476,7 @@
         "borderoutbottom" : -1,
         "borderoutright" : -1,
         "borderoutleft" : -1,
-        "columnwidth" : 140,
-        "columnheight" : -1,
+        "columnwidth" : -1,
         "cssname" : "",
         "fontsize" : 11,
         "fontstyle" : 0,
@@ -521,14 +493,12 @@
         "dateformat" : "",
         "template" : "",
         "gradientmode" : -1,
-        "forecolor" : "#333366",
-        "backcolor" : "#D8D8D8"
+        "backcolor" : "#D8D8D8",
+        "forecolor" : "#333366"
       },
       "data" : {
         "autowidth" : true,
-        "autowidthmode" : "F",
-        "wordwrap" : false,
-        "wordwrapmode" : "F",
+        "autowidthmode" : "T",
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : 1,
@@ -538,8 +508,7 @@
         "borderoutbottom" : -1,
         "borderoutright" : -1,
         "borderoutleft" : -1,
-        "columnwidth" : 140,
-        "columnheight" : -1,
+        "columnwidth" : -1,
         "cssname" : "",
         "fontsize" : 11,
         "fontstyle" : 0,
@@ -556,8 +525,8 @@
         "dateformat" : "",
         "template" : "",
         "gradientmode" : -1,
-        "forecolor" : "#0000FF",
-        "backcolor" : "#FFFFFF"
+        "backcolor" : "#FFFFFF",
+        "forecolor" : "#0000FF"
       }
     }, {
       "fid" : "",
@@ -565,9 +534,7 @@
       "rptseq" : 0,
       "header" : {
         "autowidth" : true,
-        "autowidthmode" : "F",
-        "wordwrap" : false,
-        "wordwrapmode" : "F",
+        "autowidthmode" : "T",
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : 1,
@@ -577,8 +544,7 @@
         "borderoutbottom" : -1,
         "borderoutright" : -1,
         "borderoutleft" : -1,
-        "columnwidth" : 60,
-        "columnheight" : -1,
+        "columnwidth" : -1,
         "cssname" : "",
         "fontsize" : 11,
         "fontstyle" : 0,
@@ -595,14 +561,12 @@
         "dateformat" : "",
         "template" : "",
         "gradientmode" : -1,
-        "forecolor" : "#333366",
-        "backcolor" : "#D8D8D8"
+        "backcolor" : "#D8D8D8",
+        "forecolor" : "#333366"
       },
       "data" : {
         "autowidth" : true,
-        "autowidthmode" : "F",
-        "wordwrap" : false,
-        "wordwrapmode" : "F",
+        "autowidthmode" : "T",
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : 1,
@@ -612,8 +576,7 @@
         "borderoutbottom" : -1,
         "borderoutright" : -1,
         "borderoutleft" : -1,
-        "columnwidth" : 60,
-        "columnheight" : -1,
+        "columnwidth" : -1,
         "cssname" : "",
         "fontsize" : 11,
         "fontstyle" : 0,
@@ -630,8 +593,8 @@
         "dateformat" : "",
         "template" : "",
         "gradientmode" : -1,
-        "forecolor" : "#333366",
-        "backcolor" : "#FFFF99"
+        "backcolor" : "#FFFF99",
+        "forecolor" : "#333366"
       }
     } ],
     "custom_styles" : [ {
@@ -641,7 +604,6 @@
       "basestylename" : "Dimension",
       "header" : {
         "autowidth" : true,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -652,7 +614,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "name" : "cluster",
@@ -667,7 +628,6 @@
       },
       "data" : {
         "autowidth" : true,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -678,7 +638,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "name" : "cluster",
@@ -698,7 +657,6 @@
       "basestylename" : "Measure",
       "header" : {
         "autowidth" : true,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -709,7 +667,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "name" : "USD",
@@ -724,7 +681,6 @@
       },
       "data" : {
         "autowidth" : true,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -735,7 +691,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "name" : "USD",
@@ -756,7 +711,6 @@
       "basestylename" : "Measure",
       "header" : {
         "autowidth" : true,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -767,7 +721,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "name" : "Currency",
@@ -782,7 +735,6 @@
       },
       "data" : {
         "autowidth" : true,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -793,7 +745,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "name" : "Currency",
@@ -814,7 +765,6 @@
       "basestylename" : "Measure",
       "header" : {
         "autowidth" : true,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -825,7 +775,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "name" : "Thousand",
@@ -840,7 +789,6 @@
       },
       "data" : {
         "autowidth" : true,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -851,7 +799,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "name" : "Thousand",
@@ -872,7 +819,6 @@
       "basestylename" : "Measure",
       "header" : {
         "autowidth" : true,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -883,7 +829,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "name" : "Million",
@@ -898,7 +843,6 @@
       },
       "data" : {
         "autowidth" : true,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -909,7 +853,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "name" : "Million",
@@ -930,7 +873,6 @@
       "basestylename" : "Measure",
       "header" : {
         "autowidth" : true,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -941,7 +883,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "name" : "PercentSymbol",
@@ -956,7 +897,6 @@
       },
       "data" : {
         "autowidth" : true,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -967,7 +907,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "name" : "PercentSymbol",
@@ -988,7 +927,6 @@
       "basestylename" : "Measure",
       "header" : {
         "autowidth" : true,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -999,7 +937,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "name" : "Percentage_2Decimal",
@@ -1014,7 +951,6 @@
       },
       "data" : {
         "autowidth" : true,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -1025,7 +961,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "name" : "Percentage_2Decimal",
@@ -1046,7 +981,6 @@
       "basestylename" : "Measure",
       "header" : {
         "autowidth" : true,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -1057,7 +991,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "name" : "PercentSymbol_2Decimal",
@@ -1072,7 +1005,6 @@
       },
       "data" : {
         "autowidth" : true,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -1083,7 +1015,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "name" : "PercentSymbol_2Decimal",
@@ -1104,7 +1035,6 @@
       "basestylename" : "Measure",
       "header" : {
         "autowidth" : true,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -1115,7 +1045,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "name" : "Percentage",
@@ -1130,7 +1059,6 @@
       },
       "data" : {
         "autowidth" : true,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -1141,7 +1069,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "name" : "Percentage",
@@ -1162,7 +1089,6 @@
       "basestylename" : "Measure",
       "header" : {
         "autowidth" : true,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -1173,7 +1099,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "name" : "Arrow_Up",
@@ -1188,7 +1113,6 @@
       },
       "data" : {
         "autowidth" : true,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -1199,7 +1123,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "name" : "Arrow_Up",
@@ -1210,7 +1133,7 @@
         "textalign" : -1,
         "width" : -1,
         "widthmode" : -1,
-        "template" : "{enc}PHNwYW4+VEVYVDwvc3Bhbj48c3BhbiBzdHlsZT0nZm9udC1mYW1pbHk6IGZvbnRhd2Vzb21lOyBjb2xvcjokJCMwMGZmMDB8I2ZmMDAwMCQkJz4kJO+BonzvgaMkJDwvc3Bhbj4=",
+        "template" : "<span>TEXT</span><span style='font-family: fontawesome; color:$$#00ff00|#ff0000$$'>$$|$$</span>",
         "gradientmode" : -1
       }
     }, {
@@ -1220,7 +1143,6 @@
       "basestylename" : "Measure",
       "header" : {
         "autowidth" : true,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -1231,7 +1153,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "name" : "Arrow_Down",
@@ -1246,7 +1167,6 @@
       },
       "data" : {
         "autowidth" : true,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -1257,7 +1177,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "name" : "Arrow_Down",
@@ -1268,7 +1187,7 @@
         "textalign" : -1,
         "width" : -1,
         "widthmode" : -1,
-        "template" : "{enc}PHNwYW4+VEVYVDwvc3Bhbj48c3BhbiBzdHlsZT0nZm9udC1mYW1pbHk6IGZvbnRhd2Vzb21lOyBjb2xvcjokJCMwMGZmMDB8I2ZmMDAwMCQkJz4kJO+BonzvgaMkJDwvc3Bhbj4=",
+        "template" : "<span>TEXT</span><span style='font-family: fontawesome; color:$$#00ff00|#ff0000$$'>$$|$$</span>",
         "gradientmode" : -1
       }
     }, {
@@ -1277,7 +1196,6 @@
       "basestylename" : "Measure",
       "header" : {
         "autowidth" : true,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -1288,7 +1206,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "name" : "2 decimal",
@@ -1303,7 +1220,6 @@
       },
       "data" : {
         "autowidth" : true,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -1314,7 +1230,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "name" : "2 decimal",
@@ -1334,7 +1249,6 @@
       "basestylename" : "Dimension",
       "header" : {
         "autowidth" : false,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -1345,7 +1259,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "name" : "highlight_type1",
@@ -1360,7 +1273,6 @@
       },
       "data" : {
         "autowidth" : false,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -1371,7 +1283,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "name" : "highlight_type1",
@@ -1383,8 +1294,8 @@
         "width" : -1,
         "widthmode" : -1,
         "gradientmode" : -1,
-        "forecolor" : "#F90000",
-        "backcolor" : "#FFFFA8"
+        "backcolor" : "#FFFFA8",
+        "forecolor" : "#F90000"
       }
     }, {
       "name" : "Financial Notice",
@@ -1392,7 +1303,6 @@
       "basestylename" : "Measure",
       "header" : {
         "autowidth" : true,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -1403,7 +1313,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -1417,7 +1326,6 @@
       },
       "data" : {
         "autowidth" : true,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -1428,7 +1336,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -1439,76 +1346,10 @@
         "width" : -1,
         "widthmode" : -1,
         "formatstring" : "#,##0;(#,##0)",
-        "template" : "{enc}PHNwYW4gc3R5bGU9ImNvbG9yOiQkfCNmZjAwMDAkJDsiPlRFWFQ8L3NwYW4+",
+        "template" : "<span style=\"color:$$|#ff0000$$;\">TEXT</span>",
         "gradientmode" : -1
       }
-    }, {
-      "name" : "fixed column size",
-      "rptseq" : 0,
-      "basestylename" : "Dimension",
-      "header" : {
-        "autowidth" : true,
-        "wordwrap" : false,
-        "backalpha" : -1.0,
-        "bordertop" : -1,
-        "borderbottom" : -1,
-        "borderright" : -1,
-        "borderleft" : -1,
-        "borderouttop" : -1,
-        "borderoutbottom" : -1,
-        "borderoutright" : -1,
-        "borderoutleft" : -1,
-        "columnwidth" : -1,
-        "columnheight" : -1,
-        "fontsize" : -1,
-        "fontstyle" : -1,
-        "paddingbottom" : -1,
-        "paddingleft" : -1,
-        "paddingright" : -1,
-        "paddingtop" : -1,
-        "textalign" : -1,
-        "width" : -1,
-        "widthmode" : -1,
-        "gradientmode" : -1
-      },
-      "data" : {
-        "autowidth" : true,
-        "wordwrap" : false,
-        "backalpha" : -1.0,
-        "bordertop" : -1,
-        "borderbottom" : -1,
-        "borderright" : -1,
-        "borderleft" : -1,
-        "borderouttop" : -1,
-        "borderoutbottom" : -1,
-        "borderoutright" : -1,
-        "borderoutleft" : -1,
-        "columnwidth" : -1,
-        "columnheight" : -1,
-        "fontsize" : -1,
-        "fontstyle" : -1,
-        "paddingbottom" : -1,
-        "paddingleft" : -1,
-        "paddingright" : -1,
-        "paddingtop" : -1,
-        "textalign" : -1,
-        "width" : -1,
-        "widthmode" : -1,
-        "gradientmode" : -1
-      }
-    } ],
-    "chart_color_set" : {
-      "office_2013" : [ "#5b9bd5", "#ed7d31", "#a5a5a5", "#ffc000", "#4472c4", "#70ad47", "#255e91", "#9e480e", "#636363", "#997300", "#264478", "#43682b" ],
-      "theme 1" : [ "#5b9bd5", "#a5a5a5", "#4472c4", "#255e91", "#636363", "#264478", "#7cafdd", "#b7b7b7", "#698ed0", "#327dc2", "#848484", "#335aa1", "#9dc3e6", "#c9c9c9" ],
-      "theme 2" : [ "#ed7d31", "#ffc000", "#70ad47", "#9e480e", "#997300", "#43682b", "#f1975a", "#ffcd33", "#8cc168", "#d26012", "#cc9a00", "#5a8a39" ],
-      "theme 3" : [ "#70ad47", "#4472c4", "#ffc000", "#43682b", "#264478", "#997300", "#8cc168", "#698ed0", "#ffcd33", "#5a8a39", "#335aa1", "#cc9a00" ],
-      "signika" : [ "#f45b5b", "#8085e9", "#8d4654", "#7798BF", "#aaeeee", "#ff0066", "#eeaaee", "#55BF3B", "#DF5353", "#7798BF", "#aaeeee" ],
-      "light-color" : [ "#7cb5ec", "#f7a35c", "#90ee7e", "#7798BF", "#aaeeee", "#ff0066", "#eeaaee", "#55BF3B", "#DF5353", "#7798BF", "#aaeeee" ],
-      "dark-color" : [ "#2b908f", "#90ee7e", "#f45b5b", "#7798BF", "#aaeeee", "#ff0066", "#eeaaee", "#55BF3B", "#DF5353", "#7798BF", "#aaeeee" ],
-      "combo1574" : [ "#7A3E48", "#EECD86", "#E18942", "#B95835", "#3D3242", "#06354F" ],
-      "combo1573" : [ "#7C786A", "#8DCDC1", "#D3E397", "#FFF5C3", "#EB6E44" ],
-      "combo1572" : [ "#6194BC", "#A5D1F3", "#D0EAFF", "#E4001B", "#ECECEC", "#606060" ]
-    }
+    } ]
   }, {
     "name" : "DesertLight",
     "gs_enable" : false,
@@ -1520,7 +1361,6 @@
       "header" : {
         "autowidth" : true,
         "autowidthmode" : "T",
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : 1,
@@ -1531,7 +1371,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "cssname" : "",
         "fontsize" : 11,
         "fontstyle" : 0,
@@ -1547,14 +1386,13 @@
         "dateformat" : "",
         "template" : "",
         "gradientmode" : -1,
+        "backcolor" : "#575757",
         "forecolor" : "#000000",
-        "bordercolor" : "#F4F4F4",
-        "backcolor" : "#575757"
+        "bordercolor" : "#F4F4F4"
       },
       "data" : {
         "autowidth" : true,
         "autowidthmode" : "T",
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : 1,
@@ -1565,7 +1403,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "cssname" : "",
         "fontsize" : 11,
         "fontstyle" : 0,
@@ -1581,8 +1418,8 @@
         "dateformat" : "",
         "template" : "",
         "gradientmode" : -1,
-        "forecolor" : "#F9F900",
-        "backcolor" : "#818181"
+        "backcolor" : "#818181",
+        "forecolor" : "#F9F900"
       }
     }, {
       "fid" : "",
@@ -1591,7 +1428,6 @@
       "header" : {
         "autowidth" : true,
         "autowidthmode" : "T",
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : 1,
@@ -1602,7 +1438,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "cssname" : "",
         "fontsize" : 11,
         "fontstyle" : 0,
@@ -1618,14 +1453,13 @@
         "dateformat" : "",
         "template" : "",
         "gradientmode" : -1,
+        "backcolor" : "#575757",
         "forecolor" : "#000000",
-        "bordercolor" : "#F4F4F4",
-        "backcolor" : "#575757"
+        "bordercolor" : "#F4F4F4"
       },
       "data" : {
         "autowidth" : true,
         "autowidthmode" : "T",
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : 1,
@@ -1636,7 +1470,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "cssname" : "",
         "fontsize" : 11,
         "fontstyle" : 0,
@@ -1652,8 +1485,8 @@
         "dateformat" : "",
         "template" : "",
         "gradientmode" : -1,
-        "forecolor" : "#F9F900",
-        "backcolor" : "#818181"
+        "backcolor" : "#818181",
+        "forecolor" : "#F9F900"
       }
     }, {
       "fid" : "",
@@ -1662,7 +1495,6 @@
       "header" : {
         "autowidth" : true,
         "autowidthmode" : "T",
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : 1,
@@ -1673,7 +1505,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "cssname" : "",
         "fontsize" : 11,
         "fontstyle" : 0,
@@ -1689,14 +1520,13 @@
         "dateformat" : "",
         "template" : "",
         "gradientmode" : -1,
+        "backcolor" : "#000000",
         "forecolor" : "#FFFFFF",
-        "bordercolor" : "#F4F4F4",
-        "backcolor" : "#000000"
+        "bordercolor" : "#F4F4F4"
       },
       "data" : {
         "autowidth" : true,
         "autowidthmode" : "T",
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : 1,
@@ -1707,7 +1537,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "cssname" : "",
         "fontsize" : 11,
         "fontstyle" : 0,
@@ -1723,8 +1552,8 @@
         "dateformat" : "",
         "template" : "",
         "gradientmode" : -1,
-        "forecolor" : "#D5D5D5",
-        "backcolor" : "#000000"
+        "backcolor" : "#000000",
+        "forecolor" : "#D5D5D5"
       }
     }, {
       "fid" : "",
@@ -1733,7 +1562,6 @@
       "basestylename" : "Dimension",
       "header" : {
         "autowidth" : true,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -1744,7 +1572,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -1758,7 +1585,6 @@
       },
       "data" : {
         "autowidth" : true,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -1769,7 +1595,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -1789,7 +1614,6 @@
       "basestylename" : "Dimension",
       "header" : {
         "autowidth" : true,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -1800,7 +1624,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -1814,7 +1637,6 @@
       },
       "data" : {
         "autowidth" : true,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -1825,7 +1647,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -1845,7 +1666,6 @@
       "header" : {
         "autowidth" : true,
         "autowidthmode" : "T",
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : 1,
@@ -1856,7 +1676,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "cssname" : "",
         "fontsize" : 11,
         "fontstyle" : 0,
@@ -1872,14 +1691,13 @@
         "dateformat" : "",
         "template" : "",
         "gradientmode" : -1,
+        "backcolor" : "#000000",
         "forecolor" : "#FFFFFF",
-        "bordercolor" : "#F4F4F4",
-        "backcolor" : "#000000"
+        "bordercolor" : "#F4F4F4"
       },
       "data" : {
         "autowidth" : true,
         "autowidthmode" : "T",
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : 1,
@@ -1890,7 +1708,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "cssname" : "",
         "fontsize" : 11,
         "fontstyle" : 0,
@@ -1906,8 +1723,8 @@
         "dateformat" : "",
         "template" : "",
         "gradientmode" : -1,
-        "forecolor" : "#D5D5D5",
-        "backcolor" : "#000000"
+        "backcolor" : "#000000",
+        "forecolor" : "#D5D5D5"
       }
     }, {
       "fid" : "",
@@ -1916,7 +1733,6 @@
       "header" : {
         "autowidth" : true,
         "autowidthmode" : "T",
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : 1,
@@ -1927,7 +1743,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "cssname" : "",
         "fontsize" : 11,
         "fontstyle" : 0,
@@ -1943,14 +1758,13 @@
         "dateformat" : "",
         "template" : "",
         "gradientmode" : -1,
+        "backcolor" : "#000000",
         "forecolor" : "#818181",
-        "bordercolor" : "#F4F4F4",
-        "backcolor" : "#000000"
+        "bordercolor" : "#F4F4F4"
       },
       "data" : {
         "autowidth" : true,
         "autowidthmode" : "T",
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : 1,
@@ -1961,7 +1775,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "cssname" : "",
         "fontsize" : 11,
         "fontstyle" : 0,
@@ -1977,8 +1790,8 @@
         "dateformat" : "",
         "template" : "",
         "gradientmode" : -1,
-        "forecolor" : "#D5D5D5",
-        "backcolor" : "#575757"
+        "backcolor" : "#575757",
+        "forecolor" : "#D5D5D5"
       }
     }, {
       "fid" : "",
@@ -1987,7 +1800,6 @@
       "header" : {
         "autowidth" : true,
         "autowidthmode" : "T",
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : 1,
@@ -1998,7 +1810,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "cssname" : "",
         "fontsize" : 11,
         "fontstyle" : 0,
@@ -2014,14 +1825,13 @@
         "dateformat" : "",
         "template" : "",
         "gradientmode" : -1,
+        "backcolor" : "#D8D8D8",
         "forecolor" : "#333366",
-        "bordercolor" : "#F4F4F4",
-        "backcolor" : "#D8D8D8"
+        "bordercolor" : "#F4F4F4"
       },
       "data" : {
         "autowidth" : true,
         "autowidthmode" : "T",
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : 1,
@@ -2032,7 +1842,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "cssname" : "",
         "fontsize" : 11,
         "fontstyle" : 0,
@@ -2048,8 +1857,8 @@
         "dateformat" : "",
         "template" : "",
         "gradientmode" : -1,
-        "forecolor" : "#D5D5D5",
-        "backcolor" : "#00004C"
+        "backcolor" : "#00004C",
+        "forecolor" : "#D5D5D5"
       }
     }, {
       "name" : "Dimension String",
@@ -2057,7 +1866,6 @@
       "basestylename" : "Dimension",
       "header" : {
         "autowidth" : true,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -2068,7 +1876,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -2082,7 +1889,6 @@
       },
       "data" : {
         "autowidth" : true,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -2093,7 +1899,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -2113,7 +1918,6 @@
       "basestylename" : "Measure",
       "header" : {
         "autowidth" : false,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -2124,7 +1928,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -2138,7 +1941,6 @@
       },
       "data" : {
         "autowidth" : false,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -2149,7 +1951,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -2169,7 +1970,6 @@
       "basestylename" : "Dimension",
       "header" : {
         "autowidth" : false,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -2180,7 +1980,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -2194,7 +1993,6 @@
       },
       "data" : {
         "autowidth" : false,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -2205,7 +2003,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : 1,
         "paddingbottom" : -1,
@@ -2225,7 +2022,6 @@
       "basestylename" : "Measure",
       "header" : {
         "autowidth" : false,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -2236,7 +2032,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -2250,7 +2045,6 @@
       },
       "data" : {
         "autowidth" : false,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -2261,7 +2055,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -2271,7 +2064,7 @@
         "textalign" : -1,
         "width" : -1,
         "widthmode" : -1,
-        "template" : "{enc}PHNwYW4+VEVYVDwvc3Bhbj48c3BhbiBzdHlsZT0nZm9udC1mYW1pbHk6IGZvbnRhd2Vzb21lOyBjb2xvcjojMDBmZjAwJz7vgaI8L3NwYW4+",
+        "template" : "<span>TEXT</span><span style='font-family: fontawesome; color:#00ff00'></span>",
         "gradientmode" : -1
       }
     }, {
@@ -2281,7 +2074,6 @@
       "basestylename" : "Measure",
       "header" : {
         "autowidth" : false,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -2292,7 +2084,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -2306,7 +2097,6 @@
       },
       "data" : {
         "autowidth" : false,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -2317,7 +2107,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -2327,7 +2116,7 @@
         "textalign" : -1,
         "width" : -1,
         "widthmode" : -1,
-        "template" : "{enc}PHNwYW4+VEVYVDwvc3Bhbj48c3BhbiBzdHlsZT0nZm9udC1mYW1pbHk6IGZvbnRhd2Vzb21lOyBjb2xvcjojZmYwMDAwJz7vgaM8L3NwYW4+",
+        "template" : "<span>TEXT</span><span style='font-family: fontawesome; color:#ff0000'></span>",
         "gradientmode" : -1
       }
     }, {
@@ -2337,7 +2126,6 @@
       "basestylename" : "Measure",
       "header" : {
         "autowidth" : false,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -2348,7 +2136,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -2362,7 +2149,6 @@
       },
       "data" : {
         "autowidth" : false,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -2373,7 +2159,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -2393,7 +2178,6 @@
       "basestylename" : "Measure",
       "header" : {
         "autowidth" : false,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -2404,7 +2188,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -2418,7 +2201,6 @@
       },
       "data" : {
         "autowidth" : false,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -2429,7 +2211,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -2449,7 +2230,6 @@
       "basestylename" : "Measure",
       "header" : {
         "autowidth" : true,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -2460,7 +2240,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -2474,7 +2253,6 @@
       },
       "data" : {
         "autowidth" : true,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -2485,7 +2263,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -2505,7 +2282,6 @@
       "basestylename" : "Measure",
       "header" : {
         "autowidth" : true,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -2516,7 +2292,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -2530,7 +2305,6 @@
       },
       "data" : {
         "autowidth" : true,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -2541,7 +2315,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -2561,7 +2334,6 @@
       "basestylename" : "Measure",
       "header" : {
         "autowidth" : true,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -2572,7 +2344,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -2586,7 +2357,6 @@
       },
       "data" : {
         "autowidth" : true,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -2597,7 +2367,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -2617,7 +2386,6 @@
       "basestylename" : "Measure",
       "header" : {
         "autowidth" : false,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -2628,7 +2396,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -2642,7 +2409,6 @@
       },
       "data" : {
         "autowidth" : false,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -2653,7 +2419,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -2673,7 +2438,6 @@
       "basestylename" : "Measure",
       "header" : {
         "autowidth" : false,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -2684,7 +2448,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -2698,7 +2461,6 @@
       },
       "data" : {
         "autowidth" : false,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -2709,7 +2471,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -2728,7 +2489,6 @@
       "basestylename" : "Measure",
       "header" : {
         "autowidth" : false,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -2739,7 +2499,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -2753,7 +2512,6 @@
       },
       "data" : {
         "autowidth" : false,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -2764,7 +2522,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -2782,7 +2539,6 @@
       "basestylename" : "Dimension",
       "header" : {
         "autowidth" : false,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -2793,7 +2549,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -2804,12 +2559,11 @@
         "width" : -1,
         "widthmode" : -1,
         "gradientmode" : -1,
-        "forecolor" : "#FFCC00",
-        "backcolor" : "#969696"
+        "backcolor" : "#969696",
+        "forecolor" : "#FFCC00"
       },
       "data" : {
         "autowidth" : false,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -2820,7 +2574,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -2839,7 +2592,6 @@
       "basestylename" : "Measure",
       "header" : {
         "autowidth" : true,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -2850,7 +2602,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -2864,7 +2615,6 @@
       },
       "data" : {
         "autowidth" : true,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -2875,7 +2625,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -2886,76 +2635,10 @@
         "width" : -1,
         "widthmode" : -1,
         "formatstring" : "#,##0;(#,##.0)",
-        "template" : "{enc}PHNwYW4gc3R5bGU9ImNvbG9yOiQkfCNmZjAwMDAkJDsiPlRFWFQ8L3NwYW4+",
+        "template" : "<span style=\"color:$$|#ff0000$$;\">TEXT</span>",
         "gradientmode" : -1
       }
-    }, {
-      "name" : "fixed column size",
-      "rptseq" : 0,
-      "basestylename" : "Dimension",
-      "header" : {
-        "autowidth" : true,
-        "wordwrap" : false,
-        "backalpha" : -1.0,
-        "bordertop" : -1,
-        "borderbottom" : -1,
-        "borderright" : -1,
-        "borderleft" : -1,
-        "borderouttop" : -1,
-        "borderoutbottom" : -1,
-        "borderoutright" : -1,
-        "borderoutleft" : -1,
-        "columnwidth" : -1,
-        "columnheight" : -1,
-        "fontsize" : -1,
-        "fontstyle" : -1,
-        "paddingbottom" : -1,
-        "paddingleft" : -1,
-        "paddingright" : -1,
-        "paddingtop" : -1,
-        "textalign" : -1,
-        "width" : -1,
-        "widthmode" : -1,
-        "gradientmode" : -1
-      },
-      "data" : {
-        "autowidth" : true,
-        "wordwrap" : false,
-        "backalpha" : -1.0,
-        "bordertop" : -1,
-        "borderbottom" : -1,
-        "borderright" : -1,
-        "borderleft" : -1,
-        "borderouttop" : -1,
-        "borderoutbottom" : -1,
-        "borderoutright" : -1,
-        "borderoutleft" : -1,
-        "columnwidth" : -1,
-        "columnheight" : -1,
-        "fontsize" : -1,
-        "fontstyle" : -1,
-        "paddingbottom" : -1,
-        "paddingleft" : -1,
-        "paddingright" : -1,
-        "paddingtop" : -1,
-        "textalign" : -1,
-        "width" : -1,
-        "widthmode" : -1,
-        "gradientmode" : -1
-      }
-    } ],
-    "chart_color_set" : {
-      "office_2013" : [ "#5b9bd5", "#ed7d31", "#a5a5a5", "#ffc000", "#4472c4", "#70ad47", "#255e91", "#9e480e", "#636363", "#997300", "#264478", "#43682b" ],
-      "theme 1" : [ "#5b9bd5", "#a5a5a5", "#4472c4", "#255e91", "#636363", "#264478", "#7cafdd", "#b7b7b7", "#698ed0", "#327dc2", "#848484", "#335aa1", "#9dc3e6", "#c9c9c9" ],
-      "theme 2" : [ "#ed7d31", "#ffc000", "#70ad47", "#9e480e", "#997300", "#43682b", "#f1975a", "#ffcd33", "#8cc168", "#d26012", "#cc9a00", "#5a8a39" ],
-      "theme 3" : [ "#70ad47", "#4472c4", "#ffc000", "#43682b", "#264478", "#997300", "#8cc168", "#698ed0", "#ffcd33", "#5a8a39", "#335aa1", "#cc9a00" ],
-      "signika" : [ "#f45b5b", "#8085e9", "#8d4654", "#7798BF", "#aaeeee", "#ff0066", "#eeaaee", "#55BF3B", "#DF5353", "#7798BF", "#aaeeee" ],
-      "light-color" : [ "#7cb5ec", "#f7a35c", "#90ee7e", "#7798BF", "#aaeeee", "#ff0066", "#eeaaee", "#55BF3B", "#DF5353", "#7798BF", "#aaeeee" ],
-      "dark-color" : [ "#2b908f", "#90ee7e", "#f45b5b", "#7798BF", "#aaeeee", "#ff0066", "#eeaaee", "#55BF3B", "#DF5353", "#7798BF", "#aaeeee" ],
-      "combo1574" : [ "#7A3E48", "#EECD86", "#E18942", "#B95835", "#3D3242", "#06354F" ],
-      "combo1573" : [ "#7C786A", "#8DCDC1", "#D3E397", "#FFF5C3", "#EB6E44" ],
-      "combo1572" : [ "#6194BC", "#A5D1F3", "#D0EAFF", "#E4001B", "#ECECEC", "#606060" ]
-    }
+    } ]
   }, {
     "name" : "DarkBrown",
     "gs_enable" : false,
@@ -2967,7 +2650,6 @@
       "header" : {
         "autowidth" : true,
         "autowidthmode" : "T",
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : 1,
@@ -2978,7 +2660,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "cssname" : "",
         "fontsize" : 11,
         "fontstyle" : 0,
@@ -2994,14 +2675,13 @@
         "dateformat" : "",
         "template" : "",
         "gradientmode" : -1,
+        "backcolor" : "#D8D8D8",
         "forecolor" : "#333366",
-        "bordercolor" : "#F4F4F4",
-        "backcolor" : "#D8D8D8"
+        "bordercolor" : "#F4F4F4"
       },
       "data" : {
         "autowidth" : true,
         "autowidthmode" : "T",
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : 1,
@@ -3012,7 +2692,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "cssname" : "",
         "fontsize" : 11,
         "fontstyle" : 0,
@@ -3028,8 +2707,8 @@
         "dateformat" : "",
         "template" : "",
         "gradientmode" : -1,
-        "forecolor" : "#800000",
-        "backcolor" : "#F6F6F6"
+        "backcolor" : "#F6F6F6",
+        "forecolor" : "#800000"
       }
     }, {
       "fid" : "",
@@ -3038,7 +2717,6 @@
       "header" : {
         "autowidth" : true,
         "autowidthmode" : "T",
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : 1,
@@ -3049,7 +2727,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "cssname" : "",
         "fontsize" : 11,
         "fontstyle" : 0,
@@ -3065,14 +2742,13 @@
         "dateformat" : "",
         "template" : "",
         "gradientmode" : -1,
+        "backcolor" : "#D8D8D8",
         "forecolor" : "#333366",
-        "bordercolor" : "#F4F4F4",
-        "backcolor" : "#D8D8D8"
+        "bordercolor" : "#F4F4F4"
       },
       "data" : {
         "autowidth" : true,
         "autowidthmode" : "T",
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : 1,
@@ -3083,7 +2759,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "cssname" : "",
         "fontsize" : 11,
         "fontstyle" : 0,
@@ -3099,8 +2774,8 @@
         "dateformat" : "",
         "template" : "",
         "gradientmode" : -1,
-        "forecolor" : "#800000",
-        "backcolor" : "#F6F6F6"
+        "backcolor" : "#F6F6F6",
+        "forecolor" : "#800000"
       }
     }, {
       "fid" : "",
@@ -3109,7 +2784,6 @@
       "header" : {
         "autowidth" : true,
         "autowidthmode" : "T",
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : 1,
@@ -3120,7 +2794,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "cssname" : "",
         "fontsize" : 11,
         "fontstyle" : 0,
@@ -3136,14 +2809,13 @@
         "dateformat" : "",
         "template" : "",
         "gradientmode" : -1,
+        "backcolor" : "#9fd9ff",
         "forecolor" : "#575757",
-        "bordercolor" : "#F4F4F4",
-        "backcolor" : "#9fd9ff"
+        "bordercolor" : "#F4F4F4"
       },
       "data" : {
         "autowidth" : true,
         "autowidthmode" : "T",
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : 1,
@@ -3154,7 +2826,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "cssname" : "",
         "fontsize" : 11,
         "fontstyle" : 0,
@@ -3170,8 +2841,8 @@
         "dateformat" : "",
         "template" : "",
         "gradientmode" : -1,
-        "forecolor" : "#800000",
-        "backcolor" : "#F6F6F6"
+        "backcolor" : "#F6F6F6",
+        "forecolor" : "#800000"
       }
     }, {
       "fid" : "",
@@ -3180,7 +2851,6 @@
       "basestylename" : "Dimension",
       "header" : {
         "autowidth" : true,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -3191,7 +2861,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -3205,7 +2874,6 @@
       },
       "data" : {
         "autowidth" : true,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -3216,7 +2884,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -3236,7 +2903,6 @@
       "basestylename" : "Dimension",
       "header" : {
         "autowidth" : true,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -3247,7 +2913,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -3261,7 +2926,6 @@
       },
       "data" : {
         "autowidth" : true,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -3272,7 +2936,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -3292,7 +2955,6 @@
       "header" : {
         "autowidth" : true,
         "autowidthmode" : "T",
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : 1,
@@ -3303,7 +2965,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "cssname" : "",
         "fontsize" : 11,
         "fontstyle" : 0,
@@ -3319,14 +2980,13 @@
         "dateformat" : "",
         "template" : "",
         "gradientmode" : -1,
+        "backcolor" : "#9fd9ff",
         "forecolor" : "#575757",
-        "bordercolor" : "#F4F4F4",
-        "backcolor" : "#9fd9ff"
+        "bordercolor" : "#F4F4F4"
       },
       "data" : {
         "autowidth" : true,
         "autowidthmode" : "T",
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : 1,
@@ -3337,7 +2997,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "cssname" : "",
         "fontsize" : 11,
         "fontstyle" : 0,
@@ -3353,8 +3012,8 @@
         "dateformat" : "",
         "template" : "",
         "gradientmode" : -1,
-        "forecolor" : "#800000",
-        "backcolor" : "#F6F6F6"
+        "backcolor" : "#F6F6F6",
+        "forecolor" : "#800000"
       }
     }, {
       "fid" : "",
@@ -3363,7 +3022,6 @@
       "header" : {
         "autowidth" : true,
         "autowidthmode" : "T",
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : 1,
@@ -3374,7 +3032,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "cssname" : "",
         "fontsize" : 11,
         "fontstyle" : 0,
@@ -3390,14 +3047,13 @@
         "dateformat" : "",
         "template" : "",
         "gradientmode" : -1,
+        "backcolor" : "#9fd9ff",
         "forecolor" : "#575757",
-        "bordercolor" : "#F4F4F4",
-        "backcolor" : "#9fd9ff"
+        "bordercolor" : "#F4F4F4"
       },
       "data" : {
         "autowidth" : true,
         "autowidthmode" : "T",
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : 1,
@@ -3408,7 +3064,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "cssname" : "",
         "fontsize" : 11,
         "fontstyle" : 0,
@@ -3424,8 +3079,8 @@
         "dateformat" : "",
         "template" : "",
         "gradientmode" : -1,
-        "forecolor" : "#575757",
-        "backcolor" : "#FFFFFF"
+        "backcolor" : "#FFFFFF",
+        "forecolor" : "#575757"
       }
     }, {
       "fid" : "",
@@ -3434,7 +3089,6 @@
       "header" : {
         "autowidth" : true,
         "autowidthmode" : "T",
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : 1,
@@ -3445,7 +3099,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "cssname" : "",
         "fontsize" : 11,
         "fontstyle" : 0,
@@ -3461,14 +3114,13 @@
         "dateformat" : "",
         "template" : "",
         "gradientmode" : -1,
+        "backcolor" : "#D8D8D8",
         "forecolor" : "#333366",
-        "bordercolor" : "#F4F4F4",
-        "backcolor" : "#D8D8D8"
+        "bordercolor" : "#F4F4F4"
       },
       "data" : {
         "autowidth" : true,
         "autowidthmode" : "T",
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : 1,
@@ -3479,7 +3131,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "cssname" : "",
         "fontsize" : 11,
         "fontstyle" : 0,
@@ -3495,8 +3146,8 @@
         "dateformat" : "",
         "template" : "",
         "gradientmode" : -1,
-        "forecolor" : "#333366",
-        "backcolor" : "#FFFF99"
+        "backcolor" : "#FFFF99",
+        "forecolor" : "#333366"
       }
     }, {
       "name" : "Dimension String",
@@ -3504,7 +3155,6 @@
       "basestylename" : "Dimension",
       "header" : {
         "autowidth" : true,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -3515,7 +3165,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -3529,7 +3178,6 @@
       },
       "data" : {
         "autowidth" : true,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -3540,7 +3188,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -3560,7 +3207,6 @@
       "basestylename" : "Dimension",
       "header" : {
         "autowidth" : false,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -3571,7 +3217,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -3582,12 +3227,11 @@
         "width" : -1,
         "widthmode" : -1,
         "gradientmode" : -1,
-        "forecolor" : "#333366",
-        "backcolor" : "#D8D8D8"
+        "backcolor" : "#D8D8D8",
+        "forecolor" : "#333366"
       },
       "data" : {
         "autowidth" : false,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -3598,7 +3242,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -3618,7 +3261,6 @@
       "basestylename" : "Measure",
       "header" : {
         "autowidth" : false,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -3629,7 +3271,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -3640,12 +3281,11 @@
         "width" : -1,
         "widthmode" : -1,
         "gradientmode" : -1,
-        "forecolor" : "#99CCFF",
-        "backcolor" : "#FF00FF"
+        "backcolor" : "#FF00FF",
+        "forecolor" : "#99CCFF"
       },
       "data" : {
         "autowidth" : false,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -3656,7 +3296,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -3668,8 +3307,8 @@
         "widthmode" : -1,
         "formatstring" : "$ #,##0",
         "gradientmode" : -1,
-        "forecolor" : "#800000",
-        "backcolor" : "#99CC00"
+        "backcolor" : "#99CC00",
+        "forecolor" : "#800000"
       }
     }, {
       "fid" : "",
@@ -3678,7 +3317,6 @@
       "basestylename" : "Measure",
       "header" : {
         "autowidth" : false,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -3689,7 +3327,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -3700,12 +3337,11 @@
         "width" : -1,
         "widthmode" : -1,
         "gradientmode" : -1,
-        "forecolor" : "#99CCFF",
-        "backcolor" : "#FF00FF"
+        "backcolor" : "#FF00FF",
+        "forecolor" : "#99CCFF"
       },
       "data" : {
         "autowidth" : false,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -3716,7 +3352,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -3728,8 +3363,8 @@
         "widthmode" : -1,
         "formatstring" : "\\ #,##0",
         "gradientmode" : -1,
-        "forecolor" : "#800000",
-        "backcolor" : "#99CC00"
+        "backcolor" : "#99CC00",
+        "forecolor" : "#800000"
       }
     }, {
       "fid" : "",
@@ -3738,7 +3373,6 @@
       "basestylename" : "Measure",
       "header" : {
         "autowidth" : false,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -3749,7 +3383,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -3760,12 +3393,11 @@
         "width" : -1,
         "widthmode" : -1,
         "gradientmode" : -1,
-        "forecolor" : "#99CCFF",
-        "backcolor" : "#FF00FF"
+        "backcolor" : "#FF00FF",
+        "forecolor" : "#99CCFF"
       },
       "data" : {
         "autowidth" : false,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -3776,7 +3408,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -3788,8 +3419,8 @@
         "widthmode" : -1,
         "formatstring" : "#,##0,",
         "gradientmode" : -1,
-        "forecolor" : "#800000",
-        "backcolor" : "#99CC00"
+        "backcolor" : "#99CC00",
+        "forecolor" : "#800000"
       }
     }, {
       "fid" : "",
@@ -3798,7 +3429,6 @@
       "basestylename" : "Measure",
       "header" : {
         "autowidth" : false,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -3809,7 +3439,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -3820,12 +3449,11 @@
         "width" : -1,
         "widthmode" : -1,
         "gradientmode" : -1,
-        "forecolor" : "#99CCFF",
-        "backcolor" : "#FF00FF"
+        "backcolor" : "#FF00FF",
+        "forecolor" : "#99CCFF"
       },
       "data" : {
         "autowidth" : false,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -3836,7 +3464,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -3848,8 +3475,8 @@
         "widthmode" : -1,
         "formatstring" : "#,##0,,",
         "gradientmode" : -1,
-        "forecolor" : "#800000",
-        "backcolor" : "#99CC00"
+        "backcolor" : "#99CC00",
+        "forecolor" : "#800000"
       }
     }, {
       "fid" : "",
@@ -3858,7 +3485,6 @@
       "basestylename" : "Measure",
       "header" : {
         "autowidth" : false,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -3869,7 +3495,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -3880,12 +3505,11 @@
         "width" : -1,
         "widthmode" : -1,
         "gradientmode" : -1,
-        "forecolor" : "#99CCFF",
-        "backcolor" : "#FF00FF"
+        "backcolor" : "#FF00FF",
+        "forecolor" : "#99CCFF"
       },
       "data" : {
         "autowidth" : false,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -3896,7 +3520,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -3908,8 +3531,8 @@
         "widthmode" : -1,
         "formatstring" : "#,##0.00 '%'",
         "gradientmode" : -1,
-        "forecolor" : "#800000",
-        "backcolor" : "#99CC00"
+        "backcolor" : "#99CC00",
+        "forecolor" : "#800000"
       }
     }, {
       "fid" : "",
@@ -3918,7 +3541,6 @@
       "basestylename" : "Measure",
       "header" : {
         "autowidth" : false,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -3929,7 +3551,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -3940,12 +3561,11 @@
         "width" : -1,
         "widthmode" : -1,
         "gradientmode" : -1,
-        "forecolor" : "#99CCFF",
-        "backcolor" : "#FF00FF"
+        "backcolor" : "#FF00FF",
+        "forecolor" : "#99CCFF"
       },
       "data" : {
         "autowidth" : false,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -3956,7 +3576,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -3968,8 +3587,8 @@
         "widthmode" : -1,
         "formatstring" : "#,##0.00 %",
         "gradientmode" : -1,
-        "forecolor" : "#800000",
-        "backcolor" : "#99CC00"
+        "backcolor" : "#99CC00",
+        "forecolor" : "#800000"
       }
     }, {
       "fid" : "",
@@ -3978,7 +3597,6 @@
       "basestylename" : "Measure",
       "header" : {
         "autowidth" : false,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -3989,7 +3607,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -4000,12 +3617,11 @@
         "width" : -1,
         "widthmode" : -1,
         "gradientmode" : -1,
-        "forecolor" : "#99CCFF",
-        "backcolor" : "#FF00FF"
+        "backcolor" : "#FF00FF",
+        "forecolor" : "#99CCFF"
       },
       "data" : {
         "autowidth" : false,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -4016,7 +3632,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -4028,8 +3643,8 @@
         "widthmode" : -1,
         "formatstring" : "#,##0.00 '%'",
         "gradientmode" : -1,
-        "forecolor" : "#800000",
-        "backcolor" : "#99CC00"
+        "backcolor" : "#99CC00",
+        "forecolor" : "#800000"
       }
     }, {
       "fid" : "",
@@ -4038,7 +3653,6 @@
       "basestylename" : "Measure",
       "header" : {
         "autowidth" : false,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -4049,7 +3663,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -4060,12 +3673,11 @@
         "width" : -1,
         "widthmode" : -1,
         "gradientmode" : -1,
-        "forecolor" : "#99CCFF",
-        "backcolor" : "#FF00FF"
+        "backcolor" : "#FF00FF",
+        "forecolor" : "#99CCFF"
       },
       "data" : {
         "autowidth" : false,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -4076,7 +3688,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -4088,8 +3699,8 @@
         "widthmode" : -1,
         "formatstring" : "#,##0 %",
         "gradientmode" : -1,
-        "forecolor" : "#800000",
-        "backcolor" : "#99CC00"
+        "backcolor" : "#99CC00",
+        "forecolor" : "#800000"
       }
     }, {
       "fid" : "",
@@ -4098,7 +3709,6 @@
       "basestylename" : "Measure",
       "header" : {
         "autowidth" : false,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -4109,7 +3719,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -4120,12 +3729,11 @@
         "width" : -1,
         "widthmode" : -1,
         "gradientmode" : -1,
-        "forecolor" : "#99CCFF",
-        "backcolor" : "#FF00FF"
+        "backcolor" : "#FF00FF",
+        "forecolor" : "#99CCFF"
       },
       "data" : {
         "autowidth" : false,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -4136,7 +3744,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -4146,10 +3753,10 @@
         "textalign" : -1,
         "width" : -1,
         "widthmode" : -1,
-        "template" : "{enc}PHNwYW4+VEVYVDwvc3Bhbj48c3BhbiBzdHlsZT0nZm9udC1mYW1pbHk6IGZvbnRhd2Vzb21lOyBjb2xvcjojMDBmZjAwJz7vgaI8L3NwYW4+",
+        "template" : "<span>TEXT</span><span style='font-family: fontawesome; color:#00ff00'></span>",
         "gradientmode" : -1,
-        "forecolor" : "#800000",
-        "backcolor" : "#99CC00"
+        "backcolor" : "#99CC00",
+        "forecolor" : "#800000"
       }
     }, {
       "fid" : "",
@@ -4158,7 +3765,6 @@
       "basestylename" : "Measure",
       "header" : {
         "autowidth" : false,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -4169,7 +3775,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -4180,12 +3785,11 @@
         "width" : -1,
         "widthmode" : -1,
         "gradientmode" : -1,
-        "forecolor" : "#99CCFF",
-        "backcolor" : "#FF00FF"
+        "backcolor" : "#FF00FF",
+        "forecolor" : "#99CCFF"
       },
       "data" : {
         "autowidth" : false,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -4196,7 +3800,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -4206,10 +3809,10 @@
         "textalign" : -1,
         "width" : -1,
         "widthmode" : -1,
-        "template" : "{enc}PHNwYW4+VEVYVDwvc3Bhbj48c3BhbiBzdHlsZT0nZm9udC1mYW1pbHk6IGZvbnRhd2Vzb21lOyBjb2xvcjojZmYwMDAwJz7vgaM8L3NwYW4+",
+        "template" : "<span>TEXT</span><span style='font-family: fontawesome; color:#ff0000'></span>",
         "gradientmode" : -1,
-        "forecolor" : "#800000",
-        "backcolor" : "#99CC00"
+        "backcolor" : "#99CC00",
+        "forecolor" : "#800000"
       }
     }, {
       "name" : "2 decimal",
@@ -4217,7 +3820,6 @@
       "basestylename" : "Measure",
       "header" : {
         "autowidth" : false,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -4228,7 +3830,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -4239,12 +3840,11 @@
         "width" : -1,
         "widthmode" : -1,
         "gradientmode" : -1,
-        "forecolor" : "#99CCFF",
-        "backcolor" : "#FF00FF"
+        "backcolor" : "#FF00FF",
+        "forecolor" : "#99CCFF"
       },
       "data" : {
         "autowidth" : false,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -4255,7 +3855,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -4266,8 +3865,8 @@
         "width" : -1,
         "widthmode" : -1,
         "gradientmode" : -1,
-        "forecolor" : "#800000",
-        "backcolor" : "#99CC00"
+        "backcolor" : "#99CC00",
+        "forecolor" : "#800000"
       }
     }, {
       "name" : "highlight_type1",
@@ -4275,7 +3874,6 @@
       "basestylename" : "Dimension",
       "header" : {
         "autowidth" : false,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -4286,7 +3884,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -4297,12 +3894,11 @@
         "width" : -1,
         "widthmode" : -1,
         "gradientmode" : -1,
-        "forecolor" : "#333366",
-        "backcolor" : "#D8D8D8"
+        "backcolor" : "#D8D8D8",
+        "forecolor" : "#333366"
       },
       "data" : {
         "autowidth" : false,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -4313,7 +3909,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -4332,7 +3927,6 @@
       "basestylename" : "Measure",
       "header" : {
         "autowidth" : true,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -4343,7 +3937,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -4357,7 +3950,6 @@
       },
       "data" : {
         "autowidth" : true,
-        "wordwrap" : false,
         "backalpha" : -1.0,
         "bordertop" : -1,
         "borderbottom" : -1,
@@ -4368,7 +3960,6 @@
         "borderoutright" : -1,
         "borderoutleft" : -1,
         "columnwidth" : -1,
-        "columnheight" : -1,
         "fontsize" : -1,
         "fontstyle" : -1,
         "paddingbottom" : -1,
@@ -4379,75 +3970,9 @@
         "width" : -1,
         "widthmode" : -1,
         "formatstring" : "#,##0;(#,##0)",
-        "template" : "{enc}PHNwYW4gc3R5bGU9ImNvbG9yOiQkfCNmZjAwMDAkJDsiPlRFWFQ8L3NwYW4+",
+        "template" : "<span style=\"color:$$|#ff0000$$;\">TEXT</span>",
         "gradientmode" : -1
       }
-    }, {
-      "name" : "fixed column size",
-      "rptseq" : 0,
-      "basestylename" : "Dimension",
-      "header" : {
-        "autowidth" : true,
-        "wordwrap" : false,
-        "backalpha" : -1.0,
-        "bordertop" : -1,
-        "borderbottom" : -1,
-        "borderright" : -1,
-        "borderleft" : -1,
-        "borderouttop" : -1,
-        "borderoutbottom" : -1,
-        "borderoutright" : -1,
-        "borderoutleft" : -1,
-        "columnwidth" : -1,
-        "columnheight" : -1,
-        "fontsize" : -1,
-        "fontstyle" : -1,
-        "paddingbottom" : -1,
-        "paddingleft" : -1,
-        "paddingright" : -1,
-        "paddingtop" : -1,
-        "textalign" : -1,
-        "width" : -1,
-        "widthmode" : -1,
-        "gradientmode" : -1
-      },
-      "data" : {
-        "autowidth" : true,
-        "wordwrap" : false,
-        "backalpha" : -1.0,
-        "bordertop" : -1,
-        "borderbottom" : -1,
-        "borderright" : -1,
-        "borderleft" : -1,
-        "borderouttop" : -1,
-        "borderoutbottom" : -1,
-        "borderoutright" : -1,
-        "borderoutleft" : -1,
-        "columnwidth" : -1,
-        "columnheight" : -1,
-        "fontsize" : -1,
-        "fontstyle" : -1,
-        "paddingbottom" : -1,
-        "paddingleft" : -1,
-        "paddingright" : -1,
-        "paddingtop" : -1,
-        "textalign" : -1,
-        "width" : -1,
-        "widthmode" : -1,
-        "gradientmode" : -1
-      }
-    } ],
-    "chart_color_set" : {
-      "office_2013" : [ "#5b9bd5", "#ed7d31", "#a5a5a5", "#ffc000", "#4472c4", "#70ad47", "#255e91", "#9e480e", "#636363", "#997300", "#264478", "#43682b" ],
-      "theme 1" : [ "#5b9bd5", "#a5a5a5", "#4472c4", "#255e91", "#636363", "#264478", "#7cafdd", "#b7b7b7", "#698ed0", "#327dc2", "#848484", "#335aa1", "#9dc3e6", "#c9c9c9" ],
-      "theme 2" : [ "#ed7d31", "#ffc000", "#70ad47", "#9e480e", "#997300", "#43682b", "#f1975a", "#ffcd33", "#8cc168", "#d26012", "#cc9a00", "#5a8a39" ],
-      "theme 3" : [ "#70ad47", "#4472c4", "#ffc000", "#43682b", "#264478", "#997300", "#8cc168", "#698ed0", "#ffcd33", "#5a8a39", "#335aa1", "#cc9a00" ],
-      "signika" : [ "#f45b5b", "#8085e9", "#8d4654", "#7798BF", "#aaeeee", "#ff0066", "#eeaaee", "#55BF3B", "#DF5353", "#7798BF", "#aaeeee" ],
-      "light-color" : [ "#7cb5ec", "#f7a35c", "#90ee7e", "#7798BF", "#aaeeee", "#ff0066", "#eeaaee", "#55BF3B", "#DF5353", "#7798BF", "#aaeeee" ],
-      "dark-color" : [ "#2b908f", "#90ee7e", "#f45b5b", "#7798BF", "#aaeeee", "#ff0066", "#eeaaee", "#55BF3B", "#DF5353", "#7798BF", "#aaeeee" ],
-      "combo1574" : [ "#7A3E48", "#EECD86", "#E18942", "#B95835", "#3D3242", "#06354F" ],
-      "combo1573" : [ "#7C786A", "#8DCDC1", "#D3E397", "#FFF5C3", "#EB6E44" ],
-      "combo1572" : [ "#6194BC", "#A5D1F3", "#D0EAFF", "#E4001B", "#ECECEC", "#606060" ]
-    }
+    } ]
   } ]
 }

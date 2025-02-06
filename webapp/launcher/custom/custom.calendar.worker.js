@@ -159,7 +159,7 @@ function getDateFromFormat(val,format) {
 	if (hh<12 && ampm=="PM") { hh=hh-0+12; }
 	else if (hh>11 && ampm=="AM") { hh-=12; }
 	var newdate=new Date(year,month-1,date,hh,mm,ss);
-	return newdate; // .getTime();
+	return newdate.getTime();
 	}
 
 // ------------------------------------------------------------------
@@ -193,15 +193,15 @@ function parseDate(val) {
 	}
 
 
-IG$.cVis.calendar.prototype.draw = function(results) {
+IG$.__chartoption.chartext.calendar.prototype.drawChart = function(owner, results) {
 	var me = this,
-		chartview = me.chartview,
-		container = $(chartview.container),
-		sop = chartview._ILb,
-		cop = chartview.cop,
+		container = $(owner.container),
+		sop = owner._ILb,
+		cop = owner.cop,
 		usedualaxis = cop.usedualaxis,
 		dualaxisitem = cop.dualaxisitem;
 	
+	me.owner = owner;
 	me.container = container;
 	
 	container.empty();
@@ -241,19 +241,9 @@ IG$.cVis.calendar.prototype.draw = function(results) {
 		me.dataIndex = 0;
 		me.results = results;
 
-		var houter = $("<div></div>")
-			.css({
-				position: "relative",
-				width: "100%",
-				height: "100%",
-				padding: 0,
-				margin: 0
-			})
-			.appendTo(container);
-
 		var copt = {
 			chart: {
-				renderTo: houter[0]
+				renderTo: container[0]
 			},
 			tooltip: {
 				position: 'top',
@@ -263,11 +253,10 @@ IG$.cVis.calendar.prototype.draw = function(results) {
 				}
 			},
 			visualMap: {
-				// type: "piecewise",
-				calculable: true,
+				type: "piecewise",
 				orient: "horizontal",
 				left: "center",
-				top: 35,
+				top: 65,
 				textStyle: {
 					color: "#000"
 				}
@@ -300,7 +289,7 @@ IG$.cVis.calendar.prototype.draw = function(results) {
 			}
 		}
 		
-		df = cop.s_t_fo || "epoch";
+		df = cop.s_t_fo;
 		
 		for (i=0; i < series.length; i++)
 		{
@@ -308,11 +297,6 @@ IG$.cVis.calendar.prototype.draw = function(results) {
 			{
 				series[i].type = IG$.getSeriesType(cop.renderas[i]);
 			}
-		}
-
-		for (i=0; i < rowfix; i++)
-		{
-			series.name = (i == 0 ? data[i][colfix].text : series.name + " " + data[i][colfix].text);
 		}
 		
 		for (i=rowfix; i < rows; i++)
@@ -376,41 +360,40 @@ IG$.cVis.calendar.prototype.draw = function(results) {
 						cmax = dt;
 					}
 				}
-
-				dr = {
-					value: [dt]
-				};
-				v = 0;
-				if (data[i][colfix])
-				{
-					v = data[i][colfix].code;
-					v = Number(v);
-					if (isNaN(v))
-					{
-						v = 0;
-					}
-					
-					dr.label = data[i][colfix].text;
-					dr.drname = data[i][dtcol].text || data[i][dtcol].code;
-				}
-				
-				if (isNaN(vmin))
-				{
-					vmin = vmax = v;
-				}
-				else
-				{
-					vmin = Math.min(vmin, v);
-					vmax = Math.max(vmax, v);
-				}
-				
-				dr.value.push(v);
-				// dr.push("TTTT");
-				// dr.push("TTTT");
-				// dr.push({disp: data[i][colfix].text});
-				
-				series.data.push(dr);
 			}
+
+			dr = {
+				value: [dt]
+			};
+			v = 0;
+			if (data[i][colfix])
+			{
+				v = data[i][colfix].code;
+				v = Number(v);
+				if (isNaN(v))
+				{
+					v = 0;
+				}
+				
+				dr.label = data[i][colfix].text;
+			}
+			
+			if (isNaN(vmin))
+			{
+				vmin = vmax = v;
+			}
+			else
+			{
+				vmin = Math.min(vmin, v);
+				vmax = Math.max(vmax, v);
+			}
+			
+			dr.value.push(v);
+			// dr.push("TTTT");
+			// dr.push("TTTT");
+			// dr.push({disp: data[i][colfix].text});
+			
+			series.data.push(dr);
 		}
 		
 		if (cop.title)
@@ -425,59 +408,7 @@ IG$.cVis.calendar.prototype.draw = function(results) {
 		copt.series = series;
 		copt.visualMap.min = vmin;
 		copt.visualMap.max = vmax;
-		copt.calendar.range = [];
-		
-		if (cmin.getFullYear() < cmax.getFullYear())
-		{
-			var vtop = copt.calendar.top,
-				smap = {},
-				k;
-			copt.series = [];
-			copt.calendar = [];
-
-			for (i=cmax.getFullYear(); i >= cmin.getFullYear(); i--)
-			{
-				k = "" + i;
-				copt.calendar.push({
-					range: k,
-					cellSize: ['auto', 20],
-					top: vtop,
-					right: 10
-				});
-				vtop += 220;
-				var serie = {
-					type: "heatmap",
-					coordinateSystem: "calendar",
-					calendarIndex: cmax.getFullYear() - i,
-					yAxisIndex: 0,
-					data: []
-				};
-				smap[k] = serie;
-				copt.series.push(serie);
-			}
-
-			for (i=0; i < series.data.length; i++)
-			{
-				if (series.data[i].value[0].getFullYear)
-				{
-					var fyear = "" + series.data[i].value[0].getFullYear();
-					if (smap[fyear])
-					{
-						smap[fyear].data.push(series.data[i]);
-					}
-				}
-			}
-
-			houter.height(vtop);
-			container.css({
-				overflowX: "hidden",
-				overflowY: "auto"
-			});
-		}
-		else 
-		{
-			copt.calendar.range = [("" + cmin.getFullYear()) + "-01-01", ("" + cmax.getFullYear()) + "-12-31"];
-		}
+		copt.calendar.range = [("" + cmin.getFullYear()) + "-01-01", ("" + cmax.getFullYear()) + "-12-31"];
 		// copt.calendar.range = [cmin, cmax];
 
 		var hchart = echarts.init(copt.chart.renderTo, cop.echart_theme || ig$.echarts_theme || 'amplix', {
@@ -495,7 +426,7 @@ IG$.cVis.calendar.prototype.draw = function(results) {
 		hchart.on("click", function(params) {
 			if (params.componentType == "series")
 			{
-				chartview.procClickEvent(
+				_chartview.procClickEvent(
 					{
 						series: {
 							name: params.seriesName,
@@ -515,17 +446,17 @@ IG$.cVis.calendar.prototype.draw = function(results) {
 	}
 };
 	
-IG$.cVis.calendar.prototype.updatedisplay = function(w, h) {
+IG$.__chartoption.chartext.calendar.prototype.updatedisplay = function(owner, w, h) {
 	var me = this,
 		hchart = me.hchart;
 
 	if (hchart)
 	{
-		// hchart.resize({width: w, height: h});
+		hchart.resize({width: w, height: h});
 	}
 };
 
-IG$.cVis.calendar.prototype.dispose = function() {
+IG$.__chartoption.chartext.calendar.prototype.destroy = function(owner, w, h) {
 	var me = this,
 		hchart = me.hchart;
 
@@ -533,6 +464,4 @@ IG$.cVis.calendar.prototype.dispose = function() {
 	{
 		hchart.dispose();
 	}
-
-	me.container && me.container.empty();
 };

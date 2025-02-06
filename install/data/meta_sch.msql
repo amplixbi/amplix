@@ -19,7 +19,6 @@ CREATE TABLE igcappoption (
 );
 
 CREATE INDEX idx_igcappoption_tenant ON igcappoption(mts);
-CREATE INDEX idx_igcappoption_01 ON igcappoption(optype, pstatus, seq);
 
 CREATE TABLE igcdepts (
   mts #CHAR#(17) NOT NULL,
@@ -202,7 +201,7 @@ CREATE TABLE igcms (
   iuid #CHAR#(17) NOT NULL,
   pid #CHAR#(17) #NULL#,
   mctype #NUMBER#(4) #NULL#,
-  cname #VARCHAR#(200) #NULL#,
+  cname #VARCHAR#(100) #NULL#,
   mdate #LONG# #NULL#,
   pstatus #NUMBER#(4) NOT NULL,
   node #VARCHAR#(1000),
@@ -229,8 +228,9 @@ CREATE INDEX idx_igcms_f1 ON igcms(iuid);
 CREATE UNIQUE INDEX idx_igcms_f2 ON igcms(pid, cname, mts, pstatus);
 CREATE UNIQUE INDEX idx_igcms_f3 ON igcms(iuid, pstatus, mts);
 
+CREATE INDEX idx_igcms_f4 ON igcms(cname);
 CREATE INDEX idx_igcms_f5 ON igcms(pid);
-CREATE INDEX idx_igcms_f6 ON igcms(mctype, revise);
+CREATE INDEX idx_igcms_f6 ON igcms(mctype);
 CREATE INDEX idx_igcms_f7 ON igcms(memo, iuid);
 CREATE INDEX idx_igcms_tenant ON igcms(mts);
 
@@ -288,7 +288,7 @@ CREATE TABLE igctrashbin (
   iuid #CHAR#(17) NOT NULL,
   pid #CHAR#(17) #NULL#,
   mctype #NUMBER#(4) #NULL#,
-  cname #VARCHAR#(200) #NULL#,
+  cname #VARCHAR#(100) #NULL#,
   mdate #LONG# #NULL#,
   pstatus #NUMBER#(4) NOT NULL,
   node #VARCHAR#(1000),
@@ -343,8 +343,6 @@ CREATE TABLE igcusers (
   uname #VARCHAR#(100) NOT NULL,
   upasswd #VARCHAR#(256) NOT NULL,
   email #VARCHAR#(100) #NULL#,
-  twofa #VARCHAR#(100) #NULL#,
-  twofa_option #VARCHAR#(100) #NULL#,
   active #NUMBER#(4) #NULL#,
   mdate #LONG# #NULL#,
   gid #CHAR#(17) NOT NULL,
@@ -412,9 +410,9 @@ CREATE TABLE igcudbauth (
 );
 
 CREATE TABLE igcsm (
-  sid #CHAR#(17) NOT NULL,
-  seq #NUMBER#(4) NOT NULL,
-	iuid #CHAR#(17),
+	iuid #CHAR#(17) NOT NULL,
+	sid #CHAR#(17) NOT NULL,
+	seq #NUMBER#(4) NOT NULL,
 	snder #VARCHAR#(255),
 	sndem #VARCHAR#(255),
 	email #VARCHAR#(255),
@@ -450,11 +448,10 @@ CREATE TABLE igcsc (
   crtdate #CHAR#(24) #NULL#,
   uptdate #CHAR#(24) #NULL#,
   pstatus #CHAR#(1) #NULL#,
-  a1 #VARCHARCHAR#(100),
+  a1 #CHAR#(1),
   a1a #VARCHAR#(10),
   a1b #VARCHAR#(100),
-  a1c #VARCHAR#(200),
-  sccmd #VARCHAR#(24)
+  a1c #VARCHAR#(200)
 );
 
 CREATE TABLE igcscp (
@@ -477,8 +474,7 @@ CREATE TABLE igcsj (
   message #VARCHAR#(255) #NULL#,
   pstatus #CHAR#(1) #NULL#,
   nexec_time #LONG#,
-  jobkeyname #VARCHAR#(100),
-  pickdate #CHAR#(24) #NULL#
+  jobkeyname #VARCHAR#(100)
 );
 
 CREATE TABLE igcctlduty (
@@ -774,7 +770,7 @@ CREATE TABLE igcacclog (
 CREATE INDEX idx_igcacclog_01 ON igcacclog(cdate, userid);
 
 CREATE TABLE igcacclaud (
-	auid #CHAR#(17) NOT NULL,
+	auid #CHAR#(17) NOT NULL, 
     tuid #CHAR#(17) NOT NULL,
 	cdate #LONG# NOT NULL, 
 	lstat #CHAR#(1),

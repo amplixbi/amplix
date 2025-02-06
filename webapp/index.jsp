@@ -14,18 +14,18 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 	<meta http-equiv="Pragma" content="no-cache">
 	<meta http-equiv="Expires" content="0">
-    <link rel="stylesheet" href="./main/css/main.min.css?_dc=202501311110" />
+    <link rel="stylesheet" href="./main/css/main.min.css?_dc=202502070045" />
 <!--[if lt IE 9]>
     <link rel="stylesheet" href="./main/css/mainpage_ie.css" />
 <![endif]-->
     <link rel="icon" href="./favicon.png" type="image/png">
-    <script type="text/javascript" src="./main/js/jquery-3.6.4.min.js"></script>
+    <script type="text/javascript" src="./main/js/jquery-3.5.1.min.js"></script>
     <script type="text/javascript">
     var __mts_id = null;
     var __uri = "<%=uri%>";
    	</script>
-   	<script type="text/javascript" src="./config.js?_dc=202501311110"></script>
-    <script type="text/javascript" src="./main/js/main.min.js?_dc=202501311110"></script>
+   	<script type="text/javascript" src="./config.js?_dc=202502070045"></script>
+    <script type="text/javascript" src="./main/js/main.min.js?_dc=202502070045"></script>
 </head>
 <body class="index nav-light hoverable">
 	
@@ -67,9 +67,9 @@
 	   <div class="section-centered section-vertical-align js-vertical-align js-parallax-image" data-origin="0" data-parallax-fade="true" data-parallax-speed="3" data-reverse-parallax="true" style="opacity: 1;">
 	      <div class="one-whole">
 	         <h1 class="section-headline section-headline-large section-headline-white">
-	            Augmented Analytics, <br/>Ready for you!
+	            Scientific Analytics, ready for you
 	         </h1>
-	         <a class="maia-button button-download mobile-is-hidden get-started" href="#start">START!</a>
+	         <a class="maia-button button-download mobile-is-hidden get-started" href="#start">Go to Demo</a>
 	      </div>
 	   </div>
 	   <div class="arrow-hint">
@@ -113,30 +113,6 @@
 				                    </div>
 				                </div>
 				            </div>
-							<div class="service-two-columns2">
-                                <div class="service-summary2">
-                                    <div class="text-group-service">
-                                        <div class="service-title-preview-layout">
-                                            <div class="service-name-summary-tab" data-trackas="service-name-summary-tab">        
-                                                <a id="btn_item2">Dashboard</a>     
-                                            </div>
-                                        </div>
-                                        <div class="service-title-summary-tab">Interactive dashboard viewer without programming burden.</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="service-two-columns2">
-                                <div class="service-summary2">
-                                    <div class="text-group-service">
-                                        <div class="service-title-preview-layout">
-                                            <div class="service-name-summary-tab" data-trackas="service-name-summary-tab">        
-                                                <a id="btn_item4">Data Works</a>     
-                                            </div>
-                                        </div>
-                                        <div class="service-title-summary-tab">Start your Data Works and share over the professional data scientists.</div>
-                                    </div>
-                                </div>
-                            </div>
 							<!--
 				            <div class="service-two-columns2">
 				                <div class="service-summary2">

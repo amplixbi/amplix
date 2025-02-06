@@ -1,4 +1,4 @@
-﻿IG$.cVis.vworldmap.prototype._tmpl = function(tmpl, dpoint, gmap) {
+﻿IG$.__chartoption.chartext.vworldmap.prototype._tmpl = function(tmpl, dpoint, gmap) {
 	var r = tmpl,
 		pdata = dpoint.data,
 		k, s, m, c;
@@ -16,29 +16,21 @@
 	return r;
 };
 	
-IG$.cVis.vworldmap.prototype.draw = function(results) {
+IG$.__chartoption.chartext.vworldmap.prototype.drawChart = function(owner, results) {
 	var me = this,
-		chartview = me.chartview,
-		container = chartview.container,
+		container = owner.container,
 		jcontainer = $(container),
-		cop = chartview.cop, // chart option information
+		cop = owner.cop, // chart option information
 		map,
 		seriesname,
 		markermap = {},
-		i, j, p,
+		i, j,
 		defaultLevel,
 		m_xypos = cop.m_xypos,
 		isgps = m_xypos == "EPSG:4326";
 	
 	jcontainer.empty();
 	defaultLevel = parseInt(cop.m_zoom_level) || 11;
-
-
-	if (!window.vw)
-	{
-		IG$.ShowError(IRm$.r1("E_CHART_DRAWING") + " Map library not properly loaded!");
-		return;
-	}
 	
 	var mlng = isgps ? 126.9773356 : 4520123.305972628,
 		mlat = isgps ? 37.5675451 : 14135012.547689248,
@@ -50,11 +42,10 @@ IG$.cVis.vworldmap.prototype.draw = function(results) {
 	{
 		for (i=0; i < results.geodata.length; i++)
 		{
-			p = results.geodata[i];
-			minLng = (i == 0) ? Number(p.lng) : Math.min(minLng, Number(p.lng));
-			maxLng = (i == 0) ? Number(p.lng) : Math.max(maxLng, Number(p.lng));
-			minLat = (i == 0) ? Number(p.lat) : Math.min(minLat, Number(p.lat));
-			maxLat = (i == 0) ? Number(p.lat) : Math.max(maxLat, Number(p.lat));
+			minLng = (i == 0) ? Number(results.geodata[i].lng) : Math.min(minLng, Number(results.geodata[i].lng));
+			maxLng = (i == 0) ? Number(results.geodata[i].lng) : Math.max(maxLng, Number(results.geodata[i].lng));
+			minLat = (i == 0) ? Number(results.geodata[i].lat) : Math.min(minLat, Number(results.geodata[i].lat));
+			maxLat = (i == 0) ? Number(results.geodata[i].lat) : Math.max(maxLat, Number(results.geodata[i].lat));
 		}
 		
 		mlng = (maxLng + minLng) / 2;
@@ -156,7 +147,7 @@ IG$.cVis.vworldmap.prototype.draw = function(results) {
 //					
 //					 mapInfoTestWindow.show(disp, pt);
 //					
-//					chartview.procClickEvent.call(chartview, sender, param);
+//					owner.procClickEvent.call(owner, sender, param);
 //				}
 //			}
 //		});
@@ -309,7 +300,7 @@ IG$.cVis.vworldmap.prototype.draw = function(results) {
 	});
 }
 	
-IG$.cVis.vworldmap.prototype.test = function() {
+IG$.__chartoption.chartext.vworldmap.prototype.test = function() {
 	var oSize = new nhn.api.map.Size(28, 37);
 	var oOffset = new nhn.api.map.Size(14, 37);
 	var oIcon = new nhn.api.map.Icon('http://static.vworld.com/maps2/icons/pin_spot2.png', oSize, oOffset);
@@ -349,7 +340,7 @@ IG$.cVis.vworldmap.prototype.test = function() {
 
 };
 
-IG$.cVis.vworldmap.prototype.updatedisplay = function(w, h) {
+IG$.__chartoption.chartext.vworldmap.prototype.updatedisplay = function(owner, w, h) {
 	var me = this,
 		map = me.map;
 		
@@ -362,8 +353,8 @@ IG$.cVis.vworldmap.prototype.updatedisplay = function(w, h) {
 	}
 };
 	
-IG$.cVis.vworldmap.destroy = function() {
+IG$.__chartoption.chartext.vworldmap.destroy = function() {
 	var me = this;
 	
-	me.chartview && me.chartview.container && $(me.chartview.container).empty();
+	me.owner && me.owner.container && $(me.owner.container).empty();
 };

@@ -201,9 +201,7 @@ IG$.showLogin = function(instance, callback, rs, __encrypt) // show login screen
 				sform.fadeOut();
 				progress.hide();
 				mc.fadeIn();
-			}), {
-				sso_module: ig$.$sso_module_name || "dbsync"
-			});
+			}));
 		}
 	}
 	
@@ -211,13 +209,7 @@ IG$.showLogin = function(instance, callback, rs, __encrypt) // show login screen
 	// rs: 1 (logout button clicked)
 	// rs: 2 (session expired)
 	// rs: 3 (print page login)
-	// rs: 5 (loginstatus result session invalid)
-	if (rs == 5)
-	{
-		// do nothing
-		progress.show();
-	}
-	else if (rs != 1) 
+	if (rs != 1) 
 	{
 		sform.show();
 		mc.hide();

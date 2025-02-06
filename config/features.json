@@ -11,14 +11,6 @@
 				{
 					"name": "New SQL Report",
 					"cls": "ig_menu_sql_rpt"
-				},
-				{
-					"name": "New FormBuilder",
-					"cls": "ig_menu_formbuilder"
-				},
-				{
-					"name": "New Finance Report",
-					"cls": "ig_menu_rpt_fin"
 				}
 			]
 		},
@@ -103,10 +95,6 @@
 							"cls": "ig_ft"
 						},
 						{
-							"name": "Assistant Robot",
-							"cls": "ig_assist_robot"
-						},
-						{
 							"name": "Trashbin",
 							"cls": "ig_trashbin"
 						}
@@ -143,10 +131,6 @@
 							"cls": "ig_imp"
 						},
 						{
-							"name": "Migration",
-							"cls": "ig_migration"
-						},
-						{
 							"name": "System Log",
 							"cls": "ig_syslog",
 							"children": [
@@ -181,16 +165,6 @@
 							"cls": "ig_schedule_prog"
 						}
 					]
-				},
-				{
-					"name": "BBS Management",
-					"cls": "ig_bbs",
-					"children": [
-						{
-							"name": "BBS Manager",
-							"cls": "ig_mgr_bbs"
-						}
-					]
 				}
 			]
 		},
@@ -212,74 +186,7 @@
 				}
 			]
 		},
-		{
-			"name": "BigData Analysis",
-			"cls": "ig_bdmgr",
-			"children": [
-				{
-					"name": "Hadoop",
-					"cls": "ig_hdoop",
-					"children": [
-						{
-							"name": "Hadoop BizFlow",
-							"cls": "ig_hd_flow"
-						},
-						{
-							"name": "Hadoop Map Reduce",
-							"cls": "ig_hd_mapr"
-						}
-					]
-				},
-				{
-					"name": "MongoDB",
-					"cls": "ig_mongo",
-					"children": [
-						{
-							"name": "Mongo Data Processor",
-							"cls": "ig_mg_dproc"
-						},
-						{
-							"name": "Mongo Data Collector",
-							"cls": "ig_mg_data"
-						}
-					]
-				}
-			]
-		},
-		{
-			"name": "Machine Learning",
-			"cls": "ig_mlmgr",
-			"children": [
-				{
-					"name": "Bayes Learning",
-					"cls": "ig_ml_bayes",
-					"children": [
-						{
-							"name": "Bayes Influence",
-							"cls": "ig_ml_bayes_rpt"
-						},
-						{
-							"name": "Learn from Data",
-							"cls": "ig_ml_learn"
-						}
-					]
-				}
-			]
-		},
-		{
-			"name": "Migration",
-			"cls": "ig_mig",
-			"children": [
-				{
-					"name": "Discoverer Migration",
-					"cls": "ig_disco"
-				},
-				{
-					"name": "Amplix Meta Upgrade",
-					"cls": "ig_meta_upgrade"
-				}
-			]
-		},
+		
 		
 		{
 			"name": "Navigator",
@@ -348,16 +255,8 @@
 									"cls": "ig_n_sqlrpt"
 								},
 								{
-									"name": "Form Builder",
-									"cls": "ig_n_dbd"
-								},
-								{
 									"name": "Composite Report",
 									"cls": "ig_n_crpt"
-								},
-								{
-									"name": "Hadoop BizOp",
-									"cls": "ig_n_hb"
 								},
 								{
 									"name": "Java Class",
@@ -526,38 +425,18 @@
 									"cls": "ig_r_anal"
 								},
 								{
-									"name": "view_formview",
-									"cls": "ig_r_fview"
-								},
-								{
 									"name": "view_r",
 									"cls": "ig_r_r"
 								},
-								{
-									"name": "view_python",
-									"cls": "ig_r_python"
-								},
-								{
-									"name": "Add ReportViewer",
-									"cls": "ig_r_rpt_vr"
-								},
-								{
-									"name": "Add FormViewer",
-									"cls": "ig_r_frm_vr"
-								},
-								{
-									"name": "Add StoryView",
-									"cls": "ig_r_story"
-								}
+                                {
+                                    "name": "view_python",
+                                    "cls": "ig_r_python"
+                                },
+                                {
+                                	"name": "Add ReportViewer",
+                                	"cls": "ig_r_rpt_vr"
+                                }
 							]
-						},
-						{
-							"name": "Email Burstring",
-							"cls": "ig_r_bursting"
-						},
-						{
-							"name": "Form Builder",
-							"cls": "ig_r_formb"
 						},
 						{
 							"name": "share report",
@@ -566,10 +445,6 @@
 						{
 							"name": "formula",
 							"cls": "ig_r_fm"
-						},
-						{
-							"name": "Pivot CustomField",
-							"cls": "ig_p_cmt"
 						},
 						{
 							"name": "export",
@@ -666,10 +541,6 @@
 							"cls": "ig_r_ct"
 						},
 						{
-							"name": "AI Trend",
-							"cls": "ig_r_trend"
-						},
-						{
 							"name": "Schedule",
 							"cls": "ig_r_sch"
 						},
@@ -689,5 +560,5 @@
 				}
 			]
 		}
-	]
+	] 
 }

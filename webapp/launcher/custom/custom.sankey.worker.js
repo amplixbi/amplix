@@ -1,4 +1,4 @@
-﻿IG$.cVis.sankey.prototype.buildNode = function(results, snode) {
+﻿IG$.__chartoption.chartext.sankey.prototype.buildNode = function(results, snode) {
 	var colfix = results.colfix,
 		rowfix = results.rowfix,
 		data = results._tabledata,
@@ -8,7 +8,6 @@
 		n = 0,
 		bc,
 		lmap = {},
-		s, t,
 		sm, k;
 		
 	for (j=0; j < colfix; j++)
@@ -36,11 +35,6 @@
 	for (i=rowfix; i < data.length; i++)
 	{
 		c = data[i][colfix].code || "0";
-
-		c = Number(c);
-
-		if (isNaN(c) || c <= 0)
-			continue;
 		
 		bc = 0;
 		
@@ -65,14 +59,14 @@
 			sm = lmap[k];
 			if (sm)
 			{
-				sm.value += c;
+				sm.value += Number(c);
 			}
 			else
 			{
 				sm = {
-					source: snode.nodes[s].name,
-					target: snode.nodes[t].name,
-					value: c
+					source: s,
+					target: t,
+					value: Number(c)
 				};
 			
 				snode.links.push(sm);
@@ -82,7 +76,7 @@
 	}
 }
 
-IG$.cVis.sankey.prototype.draw = function(results) {
+IG$.__chartoption.chartext.sankey.prototype.drawChart = function(owner, results) {
 	var me = this;
 	
 	if (me._draw_timer)
@@ -92,115 +86,114 @@ IG$.cVis.sankey.prototype.draw = function(results) {
 	}
 	
 	me._draw_timer = setTimeout(function() {
-		me.drawChartTimer(results);
+		me.drawChartTimer(owner, results);
 	}, 10);
 }
 
-IG$.cVis.sankey.prototype.drawChartTimer = function(results) {
-	var me = this,
-		chartview = me.chartview,
-		cop = chartview.cop,
-		container = chartview.container,
-		jcontainer = $(container);
-
-	if (results.colfix < 2)
-	{
-		IG$.ShowError(IRm$.r1("E_CHART_DRAWING") + " Need 2 Column on pivot definition!");
-		return;
+IG$.__chartoption.chartext.sankey.prototype.drawChartTimer = function(owner, results) {
+			
+	var dragmove = function(d) {
+		d3.select(this).attr("transform", "translate(" + d.x + "," + (d.y = Math.max(0, Math.min(height - d.dy, d3.event.y))) + ")");
+		sankey.relayout();
+		link.attr("d", path);
 	}
-
-	var snode = {
+	
+	var me = this,
+		container = owner.container,
+		jcontainer = $(container);
+		
+	jcontainer.empty();
+	jcontainer.addClass("igc-sankey");
+	
+	var width = jcontainer.width(),
+		height = jcontainer.height();
+	
+	var formatNumber = d3.format(",.0f"),
+		format = function(d) { return formatNumber(d); },
+		// color = d3.scale.category20();
+		color = d3.scaleOrdinal(d3.schemeCategory10);
+	
+	var svg = me.pdev = d3.select(jcontainer[0]).append("svg")
+		.attr("width", width)
+		.attr("height", height)
+		.append("g");
+//			.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+	
+	var sankey = d3.sankey()
+		.nodeWidth(15)
+		.nodePadding(10)
+		.size([width, height]);
+		
+	var path = sankey.link(),
+		snode = {
 			nodes: [],
 			links: []
 		};
 	
 	me._results = results;
+	me._owner = owner;
 	
+	if (results.colfix < 2)
+		return;
+		
 	me.buildNode(results, snode);
 	
-	var option = {
-		title: {
-			text: cop.title
-		},
-		tooltip: {
-			trigger: 'item',
-			triggerOn: 'mousemove'
-		},
-		series: [
-			{
-				type: 'sankey',
-				data: snode.nodes,
-				links: snode.links,
-				emphasis: {
-					focus: 'adjacency'
-				},
-				levels: [
-					{
-						depth: 0,
-						itemStyle: {
-							color: '#fbb4ae'
-						},
-						lineStyle: {
-							color: 'source',
-							opacity: 0.6
-						}
-					},
-					{
-					depth: 1,
-						itemStyle: {
-							color: '#b3cde3'
-						},
-						lineStyle: {
-							color: 'source',
-							opacity: 0.6
-						}
-					},
-					{
-						depth: 2,
-						itemStyle: {
-							color: '#ccebc5'
-						},
-						lineStyle: {
-							color: 'source',
-							opacity: 0.6
-						}
-					},
-					{
-						depth: 3,
-						itemStyle: {
-							color: '#decbe4'
-						},
-						lineStyle: {
-							color: 'source',
-							opacity: 0.6
-						}
-					}
-				],
-				lineStyle: {
-					color: "gradient",
-					curveness: 0.5
-				}
-			}
-		]
-	};
-
-	if (window.echarts)
-	{
-		myChart = me.customchart = echarts.init(jcontainer[0], cop.echart_theme || ig$.echarts_theme || 'amplix', {
-			renderer: "svg"
-		});
-
-		me.customchart.setOption(option);
-	}
+	sankey
+		.nodes(snode.nodes)
+		.links(snode.links)
+		.layout(32);
+	
+	var link = svg.append("g").selectAll(".link")
+		.data(snode.links)
+		.enter().append("path")
+		.attr("class", "link")
+		.attr("d", path)
+		.style("stroke-width", function(d) { return Math.max(1, d.dy); })
+		.sort(function(a, b) { return b.dy - a.dy; });
+	
+	link.append("title")
+		.text(function(d) { return d.source.name + " �� " + d.target.name + "\n" + format(d.value); });
+	
+	var node = svg.append("g").selectAll(".node")
+		.data(snode.nodes)
+		.enter().append("g")
+		.attr("class", "node")
+		.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; })
+		// .call(d3.behavior.drag()
+		.call(d3.drag()
+		// .origin(function(d) { return d; })
+		// .on("dragstart", function() { this.parentNode.appendChild(this); })
+		// .on("drag", dragmove));
+		.on("start", function() { this.parentNode.appendChild(this); })
+		.on("drag", dragmove));
+	
+	node.append("rect")
+		.attr("height", function(d) { return d.dy; })
+		.attr("width", sankey.nodeWidth())
+		.style("fill", function(d) { return d.color = color(d.name.replace(/ .*/, "")); })
+		.style("stroke", function(d) { return d3.rgb(d.color).darker(2); })
+		.append("title")
+		.text(function(d) { return d.name + "\n" + format(d.value); });
+	
+	node.append("text")
+		.attr("x", -6)
+		.attr("y", function(d) { return d.dy / 2; })
+		.attr("dy", ".35em")
+		.attr("text-anchor", "end")
+		.attr("transform", null)
+		.text(function(d) { return d.name; })
+		.filter(function(d) { return d.x < width / 2; })
+		.attr("x", 6 + sankey.nodeWidth())
+		.attr("text-anchor", "start");
 }
 
-IG$.cVis.sankey.prototype.dispose = function() {
+IG$.__chartoption.chartext.sankey.prototype.destroy = function() {
 	var me = this,
-		customchart = me.customchart;
+		owner = me.owner;
 		
-	if (customchart)
+	if (owner && owner.container)
 	{
-		customchart.dispose && customchart.dispose();
-		me.customchart = null;
+		$(me.owner.container).empty();
 	}
+	me.vis = null;
 }

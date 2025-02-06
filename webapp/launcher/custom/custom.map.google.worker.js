@@ -1,4 +1,4 @@
-﻿IG$.cVis.googlemap.prototype.google_initialize = function(container) {
+﻿IG$.__chartoption.chartext.googlemap.prototype.google_initialize = function(container) {
 	var me = this,
 		mapOptions = {
 		zoom: 8,
@@ -14,33 +14,33 @@
 
 	map = new google.maps.Map(container, mapOptions);
 
-	// google.maps.event.addListener(map, 'center_changed', function() {
-	// 	me.validateData();
-	// });
+	google.maps.event.addListener(map, 'center_changed', function() {
+		me.validateData.call(me);
+	});
 
-	// google.maps.event.addListener(map, 'bounds_changed', function() {
-	// 	me.validateData();
-	// });
+	google.maps.event.addListener(map, 'bounds_changed', function() {
+		me.validateData.call(me);
+	});
 
-	// google.maps.event.addListener(map, 'zoom_changed', function() {
-	// 	me.validateData();
-	// });
+	google.maps.event.addListener(map, 'zoom_changed', function() {
+		me.validateData.call(me);
+	});
 
 	return map;
 };
 
-IG$.cVis.googlemap.prototype.validateData = function() {
+IG$.__chartoption.chartext.googlemap.prototype.validateData = function() {
 	var me = this;
 
 	clearTimeout(me._ptimer);
 
 	me._ptimer = setTimeout(function() {
 		me.req_cnt = 0;
-		me.updateData();
+		me.updateData.call(me);
 	}, 1000);
 },
 
-IG$.cVis.googlemap.prototype.updateData = function() {
+IG$.__chartoption.chartext.googlemap.prototype.updateData = function() {
 	var me = this,
 		map = me.map_inst,
 		bnd = map.getBounds(),
@@ -48,7 +48,7 @@ IG$.cVis.googlemap.prototype.updateData = function() {
 		sw = bnd ? bnd.getSouthWest() : null,
 		cnt = bnd ? map.getCenter() : null,
 		zoom = map.getZoom(),
-		chartview = me.chartview,
+		owner = me.owner,
 		bopt;
 	
 	if (bnd && ne)
@@ -69,24 +69,23 @@ IG$.cVis.googlemap.prototype.updateData = function() {
 		};
 
 		me.req_cnt = 0;
-		// chartview._reqData.call(chartview, bopt);
+		owner._reqData.call(owner, bopt);
 	}
 	else
 	{
 		if (me.req_cnt < 5)
 		{
 			setTimeout(function() {
-				me.updateData();
+				me.updateData.call(me);
 			}, 300);
 		}
 		me.req_cnt++;
 	}
 }
 
-IG$.cVis.googlemap.prototype.draw = function(results) {
+IG$.__chartoption.chartext.googlemap.prototype.drawChart = function(owner, results) {
 // insert logic with report result
 	var me = this,
-		chartview = me.chartview,
 		map_inst = me.map_inst,
 		i;
 		
@@ -95,7 +94,7 @@ IG$.cVis.googlemap.prototype.draw = function(results) {
 
 	if (!map_inst)
 	{
-		me.map_inst = map_inst = me.google_initialize(chartview.container);
+		me.map_inst = map_inst = me.google_initialize(owner.container);
 	}
 	else
 	{
@@ -114,35 +113,17 @@ IG$.cVis.googlemap.prototype.draw = function(results) {
 		me.clusters = [];
 	}
 
-	map_inst.data.loadGeoJson("./data/geojson/kr/4812.json");
-	map_inst.data.setStyle(function(feature) {
-		return {
-		  	strokeWeight: 1
-		};
-	});
-	map_inst.data.addListener('mouseover', function(event) {
-		var feature = event.feature;
-		console.log("mouse over on feature");
-		map_inst.data.revertStyle();
-		map_inst.data.overrideStyle(event.feature, {
-			strokeColor: "red",
-			strokeWeight: 2
-		});
-	});
-	map_inst.data.addListener('mouseout', function(event) {
-		map_inst.data.revertStyle();
-	});
-	me.setData(chartview, results);
+	me.setData(owner, results);
 }
 
-IG$.cVis.googlemap.prototype.setData = function(chartview, results) {
+IG$.__chartoption.chartext.googlemap.prototype.setData = function(owner, results) {
 	var me = this,
-		sop = chartview.sheetoption ? chartview.sheetoption.model : null,
-		cop = chartview.cop, // chart option information
+		sop = owner.sheetoption ? owner.sheetoption.model : null,
+		cop = owner.cop, // chart option information
 		copsettings = cop.settings,
 		map = me.map_inst,
 		seriesname,
-		i, j, p,
+		i, j,
 		styles_ = [],
 		sizes = [53, 56, 66, 78, 90],
 		defaultLevel,
@@ -213,25 +194,23 @@ IG$.cVis.googlemap.prototype.setData = function(chartview, results) {
 		{
 			for (i=0; i < results.geodata.length; i++)
 			{
-				p = results.geodata[i];
-				minLng = (i == 0) ? Number(p.lng) : Math.min(minLng, Number(p.lng));
-				maxLng = (i == 0) ? Number(p.lng) : Math.max(maxLng, Number(p.lng));
-				minLat = (i == 0) ? Number(p.lat) : Math.min(minLat, Number(p.lat));
-				maxLat = (i == 0) ? Number(p.lat) : Math.max(maxLat, Number(p.lat));
+				minLng = (i == 0) ? Number(results.geodata[i].lng) : Math.min(minLng, Number(results.geodata[i].lng));
+				maxLng = (i == 0) ? Number(results.geodata[i].lng) : Math.max(maxLng, Number(results.geodata[i].lng));
+				minLat = (i == 0) ? Number(results.geodata[i].lat) : Math.min(minLat, Number(results.geodata[i].lat));
+				maxLat = (i == 0) ? Number(results.geodata[i].lat) : Math.max(maxLat, Number(results.geodata[i].lat));
 			}
 
 			mlng = (maxLng + minLng) / 2;
 			mlat = (maxLat + minLat) / 2;
 		}
 
-		var mpoint = {lat: mlat, lng: mlng}; // new google.maps.LatLng(mlng, mlat); // mlat, mlng);
+		var mpoint = new google.maps.LatLng(mlat, mlng);
 		
 		map.setCenter(mpoint);
-		map.setZoom(defaultLevel);
 		
-		me.validateData();
+		me.validateData.call(me);
 		
-		// return;
+		return;
 	}
 
 	var colfix = results.colfix,
@@ -253,7 +232,7 @@ IG$.cVis.googlemap.prototype.setData = function(chartview, results) {
 	{
 		for (i=0; i < rowfix; i++)
 		{
-			seriesname = (i==0) ? results._tabledata[i][colfix].code : seriesname + " " + results._tabledata[i][colfix].code;
+			seriesname = (i==0) ? results.data[i][colfix].code : seriesname + " " + results.data[i][colfix].code;
 		}
 	}
 
@@ -290,61 +269,6 @@ IG$.cVis.googlemap.prototype.setData = function(chartview, results) {
 		});
 	}
 
-	var is_cluster = true,
-		markers = [],
-		cluster_marker_styles = [
-			MarkerClusterer.withDefaultStyle({
-				url: "./images/m1.png",
-				width: 53,
-				height: 52,
-				anchorText: [0, 0],
-				anchorIcon: [0, 0],
-				textColor: "#ff00ff",
-				textSize: 10,
-			}),
-			MarkerClusterer.withDefaultStyle({
-				url: "./images/m2.png",
-				width: 53,
-				height: 52,
-				anchorText: [0, 0],
-				anchorIcon: [0, 0],
-				textColor: "#ff0000",
-				textSize: 11,
-			}),
-			MarkerClusterer.withDefaultStyle({
-				url: "./images/m3.png",
-				width: 53,
-				height: 52,
-				anchorText: [0, 0],
-				anchorIcon: [0, 0],
-				textColor: "#0000ff",
-				textSize: 12,
-			}),
-			MarkerClusterer.withDefaultStyle({
-				url: "./images/m4.png",
-				width: 53,
-				height: 52,
-				anchorText: [0, 0],
-				anchorIcon: [0, 0],
-				textColor: "#0000ff",
-				textSize: 12,
-			}),
-			MarkerClusterer.withDefaultStyle({
-				url: "./images/m5.png",
-				width: 53,
-				height: 52,
-				anchorText: [0, 0],
-				anchorIcon: [0, 0],
-				textColor: "#0000ff",
-				textSize: 12,
-			})
-		];
-
-	if (me.markerClusterer)
-	{
-		me.markerClusterer.clearMarkers();
-	}
-
 	$.each(results.geodata, function(i, p) {
 		var mkey = p.lat + "_" + p.lng,
 			pt = new google.maps.LatLng(p.lat, p.lng),
@@ -379,20 +303,11 @@ IG$.cVis.googlemap.prototype.setData = function(chartview, results) {
 		}
 		else
 		{
-			if (is_cluster)
+			if (p.c && p.cc)
 			{
-				// cluster = new ClusterMarker_(pt, p.cc, styles_, 60);
-				// cluster.setMap(map);
-				// me.clusters.push(cluster);
-				// var markerImage = new google.maps.MarkerImage(
-				// 	imageUrl,
-				// 	new google.maps.Size(24, 32)
-				// );
-				marker = new google.maps.Marker({
-					position: pt
-					// icon: markerImage
-				});
-				markers.push(marker);
+				cluster = new ClusterMarker_(pt, p.cc, styles_, 60);
+				cluster.setMap(map);
+				me.clusters.push(cluster);
 			}
 			else
 			{
@@ -402,38 +317,30 @@ IG$.cVis.googlemap.prototype.setData = function(chartview, results) {
 				marker.setPosition(pt);
 				marker.setMap(map);
 				me.markers.push(marker);
-			}
-
-			google.maps.event.addListener(marker, 'click', function() {
-				var html = '<div id="content">'+
-					'<div id="bodyContent"><table>',
-					i;
 				
-				if (d)
-				{
-					for (i=0; i < d.length; i++)
+				google.maps.event.addListener(marker, 'click', function() {
+					var html = '<div id="content">'+
+						'<div id="bodyContent"><table>',
+						i;
+					
+					if (d)
 					{
-						html += "<tr><td><b>" + (h[i].text || h[i].code) + "</b></td><td>" + (d[i].text || d[i].code) + "</td></tr>";
+						for (i=0; i < d.length; i++)
+						{
+							html += "<tr><td><b>" + (h[i].text || h[i].code) + "</b></td><td>" + (d[i].text || d[i].code) + "</td></tr>";
+						}
 					}
-				}
-				html += '</table></div>'+
-					'</div>';
-				me.infowindow.setContent(html);
-				me.infowindow.open(me.map, this);
-			});
+					html += '</table></div>'+
+						'</div>';
+					me.infowindow.setContent(html);
+					me.infowindow.open(me.map, this);
+				});
+			}
 		}
 	});
-
-	if (is_cluster)
-	{
-		me.markerClusterer = new MarkerClusterer(map, markers, {
-			styles: cluster_marker_styles
-			// clusterClass: style === 3 ? "custom-clustericon" : undefined,
-		});
-	}
 },
 
-IG$.cVis.googlemap.prototype.updatedisplay = function(w, h) {
+IG$.__chartoption.chartext.googlemap.prototype.updatedisplay = function(owner, w, h) {
 	var me = this,
 		map = me.map;
 		

@@ -1,6 +1,6 @@
 IG$.__chartoption.charttype = IG$.__chartoption.charttype || [];
 
-IG$.cVis.treehierarchy.prototype.initChart = function(data) {
+IG$.__chartoption.chartext.treehierarchy.prototype.initChart = function(data) {
     var myChart = this.customchart;
     
     data.children.forEach(function (datum, index) {
@@ -54,12 +54,12 @@ IG$.cVis.treehierarchy.prototype.initChart = function(data) {
     myChart.setOption(option);
 }
 
-IG$.cVis.treehierarchy.prototype.draw = function(results) {
+IG$.__chartoption.chartext.treehierarchy.prototype.drawChart = function(owner, results) {
 	var me = this,
-		chartview = me.chartview,
-		container = $(chartview.container),
-		cop = chartview.cop;
+		container = $(owner.container),
+		cop = owner.cop;
 	
+	me.owner = owner;
 	me.container = container;
 		
 	if (results)
@@ -70,7 +70,7 @@ IG$.cVis.treehierarchy.prototype.draw = function(results) {
 			cols,
 			i, j,
 			data = results._tabledata,
-			cop = chartview.cop,
+			cop = owner.cop,
 			seriesData = [],
 			keymap,
 			base,
@@ -148,7 +148,7 @@ IG$.cVis.treehierarchy.prototype.draw = function(results) {
 	}
 };
 
-IG$.cVis.treehierarchy.prototype.updatedisplay = function(w, h) {
+IG$.__chartoption.chartext.treehierarchy.prototype.updatedisplay = function(owner, w, h) {
 	var me = this,
 		customchart = me.customchart;
 	
@@ -158,7 +158,7 @@ IG$.cVis.treehierarchy.prototype.updatedisplay = function(w, h) {
 	}
 }
 
-IG$.cVis.treehierarchy.prototype.dispose = function() {
+IG$.__chartoption.chartext.treehierarchy.prototype.dispose = function() {
 	var me = this,
 		customchart = me.customchart;
 		

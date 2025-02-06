@@ -64,10 +64,9 @@ input,select,textarea{
     background-color:inherit
 }
 </style>
-<link rel="stylesheet" href="./css/igccud.min.css?_dc=202501311110"></link>
-<link rel="stylesheet" type="text/css" href="./css/mdb.min.css?_dc=202501311110" />
-<script type="text/javascript" src="./js/jquery-3.6.4.min.js"></script>
-<script type="text/javascript" src="./js/igccud.min.js?_dc=202501311110"></script>
+<link rel="stylesheet" href="./css/igccud.min.css?_dc=202502070045"></link>
+<script type="text/javascript" src="./js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="./js/igccud.min.js?_dc=202502070045"></script>
 <script type="text/javascript">
 function start_chat() {
 	$("#main_loading").show();
@@ -97,13 +96,13 @@ function start_cuddle() {
 		html: $("#app_cuddle"),
 		_mts_: <%=params.get("_mts_") != null ? "'" + params.get("_mts_") + "'" : "null" %>,
 		channel_name: <%=params.get("channel_name") != null ? "'" + params.get("channel_name") + "'" : "null" %>,
-		request_url: "<%=request.getContextPath()%>/krcp",
+		request_url: "<%=request.getContextPath()%>/servlet/krcp",
 		ws_path: "<%=request.getContextPath()%>/websocket/collaborate",
 		message: {
 			start: "Start",
 			nick: "Nick",
-			startup: "<p>Welcome to your AI Data Explorer.<br/><br/> <a href='http://www.amplixbi.com'>amplixbi</a> robo assist are here for help you.<br> To learn more about intelligent helper for your business, please visit <a href='https://amplixbi.com'>our website</a>.</p>",
-			sponsor: "<span>AI Data Explorer<br></span>Created by <a href='http://www.amplixbi.com/'>amplixbi.com</a>"
+			startup: "<p>Welcome to your Data Analytics Cuddler.<br/><br/> <a href='http://www.amplixbi.com'>amplixbi</a> robo assist are here for help you.<br> To learn more about intelligent cuddler for your business, please visit <a href='https://amplixbi.com'>our website</a>.</p>",
+			sponsor: "<span>Data Analytics Cuddler<br></span>Created by <a href='http://www.amplixbi.com/'>amplixbi.com</a>"
 		}
 	});
 	
@@ -134,7 +133,7 @@ $(document).ready(function() {
 </div>
 <div class="mainLoadingWrap" id="main_loading">
 	<div class="mainLoading">
-		<p>Calling agent to help you.<br/>I am more then happy to serve you!<br/><span>Please wait a moment.</span></p>		
+		<p>Calling agent to cuddle you.<br/>I am more then happy to serve you!<br/><span>Please wait a moment.</span></p>		
 		<div class="progressWrap">
 			<p class="line"></p>
 			<img src="./images/ico_mainloading.png" width="18" height="14" alt="" />

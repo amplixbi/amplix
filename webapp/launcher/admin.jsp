@@ -49,20 +49,21 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
 <link rel="icon" href="../favicon.png" type="image/png">
-<link rel="stylesheet" type="text/css" href="./css/apps.min.css?_dc=202501311110" />
-<link rel="stylesheet" type="text/css" href="./css/mdb.min.css?_dc=202501311110" />
+<link rel="stylesheet" type="text/css" href="./css/apps.min.css?_dc=202502070045" />
 <%
 if (theme != null && theme.length() > 0)
 {
-	out.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"./css/" + theme.toLowerCase() + ".css?_dc=202501311110\" />");
+	out.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"./css/" + theme.toLowerCase() + ".css?_dc=202502070045\" />");
 }
 %>
-<link rel="stylesheet" type="text/css" href="./css/custom_lang_<%=lang.toLowerCase()%>.css?_dc=202501311110" />
-<link rel="stylesheet" type="text/css" href="./css/custom.css?_dc=202501311110" />
-<script type="text/javascript" src="./js/jquery-3.6.4.min.js"></script>    
-<script type="text/javascript" src="../config.js?_dc=202501311110"></script>
-<script type="text/javascript" src="../bootconfig<%=(is_debug ? "_debug" : "")%>.js?_dc=202501311110"></script>
-<script type="text/javascript" src="./js/igca<%=(is_debug ? "" : ".min")%>.js?_dc=202501311110"></script>
+<% if (lang.equals("ko_KR")) {%>
+<link rel="stylesheet" type="text/css" href="./fonts/hangul_nanum.css?_dc=202502070045" />
+<% } %>
+<link rel="stylesheet" type="text/css" href="./css/custom.css?_dc=202502070045" />
+<script type="text/javascript" src="./js/jquery-3.5.1.min.js"></script>    
+<script type="text/javascript" src="../config.js?_dc=202502070045"></script>
+<script type="text/javascript" src="../bootconfig<%=(is_debug ? "_debug" : "")%>.js?_dc=202502070045"></script>
+<script type="text/javascript" src="./js/igca<%=(is_debug ? "" : ".min")%>.js?_dc=202502070045"></script>
 
 <script type="text/javascript">
 var useLocale = "<%=lang%>";
@@ -112,7 +113,7 @@ if (theme != null && theme.length() > 0)
 }
 %>
 
-var modules = ["framework", "app", "appnc", "vis_ec", "vis_ec_theme", "custom"];
+var modules = ["framework", "vis_ec", "vis_ec_theme", "app", "appnc", "custom"];
 IG$.__microloader(modules, function() {
 	$s.ready(function() {
 		// customized layout style
@@ -182,12 +183,12 @@ IG$.__microloader(modules, function() {
 	});
 });
 </script>
-<!-- start ai data explorer -->
-<link rel="stylesheet" href="./css/igccud.min.css?_dc=202501311110"></link>
+<!-- start cuddler -->
+<link rel="stylesheet" href="./css/igccud.min.css?_dc=202502070045"></link>
 <script type="text/javascript">
 var assist_message = [
 	"Welcome to amplixbi! <br/>I am here to assit you!",
-	"We have agents to help you. <br/> Just click me!"
+	"We have agents to cuddle you. <br/> Just click me!"
 ];
 
 function rotate_msg() {
@@ -232,7 +233,7 @@ $(document).ready(function() {
 	});	
 });
 </script>
-<!-- end ai data explorer -->
+<!-- end cuddler -->
 </head>
 <body scroll="no">
 	<div id="mainview">
@@ -247,7 +248,7 @@ $(document).ready(function() {
 		</div>
 	</div>
 	
-	<!-- start ai data explorer --> 
+	<!-- start cuddler --> 
 	<div class="robo_wrap" id="robo_wrap" style="display:none;">
 		<div class="robo_icon">
 			<img src="./images/cuddler.png" width="120px" height="84px">
@@ -258,7 +259,7 @@ $(document).ready(function() {
 	<div class="robo_main fadeInRight animated" id="robo_main">
 		<div class="robo_area">
 			<div class="robo_title">
-				<span class="robo_title_text">AI Data Explorer!</span>
+				<span class="robo_title_text">Expert Bot is here for cuddle you!</span>
 				<div class="robo_title_button">
 					<a id="robo_close" class="robo_close">
 						<i class="robo-window-close"></i>
@@ -270,6 +271,6 @@ $(document).ready(function() {
 			</div>
 		</div>
 	</div>
-	<!-- end ai data explorer -->
+	<!-- end cuddler -->
 </body>
 </html>

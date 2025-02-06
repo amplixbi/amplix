@@ -1,16 +1,16 @@
 ﻿IG$.__chartoption.charttype = IG$.__chartoption.charttype || [];
 
 
-IG$.cVis.imgviewer.prototype.draw = function(results) {
+IG$.__chartoption.chartext.imgviewer.prototype.drawChart = function(owner, results) {
 	var me = this,
-		chartview = me.chartview,
-		container = $(chartview.container),
-		cop = chartview.cop,
+		container = $(owner.container),
+		cop = owner.cop,
 		copsettings = cop.settings || {},
 		bgurl = copsettings.m_iv_bgimg,
 		dataurl = copsettings.m_iv_data,
 		rendertype = copsettings.m_iv_type;
 	
+	me.owner = owner;
 	me.container = container;
 	me.results = results;
 	me.rendertype = rendertype;
@@ -59,9 +59,9 @@ IG$.cVis.imgviewer.prototype.draw = function(results) {
 	}
 };
 
-IG$.cVis.imgviewer.prototype._draw_charts = function(result, rendertype) {
+IG$.__chartoption.chartext.imgviewer.prototype._draw_charts = function(result, rendertype) {
 		var me = this,
-			chartview = me.chartview,
+			owner = me.owner,
 			tabledata = result ? result._tabledata : null,
 			colfix = result ? result.colfix : 0,
 			isnodata = result ? result.rowfix == result.rowcnt : true,
@@ -70,7 +70,7 @@ IG$.cVis.imgviewer.prototype._draw_charts = function(result, rendertype) {
 			header = [],
 			map_position,
 			center = [html.width()/2, html.height()/2],
-			cop = chartview.cop,
+			cop = owner.cop,
 			sep = cop.xaxissep || ig$.chart_separator || IG$._separator;
 		
 		sep = sep == "nl" ? "\n" : sep;
@@ -111,7 +111,7 @@ IG$.cVis.imgviewer.prototype._draw_charts = function(result, rendertype) {
 								}
 							};
 					
-						chartview.procClickEvent.call(chartview, sender, param);
+						owner.procClickEvent.call(owner, sender, param);
 					});
 				}
 				else
@@ -159,7 +159,7 @@ IG$.cVis.imgviewer.prototype._draw_charts = function(result, rendertype) {
 		}
 	}
 
-IG$.cVis.imgviewer.prototype._draw_chart = function(row, colfix, header, rendertype) {
+IG$.__chartoption.chartext.imgviewer.prototype._draw_chart = function(row, colfix, header, rendertype) {
 	var me = this,
 		cname,
 		i, t,
@@ -194,7 +194,7 @@ IG$.cVis.imgviewer.prototype._draw_chart = function(row, colfix, header, rendert
 	}
 };
 
-IG$.cVis.imgviewer.prototype._draw_echart = function(pos, row, colfix, header, rendertype) {
+IG$.__chartoption.chartext.imgviewer.prototype._draw_echart = function(pos, row, colfix, header, rendertype) {
 	var me = this,
 		ec = echarts.init(pos.html[0], "amplix", {
 			renderer: "canvas"
@@ -247,19 +247,19 @@ IG$.cVis.imgviewer.prototype._draw_echart = function(pos, row, colfix, header, r
 	ec.setOption(d);
 };
 
-IG$.cVis.imgviewer.prototype.updatedisplay = function(w, h) {
+IG$.__chartoption.chartext.imgviewer.prototype.updatedisplay = function(owner, w, h) {
 	// this.map.m1.call(this.map);
 	var me = this;
 	
 	me._draw_charts();
 }
 
-IG$.cVis.imgviewer.prototype.destroy = function() {
+IG$.__chartoption.chartext.imgviewer.prototype.destroy = function() {
 	var me = this,
-		chartview = me.chartview;
+		owner = me.owner;
 		
-	if (chartview && chartview.container)
+	if (owner && owner.container)
 	{
-		$(chartview.container).empty();
+		$(owner.container).empty();
 	}
 }

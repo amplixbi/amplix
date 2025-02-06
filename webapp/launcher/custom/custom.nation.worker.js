@@ -1,10 +1,10 @@
-﻿IG$.cVis.nation.prototype.drawNationChart = function() {
+﻿IG$.__chartoption.chartext.nation.prototype.drawNationChart = function() {
 	var me = this,
-		chartview = me.chartview,
+		owner = me.owner,
 		results = me.results,
-		container = $(chartview.container),
-		sop = chartview.sheetoption,
-		cop = chartview.cop,
+		container = $(owner.container),
+		sop = owner.sheetoption,
+		cop = owner.cop,
 		i, j,
 		rdata = results._tabledata,
 		jcontainer,
@@ -554,29 +554,30 @@
 	});
 }
 
-IG$.cVis.nation.prototype.draw = function(results) {
+IG$.__chartoption.chartext.nation.prototype.drawChart = function(owner, results) {
 	var me = this;
 
+	me.owner = owner;
 	me.results = results;
 	
 	me.drawNationChart();
 };
 	
-IG$.cVis.nation.prototype.updatedisplay = function(w, h) {
+IG$.__chartoption.chartext.nation.prototype.updatedisplay = function(owner, w, h) {
 	var me = this;
 	
-	if (me.chartview && me.results)
+	if (me.owner && me.results)
 	{
 		me.drawNationChart();
 	}
 };
 
-IG$.cVis.nation.prototype.destroy = function() {
+IG$.__chartoption.chartext.nation.prototype.destroy = function(owner, w, h) {
 	var me = this,
-		chartview = me.chartview;
+		owner = me.owner;
 		
-	if (chartview && chartview.container)
+	if (owner && owner.container)
 	{
-		$(chartview.container).empty();
+		$(owner.container).empty();
 	}
 };

@@ -1,12 +1,12 @@
 ﻿/**
  * create chart instance
  */
-IG$.cVis.esri.prototype.map_initialize = function(chartview, container) {
+IG$.__chartoption.chartext.esri.prototype.map_initialize = function(owner, container) {
 	var me = this,
 		esri = me.esri,
 		map,
 		view,
-		cop = chartview.cop,
+		cop = owner.cop,
 		copsettings = cop.settings || {},
 		geocenter,
 		mapconfig = {
@@ -257,28 +257,28 @@ IG$.cVis.esri.prototype.map_initialize = function(chartview, container) {
 	return map;
 };
 
-IG$.cVis.esri.prototype.validateData = function(extent) {
+IG$.__chartoption.chartext.esri.prototype.validateData = function(extent) {
 	var me = this;
 
 	clearTimeout(me._ptimer);
 
 	me._ptimer = setTimeout(function() {
 		me.req_cnt = 0;
-		me.updateData(extent);
+		me.updateData.call(me, extent);
 	}, 1000);
 };
 
-IG$.cVis.esri.prototype.updateData = function() {
+IG$.__chartoption.chartext.esri.prototype.updateData = function() {
 	var me = this,
 		map = me.map_inst,
 		extent = map.extent,
 		zoom = map.getZoom(),
-		chartview = me.chartview,
+		owner = me.owner,
 		cnt = extent ? extent.getCenter() : null,
 		bopt;
 	
 	setTimeout(function() {
-		me.updateData();
+		me.updateData.call(me);
 	}, 300);
 };
 
@@ -286,14 +286,15 @@ IG$.cVis.esri.prototype.updateData = function() {
  * main routine to draw chart
  * called from report viewer, widget
  */
-IG$.cVis.esri.prototype.draw = function(results) {
+IG$.__chartoption.chartext.esri.prototype.drawChart = function(owner, results) {
 // insert logic with report result
 	var me = this,
-		chartview = me.chartview,
 		map_inst = me.map_inst,
-		cop = chartview.cop,
+		cop = owner.cop,
 		i;
 		
+	me.owner = owner;
+	
 	/**
 	 * arcgis module loading
 	 * loaded module class is cached in esri object 
@@ -380,7 +381,7 @@ IG$.cVis.esri.prototype.draw = function(results) {
 		
 		if (!map_inst)
 		{
-			me.map_initialize(chartview, chartview.container);
+			me.map_initialize(owner, owner.container);
 		}
 		
 		map_inst = me.map_inst;
@@ -408,23 +409,23 @@ IG$.cVis.esri.prototype.draw = function(results) {
 		/** 
 		 * create api layer from chart option with user selected layers
 		 */
-		me.load_api_layers(chartview, results);
+		me.load_api_layers(owner, results);
 	
 		/**
 		 * data visualization routine with report result set
 		 */
-		me.setData(chartview, results);
+		me.setData(owner, results);
 	});
 }
 
 /**
  * create api layer from chart option with user selected layers
  */
-IG$.cVis.esri.prototype.load_api_layers = function(chartview, results) {
+IG$.__chartoption.chartext.esri.prototype.load_api_layers = function(owner, results) {
 	var me = this,
 		map_inst = me.map_inst,
 		esri = me.esri,
-		cop = chartview.cop,
+		cop = owner.cop,
 		m_arc_layers = cop.settings.m_arc_layers;
 	
 	var layers = [],
@@ -536,11 +537,11 @@ IG$.cVis.esri.prototype.load_api_layers = function(chartview, results) {
 /**
  * data visualization routine with report result set
  */
-IG$.cVis.esri.prototype.setData = function(chartview, results) {
+IG$.__chartoption.chartext.esri.prototype.setData = function(owner, results) {
 	var me = this,
 		esri = me.esri,
-		sop = chartview.sheetoption ? chartview.sheetoption.model : null,
-		cop = chartview.cop, // chart option information
+		sop = owner.sheetoption ? owner.sheetoption.model : null,
+		cop = owner.cop, // chart option information
 		copsettings = cop.settings || {},
 		map = me.map_inst,
 		map_view = me.map_view,
@@ -1097,7 +1098,7 @@ IG$.cVis.esri.prototype.setData = function(chartview, results) {
 				};
 	
 			// drill event triggering
-			chartview.procClickEvent.call(chartview, sender, param);
+			owner.procClickEvent.call(owner, sender, param);
 		}
 		
 		me._info_timer = setTimeout(function() {
@@ -1453,7 +1454,7 @@ IG$.cVis.esri.prototype.setData = function(chartview, results) {
 /**
  * event handler for report viewer resize
  */
-IG$.cVis.esri.prototype.updatedisplay = function(w, h) {
+IG$.__chartoption.chartext.esri.prototype.updatedisplay = function(owner, w, h) {
 	var me = this,
 		map = me.map_inst,
 		map_view = me.map_view;
@@ -1467,7 +1468,7 @@ IG$.cVis.esri.prototype.updatedisplay = function(w, h) {
 /**
  * event handler to kill this instance
  */
-IG$.cVis.esri.prototype.destroy = function() {
+IG$.__chartoption.chartext.esri.prototype.destroy = function() {
 	// called when need to dispose the component
 	var me = this,
 		map = me.map_inst;

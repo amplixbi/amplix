@@ -10,9 +10,14 @@ IG$.__chartoption.charttype.push(
 	}
 );
 
+IG$.__chartoption.chartext.googlemap = function(owner) {
+	this.owner = owner;
+};
+
 // https://maps.googleapis.com/maps/api/js?&sensor=false
-IG$.cVis.googlemap = $s.extend(IG$.cVis.base, {
-	draw: function(results) {
+
+IG$.__chartoption.chartext.googlemap.prototype = {
+	drawChart: function(owner, results) {
 		var me = this;
 		
 		if (!ig$.google_map_api_key)
@@ -21,43 +26,43 @@ IG$.cVis.googlemap = $s.extend(IG$.cVis.base, {
 			return;	
 		}
 		
-		if (IG$.cVis.googlemap._loading)
+		if (IG$.__chartoption.chartext.googlemap._loading)
 		{
 			setTimeout(function() {
-				me.draw(results);
+				me.drawChart.call(me, owner, results);
 			}, 500);
 			
 			return;
 		}
 		
-		if (!IG$.cVis.googlemap._loaded)
+		if (!IG$.__chartoption.chartext.googlemap._loaded)
 		{
-			IG$.cVis.googlemap._loading = 1;
+			IG$.__chartoption.chartext.googlemap._loading = 1;
 			
 			IG$.getScriptCache([
 				{
-					src: "https://maps.googleapis.com/maps/api/js?key=" + ig$.google_map_api_key + "&libraries=maps&v=beta", // + "&callback=initMap",
+					src: "https://maps.googleapis.com/maps/api/js?key=" + ig$.google_map_api_key, // + "&callback=initMap",
 					defer: true,
 					async: true
 				}
 			], new IG$.callBackObj(this, function() {
 				var js = [
 						"./custom/custom.map.google.worker.js",
-						"./custom/custom.map.google.clustermarkerplus.js"
+						"./custom/custom.map.google.clustermarker.js"
 					];
 				
 				IG$.getScriptCache(
 					js, 
 					new IG$.callBackObj(this, function() {
-						IG$.cVis.googlemap._loaded = 1;
-						me.draw(results);
+						IG$.__chartoption.chartext.googlemap._loaded = 1;
+						me.drawChart.call(me, owner, results);
 					})
 				);
 			}));
 		}
 	},
 
-	updatedisplay: function(w, h) {
+	updatedisplay: function(owner, w, h) {
 		var me = this,
 			map = me.map;
 			
@@ -65,21 +70,5 @@ IG$.cVis.googlemap = $s.extend(IG$.cVis.base, {
 		{
 			google.maps.event.trigger(map, "resize");
 		}
-	},
-
-	dispose: function() {
-		// called when need to dispose the component
-		var me = this,
-			map = me.map_inst,
-			chartview = me.chartview,
-			container = chartview.container;
-			
-		if (map)
-		{
-			// $(container).empty();
-		}
-		
-		//me.map_inst = null;
 	}
-});
-
+};

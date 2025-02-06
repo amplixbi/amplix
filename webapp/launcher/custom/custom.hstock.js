@@ -8,40 +8,43 @@
 	}
 );
 
+IG$.__chartoption.chartext.hstock = function(owner) {
+	this.owner = owner;
+}
 
-IG$.cVis.hstock = $s.extend(IG$.cVis.base, {	
-	draw: function(results) {
+IG$.__chartoption.chartext.hstock.prototype = {	
+	drawChart: function(owner, results) {
 		var me = this;
 		
-		if (IG$.cVis.hstock._loading)
+		if (IG$.__chartoption.chartext.hstock._loading)
 		{
 			setTimeout(function() {
-				me.draw(results);
+				me.drawChart.call(me, owner, results);
 			}, 500);
 			
 			return;
 		}
 		
-		if (!IG$.cVis.hstock._loaded)
+		if (!IG$.__chartoption.chartext.hstock._loaded)
 		{
 			var js = [
 					"./custom/custom.hstock.worker.js"
 				];
 			
-			IG$.cVis.hstock._loading = 1;
+			IG$.__chartoption.chartext.hstock._loading = 1;
 			
 			IG$.getScriptCache(
 				js, 
 				new IG$.callBackObj(this, function() {
-					IG$.cVis.hstock._loaded = 1;
-					me.draw(results);
+					IG$.__chartoption.chartext.hstock._loaded = 1;
+					me.drawChart.call(me, owner, results);
 				})
 			);
 		}
 	},
-	updatedisplay: function(w, h) {
+	updatedisplay: function(owner, w, h) {
 	},
-	dispose: function() {
+	destroy: function() {
 		var me = this;
 
 		if (me.hchart && me.hchart.dispose)
@@ -50,4 +53,4 @@ IG$.cVis.hstock = $s.extend(IG$.cVis.base, {
 			me.hchart = null;
 		}
 	}
-});
+};

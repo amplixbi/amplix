@@ -49,19 +49,21 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
 <link rel="icon" href="../favicon.png" type="image/png">
-<link rel="stylesheet" type="text/css" href="./css/apps.min.css?_dc=202501311110" />
+<link rel="stylesheet" type="text/css" href="./css/apps.min.css?_dc=202502070045" />
 <%
 if (theme != null && theme.length() > 0)
 {
-	out.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"./css/" + theme.toLowerCase() + ".css?_dc=202501311110\" />");
+	out.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"./css/" + theme.toLowerCase() + ".css?_dc=202502070045\" />");
 }
 %>
-<link rel="stylesheet" type="text/css" href="./css/custom_lang_<%=lang.toLowerCase()%>.css?_dc=202501311110" />
-<link rel="stylesheet" type="text/css" href="./css/custom.css?_dc=202501311110" />
-<script type="text/javascript" src="./js/jquery-3.6.4.min.js"></script>    
-<script type="text/javascript" src="../config.js?_dc=202501311110"></script>
-<script type="text/javascript" src="../bootconfig<%=(is_debug ? "_debug" : "")%>.js?_dc=202501311110"></script>
-<script type="text/javascript" src="./js/igca<%=(is_debug ? "" : ".min")%>.js?_dc=202501311110"></script>
+<% if (lang.equals("ko_KR")) {%>
+<link rel="stylesheet" type="text/css" href="./fonts/hangul_nanum.css?_dc=202502070045" />
+<% } %>
+<link rel="stylesheet" type="text/css" href="./css/custom.css?_dc=202502070045" />
+<script type="text/javascript" src="./js/jquery-3.5.1.min.js"></script>    
+<script type="text/javascript" src="../config.js?_dc=202502070045"></script>
+<script type="text/javascript" src="../bootconfig<%=(is_debug ? "_debug" : "")%>.js?_dc=202502070045"></script>
+<script type="text/javascript" src="./js/igca<%=(is_debug ? "" : ".min")%>.js?_dc=202502070045"></script>
 
 <script type="text/javascript">
 var useLocale = "<%=lang%>";
@@ -111,7 +113,7 @@ if (theme != null && theme.length() > 0)
 }
 %>
 
-var modules = ["framework", "app", "appnc", "vis_ec", "vis_ec_theme", "custom"];
+var modules = ["framework", "vis_ec", "vis_ec_theme", "app", "appnc", "custom"];
 IG$.__microloader(modules, function() {
 	$s.ready(function() {
 		var instance = new IG$.amplix_instance({
@@ -119,111 +121,60 @@ IG$.__microloader(modules, function() {
 		});
 		
 		instance.create();
-
-		_load_cuddler(instance);
 	});
 });
 </script>
-<!-- start ai data explorer -->
-<link rel="stylesheet" href="./css/igccud.min.css?_dc=202501311110"></link>
+<!-- start cuddler -->
+<link rel="stylesheet" href="./css/igccud.min.css?_dc=202502070045"></link>
 <script type="text/javascript">
-function _load_cuddler(instance) {
-	var assist_message = [
-		"Welcome to amplixbi! <br/>I am here to assit you!",
-		"We have agents to help you. <br/> Just click me!"
-	];
+var assist_message = [
+	"Welcome to amplixbi! <br/>I am here to assit you!",
+	"We have agents to cuddle you. <br/> Just click me!"
+];
 
-	function rotate_msg() {
-		if (window.assist_message && assist_message.length > 0)
+function rotate_msg() {
+	if (window.assist_message && assist_message.length > 0)
+	{
+		var mindex = window._curmsg || 0;
+		
+		$("#assist_message").fadeIn();
+		$("#assist_message").html(assist_message[mindex % assist_message.length]);
+		
+		window._curmsg = mindex + 1;
+		
+		if (assist_message.length > 1)
 		{
-			var mindex = window._curmsg || 0;
-			
-			$("#assist_message").fadeIn();
-			$("#assist_message").html(assist_message[mindex % assist_message.length]);
-			
-			window._curmsg = mindex + 1;
-			
-			if (assist_message.length > 1)
-			{
-				setTimeout(function() {
-					$("#assist_message").fadeOut();
-					setTimeout(rotate_msg, 2000);
-				}, 3000);
-			}
+			setTimeout(function() {
+				$("#assist_message").fadeOut();
+				setTimeout(rotate_msg, 2000);
+			}, 3000);
 		}
 	}
+}
 
+$(document).ready(function() {
 	rotate_msg();
-
+	
 	$("#robo_wrap").bind("click", function(e) {
 		e.preventDefault();
 		e.stopPropagation();
 		
 		$("#robo_main").show();
 		
-		var robo_inst;
-
-		if (!IG$._robo_inst)
-		{
-			robo_inst = IG$._robo_inst = new IG$._wcollab({
-				instance: instance,
-				_container: $("#robo_embed_area")
-			});
-		}
-		else
-		{
-			robo_inst = IG$._robo_inst;
-		}
-
-		robo_inst.load_app();
+		document.getElementById("roboassist").src = "./roboassist.jsp";
 	});
 	
-	$("#robo_close", "#robo_main").bind("click", function(e) {
+	$("#robo_close").bind("click", function(e) {
 		e.preventDefault();
 		e.stopPropagation();
 		
 		$("#robo_main").fadeOut();
-	});
-
-	$("#robo_dock", "#robo_main").bind("click", function(e) {
-		e.preventDefault();
-		e.stopPropagation();
-
-		if (!IG$._robo_inst)
-			return;
-
-		IG$._robo_inst._dockmode = !IG$._robo_inst._dockmode;
-
-		var robo_container_dock = $("#robo_container_dock"),
-			body = $("body");
-
-		if (IG$._robo_inst._dockmode)
-		{
-			$("#mainview").appendTo(robo_container_dock);
-			$("#robo_main")
-				.appendTo(robo_container_dock)
-				.css("height", "");
-				
-			$("#robo_wrap").appendTo(robo_container_dock);
-
-			$("#robo_main").resizable("option", "handles", "W, s, sw");
-
-			robo_container_dock.show();
-		}
-		else
-		{
-			$("#mainview", robo_container_dock).appendTo(body);
-			$("#robo_main", robo_container_dock).appendTo(body);
-			$("#robo_wrap", robo_container_dock).appendTo(body);
-
-			$("#robo_main").resizable("option", "handles", "e, s, se");
-
-			robo_container_dock.hide();
-		}
-	});
-}
+		
+		document.getElementById("roboassist").src = "";
+	});	
+});
 </script>
-<!-- end ai data explorer -->
+<!-- end cuddler -->
 </head>
 <body scroll="no">
 	<div id="mainview">
@@ -238,10 +189,10 @@ function _load_cuddler(instance) {
 		</div>
 	</div>
 	
-	<!-- start ai data explorer --> 
+	<!-- start cuddler --> 
 	<div class="robo_wrap" id="robo_wrap" style="display:none;">
 		<div class="robo_icon">
-			<img src="./images/cuddler.png" width="55px" height="42px">
+			<img src="./images/cuddler.png" width="120px" height="84px">
 		</div>
 		<div class="assist_message" id="assist_message">
 		</div>
@@ -249,21 +200,18 @@ function _load_cuddler(instance) {
 	<div class="robo_main fadeInRight animated" id="robo_main">
 		<div class="robo_area">
 			<div class="robo_title">
-				<span class="robo_title_text">AI Data Explorer!</span>
+				<span class="robo_title_text">Expert Bot is here for cuddle you!</span>
 				<div class="robo_title_button">
-					<a id="robo_dock" class="robo_dock">
-						<i class="robo-window-dock"></i>
-					</a>
 					<a id="robo_close" class="robo_close">
 						<i class="robo-window-close"></i>
 					</a>
 				</div>
 			</div>
-			<div class="robo_embed_area" id="robo_embed_area">
+			<div class="robo_embed_area">
+				<iframe id="roboassist" src=""></iframe>
 			</div>
 		</div>
 	</div>
-	<div class="robo_container_dock" id="robo_container_dock" style="display:none;"></div>
-	<!-- end ai data explorer -->
+	<!-- end cuddler -->
 </body>
 </html>

@@ -193,15 +193,15 @@ function parseDate(val) {
 	}
 
 
-IG$.cVis.hstock.prototype.draw = function(results) {
+IG$.__chartoption.chartext.hstock.prototype.drawChart = function(owner, results) {
 	var me = this,
-		chartview = me.chartview,
-		container = $(chartview.container),
-		sop = chartview._ILb,
-		cop = chartview.cop,
+		container = $(owner.container),
+		sop = owner._ILb,
+		cop = owner.cop,
 		usedualaxis = cop.usedualaxis,
 		dualaxisitem = cop.dualaxisitem;
 	
+	me.owner = owner;
 	me.container = container;
 	
 	container.empty();
@@ -230,10 +230,6 @@ IG$.cVis.hstock.prototype.draw = function(results) {
 			yaxis = [
 				{
 					type: "value",
-					scale: true,
-					splitArea: {
-						show: true
-					},
 					position: "left",
 					title: {
 						text: null
@@ -264,114 +260,23 @@ IG$.cVis.hstock.prototype.draw = function(results) {
 		}
 		
 		df = cop.s_t_fo;
-
-		var upcolor = '#ec0000';
-		var downcolor = '#00da3c';
-		var upborder = '#8A0000';
-		var downborder = '#008F28';
-
-		var candlestick = {
-			type: "candlestick",
-			name: "candlestick",
-			data: [],
-			itemStyle: {
-				color: upcolor,
-				color0: downcolor,
-				borderColor: upborder,
-				borderColor0: downborder
-			},
-			// markPoint: {
-			// 	label: {
-			// 		formatter: function (param) {
-			// 			return param != null ? Math.round(param.value) + '' : '';
-			// 		}
-			// 	},
-			// 	data: [
-			// 		{
-			// 			name: 'highest value',
-			// 			type: 'max',
-			// 			valueDim: 'highest'
-			// 		},
-			// 		{
-			// 			name: 'lowest value',
-			// 			type: 'min',
-			// 			valueDim: 'lowest'
-			// 		},
-			// 		{
-			// 			name: 'average value on close',
-			// 			type: 'average',
-			// 			valueDim: 'close'
-			// 		}
-			// 	],
-			// 	tooltip: {
-			// 		formatter: function (param) {
-			// 		  return param.name + '<br>' + (param.data.coord || '');
-			// 		}
-			// 	}
-			// },
-			markLine: {
-				symbol: ["none", "none"],
-				data: [
-					// [
-					// 	{
-					// 		name: 'from lowest to highest',
-					// 		type: 'min',
-					// 		valueDim: 'lowest',
-					// 		symbol: 'circle',
-					// 		symbolSize: 10,
-					// 		label: {
-					// 		show: false
-					// 		},
-					// 		emphasis: {
-					// 			label: {
-					// 				show: false
-					// 			}
-					// 		}
-					// 	},
-					//   	{
-					// 		type: 'max',
-					// 		valueDim: 'highest',
-					// 		symbol: 'circle',
-					// 		symbolSize: 10,
-					// 		label: {
-					// 		show: false
-					// 		},
-					// 		emphasis: {
-					// 			label: {
-					// 				show: false
-					// 			}
-					// 		}
-					//   	}
-					// ],
-					{
-						name: 'min line on close',
-						type: 'min',
-						valueDim: 'close'
-					},
-					{
-						name: 'max line on close',
-						type: 'max',
-						valueDim: 'close'
-					}
-				]
+		
+		for (i=colfix; i < cols; i++)
+		{
+			for (j=0; j < rowfix; j++)
+			{
+				sname = (j == 0) ? data[j][i].text : sname + "|" + data[j][i].text;
 			}
-		};
-
-		var categoryData  = [];
-
-		series.push(candlestick);
-
-		var avgSeries = {
-			type: 'line',
-			data: [],
-			smooth: true,
-			lineStyle: {
-			  opacity: 0.5
-			}
-		};
-
-		series.push(avgSeries);
-				
+			
+			s = {
+				name: sname,
+				_c: [i],
+				data: [],
+				type: "line"
+			};
+			series.push(s);
+		}
+		
 		if (usedualaxis && dualaxisitem && dualaxisitem.length > 0)
 		{
 			yaxis.push(
@@ -397,61 +302,73 @@ IG$.cVis.hstock.prototype.draw = function(results) {
 				}
 			}
 		}
-
-		var pvalue;
+		
+		for (i=0; i < series.length; i++)
+		{
+			if (cop.renderas && cop.renderas.length > i && cop.renderas[i] != null && cop.renderas[i] != "")
+			{
+				series[i].type = IG$.getSeriesType(cop.renderas[i]);
+			}
+		}
 		
 		for (i=rowfix; i < rows; i++)
 		{
-			dt = data[i][dtcol].text || data[i][dtcol].code;
-			if (!dt || cols - colfix < 3)
+			dt = data[i][dtcol].code || data[i][dtcol].text;
+			if (!dt)
 				continue;
-
-			categoryData.push(dt);
-
-			dr = [];
-
-			var cvalue;
-
-			if (cols - colfix >= 5)
+				
+			if (df == "epoch")
 			{
-				for (k=colfix; k < cols; k++)
+				dv = Number(dt);
+				if (isNaN(dv))
+					continue;
+				dt = new Date(dv);
+			}
+			else if (df)
+			{
+				dt = getDateFromFormat(dt, df);
+			}
+			else
+			{
+				if (dt.length == 8)
 				{
-					v = data[i][k].code;
+					y = dt.substring(0, 4);
+					m = dt.substring(4, 6);
+					d = dt.substring(6, 8);
+					dt = new Date(y, m, d).getTime();
+				}
+				else if (dt.length > 11)
+				{
+					y = dt.substring(0, 4);
+					m = dt.substring(4, 6);
+					d = dt.substring(6, 8);
+					h = dt.substring(8, 10);
+					mm = dt.substring(10, 12);
+					ss = 0;
+					if (dt.length > 13)
+					{
+						ss = dt.substring(12, 14);
+					}
+					dt = new Date(y, m, d, h, mm, ss).getTime();
+				}
+			}
+			for (j=0; j < series.length; j++)
+			{
+				dr = [dt];
+				for (k=0; k < series[j]._c.length; k++)
+				{
+					v = data[i][series[j]._c[k]].code;
 					v = Number(v);
 					dr.push(v || 0);
 				}
-
-				cvalue = Number(data[i][colfix + 5].code) || 0;
-				avgSeries.data.push(cvalue);
+				
+				series[j].data.push(dr);
 			}
-			else if (cols - colfix == 3)
-			{
-				var m = Number(data[i][colfix].code) || 0;
-				var M = Number(data[i][colfix + 2].code) || 0;
-				v = m + (M - m) * 0.2;
-				dr.push(v);
-
-				v = m + (M - m) * 0.8;
-				dr.push(v);
-
-				dr.push(m);
-				dr.push(M);
-
-				cvalue = Number(data[i][colfix + 1].code) || 0;
-				avgSeries.data.push(cvalue);
-			}
-			candlestick.data.push({value: dr, itemStyle: {color: cvalue > pvalue ? downcolor : upcolor, borderColor: cvalue > pvalue ? downborder : upborder}});
-			pvalue = cvalue;
 		}
 		
 		var copt = {
 			chart: {
 				renderTo: container[0]
-			},
-			grid: {
-				left: 60,
-				right: 60,
-				bottom: 100
 			},
 			rangeSelector: {
 				selected: 1
@@ -463,33 +380,20 @@ IG$.cVis.hstock.prototype.draw = function(results) {
 				type: "time"
 			},
 			yAxis: yaxis,
-			series: series,
-			tooltip: {
-				trigger: 'axis',
-				axisPointer: {
-				  	type: 'cross'
-				}
-			}
+			series: series
 		};
 
 		if (window.echarts)
 		{
 			copt.xAxis = [
 				{
-					type: "category",
-					data: categoryData,
-					boundaryGap: false,
-					axisLine: { onZero: false },
-					min: 'dataMin',
-    				max: 'dataMax'
+					type: "time"
 				}
 			];
 			
 			copt.dataZoom = [
 				{
-					type: "slider",
-					maxValueSpan: 60,
-					startValue: (categoryData.length - 60) || 0
+					type: "slider"
 				}	
 			];
 			
@@ -523,7 +427,7 @@ IG$.cVis.hstock.prototype.draw = function(results) {
 			hchart.on("click", function(params) {
 				if (params.componentType == "series")
 				{
-					chartview.procClickEvent(
+					_chartview.procClickEvent(
 						{
 							series: {
 								name: params.seriesName,
@@ -543,15 +447,15 @@ IG$.cVis.hstock.prototype.draw = function(results) {
 
 			me.hchart = hchart;
 		}
-		// else
-		// {
-		// 	hchart = new Highcharts.stock(copt);
-		// 	me.hchart = hchart;
-		// }
+		else
+		{
+			hchart = new Highcharts.stock(copt);
+			me.hchart = hchart;
+		}
 	}
 };
 	
-IG$.cVis.hstock.prototype.updatedisplay = function(w, h) {
+IG$.__chartoption.chartext.hstock.prototype.updatedisplay = function(owner, w, h) {
 	var me = this,
 		hchart = me.hchart;
 
@@ -561,7 +465,7 @@ IG$.cVis.hstock.prototype.updatedisplay = function(w, h) {
 	}
 };
 
-IG$.cVis.hstock.prototype.destroy = function() {
+IG$.__chartoption.chartext.hstock.prototype.destroy = function(owner, w, h) {
 	var me = this,
 		hchart = me.hchart;
 

@@ -10,12 +10,14 @@ IG$.__chartoption.charttype.push(
 	}
 );
 
-IG$.cVis.pareto = $s.extend(IG$.cVis.base, {
-	draw: function(results) {
+IG$.__chartoption.chartext.pareto = function(owner) {};
+
+IG$.__chartoption.chartext.pareto.prototype = {
+	drawChart: function(owner, results) {
 		var me = this,
-			container = me.container,
+			container = owner.container,
 			jcontainer = $(container),
-			cop = me.chart_option,
+			cop = owner.cop,
 			data = results._tabledata,
 			colfix = results.colfix,
 			colcnt = results.colcnt,
@@ -50,7 +52,7 @@ IG$.cVis.pareto = $s.extend(IG$.cVis.base, {
 			return;
 		}
 		
-		me.dispose();
+		me.destroy();
 		jcontainer.empty();
 		
 		chartarea = $("<div></div>").appendTo(jcontainer);
@@ -262,7 +264,7 @@ IG$.cVis.pareto = $s.extend(IG$.cVis.base, {
 		me.dmain = masterChart;
 	},
 	
-	updatedisplay: function(w, h) {
+	updatedisplay: function(owner, w, h) {
 		var me = this,
 			dmain = me.dmain,
 			dmain_opt = me.dmain_opt;
@@ -302,7 +304,7 @@ IG$.cVis.pareto = $s.extend(IG$.cVis.base, {
 		}
 	},
 	
-	dispose: function() {
+	destroy: function() {
 		var me = this,
 			dmain = me.dmain;
 		
@@ -311,4 +313,4 @@ IG$.cVis.pareto = $s.extend(IG$.cVis.base, {
 		me.dmain = null;
 		me.dmain_opt = null;
 	}
-});
+};

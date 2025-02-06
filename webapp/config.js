@@ -1,12 +1,12 @@
 ﻿var ig$ = {
     useLocale: "en_US",
-    servlet: "../krcp",
+    servlet: "../servlet/krcp",
     companyname: "amplix",
     appname: "amplix",
     appbg: "bg_7186.png",
     companydomain: "http://www.amplixbi.com",
     applink: "launcher/viewer.jsp?objid={objid}",
-    copy: "&copy; 2005-" + "202501311110".substring(0, 4) + " amplixbi.com Inc. <br />ALL RIGHTS RESERVED. <br />amplix. Confidential Information",
+    copy: "&copy; 2005-" + (new Date()).getFullYear() + " amplixbi.com Inc. <br />ALL RIGHTS RESERVED. <br />amplix. Confidential Information",
     intropage: "navi_intro",
     timer_rsn: 300000,
     timer_ping: 0,
@@ -71,10 +71,12 @@
     ],
 	echarts_theme: "amplix",
 	appInfo: {
-		date: "202501311110",
+		date: "202502070045",
 		appversion: "",
 		apprelease: "",
-		web_revision: "3663-ver5.01-537-ge3fab8ba"
+		web_revision: "2952-1923-1097-gd8c505ef"
 	},
 	$l_:0
 };
+
+// ig$.theme_id = "test1";
