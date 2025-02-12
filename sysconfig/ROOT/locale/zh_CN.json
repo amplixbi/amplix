@@ -8589,5 +8589,17 @@
     "group" : "locale_zh_CN_0020",
     "name" : "L_EXCLUSIVE",
     "value" : "Exclusive"
+  }, {
+    "group" : "locale_zh_CN_0020",
+    "name" : "L_BPMN_MONITOR",
+    "value" : "BPMN Monitor"
+  }, {
+    "group" : "locale_zh_CN_0020",
+    "name" : "L_LM_RCS",
+    "value" : "Load RCS"
+  }, {
+    "group" : "locale_zh_CN_0020",
+    "name" : "L_C_LD_RCS",
+    "value" : "Click confirm to continue loading Locale Resource file."
   } ]
 }

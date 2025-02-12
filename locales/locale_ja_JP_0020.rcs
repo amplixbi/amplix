@@ -70,3 +70,7 @@ A;L_BP_ART;Artifacts
 
 A;L_ASYNC;Asynchronous
 A;L_EXCLUSIVE;Exclusive
+
+A;L_BPMN_MONITOR;BPMN Monitor
+A;L_LM_RCS;Load RCS
+A;L_C_LD_RCS;Click confirm to continue loading Locale Resource file.

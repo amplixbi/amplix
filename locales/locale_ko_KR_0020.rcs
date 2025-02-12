@@ -72,3 +72,7 @@ A;L_BP_ART;아티팩트
 
 A;L_ASYNC;비동기
 A;L_EXCLUSIVE;배타적
+
+A;L_BPMN_MONITOR;BPMN 모니터링
+A;L_LM_RCS;RCS 리소스 로드
+A;L_C_LD_RCS;언어 업데이트를 적용하시겠습니까?

@@ -8670,5 +8670,17 @@
     "group" : "locale_ko_KR_0020",
     "name" : "L_EXCLUSIVE",
     "value" : "배타적"
+  }, {
+    "group" : "locale_ko_KR_0020",
+    "name" : "L_BPMN_MONITOR",
+    "value" : "BPMN 모니터링"
+  }, {
+    "group" : "locale_ko_KR_0020",
+    "name" : "L_LM_RCS",
+    "value" : "RCS 리소스 로드"
+  }, {
+    "group" : "locale_ko_KR_0020",
+    "name" : "L_C_LD_RCS",
+    "value" : "언어 업데이트를 적용하시겠습니까?"
   } ]
 }
