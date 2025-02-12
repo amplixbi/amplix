@@ -8626,5 +8626,49 @@
     "group" : "locale_ko_KR_0020",
     "name" : "L_SEC_2FA",
     "value" : "2차 보안 인증"
+  }, {
+    "group" : "locale_ko_KR_0020",
+    "name" : "L_BP_START",
+    "value" : "시작"
+  }, {
+    "group" : "locale_ko_KR_0020",
+    "name" : "L_BP_ACT",
+    "value" : "액티비티"
+  }, {
+    "group" : "locale_ko_KR_0020",
+    "name" : "L_BP_STR",
+    "value" : "구조적인 작업"
+  }, {
+    "group" : "locale_ko_KR_0020",
+    "name" : "L_BP_GW",
+    "value" : "게이트웨이"
+  }, {
+    "group" : "locale_ko_KR_0020",
+    "name" : "L_BP_BEVTS",
+    "value" : "바운더리 이벤트"
+  }, {
+    "group" : "locale_ko_KR_0020",
+    "name" : "L_BP_INT_CAT_EVTS",
+    "value" : "인터럽트 수신 이벤트"
+  }, {
+    "group" : "locale_ko_KR_0020",
+    "name" : "L_BP_INT_THR_EVTS",
+    "value" : "인터럽트 발생 이벤트"
+  }, {
+    "group" : "locale_ko_KR_0020",
+    "name" : "L_BP_SWIMLANES",
+    "value" : "스윔레인"
+  }, {
+    "group" : "locale_ko_KR_0020",
+    "name" : "L_BP_ART",
+    "value" : "아티팩트"
+  }, {
+    "group" : "locale_ko_KR_0020",
+    "name" : "L_ASYNC",
+    "value" : "비동기"
+  }, {
+    "group" : "locale_ko_KR_0020",
+    "name" : "L_EXCLUSIVE",
+    "value" : "배타적"
   } ]
 }

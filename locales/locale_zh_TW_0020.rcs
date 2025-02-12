@@ -56,3 +56,16 @@ A;L_TWOFA_EMAIL;Email Validation Key
 A;L_AI_PIVOT_REQ;AI Pivot Query
 A;L_IMG_CMD;Image Command
 A;L_SEC_2FA;2 Factor Authentication
+
+A;L_BP_START;Start
+A;L_BP_ACT;Activities
+A;L_BP_STR;Structural
+A;L_BP_GW;Gateway
+A;L_BP_BEVTS;Boundary Events
+A;L_BP_INT_CAT_EVTS;Interrupt Catching Events
+A;L_BP_INT_THR_EVTS;Interrupt Throwing Events
+A;L_BP_SWIMLANES;SwimLanes
+A;L_BP_ART;Artifacts
+
+A;L_ASYNC;Asynchronous
+A;L_EXCLUSIVE;Exclusive

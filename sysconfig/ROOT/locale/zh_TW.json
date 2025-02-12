@@ -8553,5 +8553,49 @@
     "group" : "locale_zh_TW_0020",
     "name" : "L_SEC_2FA",
     "value" : "2 Factor Authentication"
+  }, {
+    "group" : "locale_zh_TW_0020",
+    "name" : "L_BP_START",
+    "value" : "Start"
+  }, {
+    "group" : "locale_zh_TW_0020",
+    "name" : "L_BP_ACT",
+    "value" : "Activities"
+  }, {
+    "group" : "locale_zh_TW_0020",
+    "name" : "L_BP_STR",
+    "value" : "Structural"
+  }, {
+    "group" : "locale_zh_TW_0020",
+    "name" : "L_BP_GW",
+    "value" : "Gateway"
+  }, {
+    "group" : "locale_zh_TW_0020",
+    "name" : "L_BP_BEVTS",
+    "value" : "Boundary Events"
+  }, {
+    "group" : "locale_zh_TW_0020",
+    "name" : "L_BP_INT_CAT_EVTS",
+    "value" : "Interrupt Catching Events"
+  }, {
+    "group" : "locale_zh_TW_0020",
+    "name" : "L_BP_INT_THR_EVTS",
+    "value" : "Interrupt Throwing Events"
+  }, {
+    "group" : "locale_zh_TW_0020",
+    "name" : "L_BP_SWIMLANES",
+    "value" : "SwimLanes"
+  }, {
+    "group" : "locale_zh_TW_0020",
+    "name" : "L_BP_ART",
+    "value" : "Artifacts"
+  }, {
+    "group" : "locale_zh_TW_0020",
+    "name" : "L_ASYNC",
+    "value" : "Asynchronous"
+  }, {
+    "group" : "locale_zh_TW_0020",
+    "name" : "L_EXCLUSIVE",
+    "value" : "Exclusive"
   } ]
 }
