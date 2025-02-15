@@ -1,0 +1,77 @@
+package ${PACKAGE_NAME};
+
+import java.io.File;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.amplix.rpc.igcJob;
+import com.amplix.rpc.igcServer;
+import com.amplix.exceptions.GenericException;
+
+import org.flowable.engine.delegate.DelegateExecution;
+
+import java.util.*;
+import java.sql.Connection;
+import java.sql.Statement;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.text.*;
+import com.amplix.plugin.*;
+
+import com.amplix.external.bpmn.worker.BaseWorker;
+
+
+${IMPORT_CLASSES}
+
+public class ${CLASS_NAME}
+	extends BaseWorker
+{
+	protected static final Logger logger = LoggerFactory.getLogger(${CLASS_NAME}.class);
+	
+	public ${CLASS_NAME}() {
+		super();
+	}
+	
+	@Override
+	public void execute(DelegateExecution execution)
+	{
+		Connection __con = null;
+		final String __dbcon = "${DBCON}";
+		
+		try
+		{
+			logger.info("------------ start custom code execution");
+	        
+	        ${JAVA_SOURCE}
+	        
+	        logger.info("------------ custom code execution completed");
+		}
+		catch (Exception ex)
+		{
+			logger.error("error on executing module", ex);
+			try
+			{
+				this.releaseConnection(__dbcon, __con, false);
+			}
+			catch (Exception e)
+			{
+				logger.error("error on releasing database connection");
+			}
+		}
+		finally
+		{
+			try
+			{
+				this.releaseConnection(__dbcon, __con, true);
+			}
+			catch (Exception e)
+			{
+				logger.error("error on releasing database connection");
+			}
+		}
+	}
+	
+	${JAVA_EXTRA}
+}
