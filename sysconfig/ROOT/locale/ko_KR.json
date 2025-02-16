@@ -8685,30 +8685,30 @@
   }, {
     "group" : "locale_ko_KR_0020",
     "name" : "L_PROC_ME",
-    "value" : "My Processes"
+    "value" : "나의 프로세스"
   }, {
     "group" : "locale_ko_KR_0020",
     "name" : "L_PROC_ALL",
-    "value" : "All Processes"
+    "value" : "모든 프로세스"
   }, {
     "group" : "locale_ko_KR_0020",
     "name" : "L_BPMN_TP",
-    "value" : "Terminate Processes"
+    "value" : "프로세스 종료"
   }, {
     "group" : "locale_ko_KR_0020",
     "name" : "L_REASON",
-    "value" : "Reason"
+    "value" : "사유"
   }, {
     "group" : "locale_ko_KR_0020",
     "name" : "L_BPMN_MIG",
-    "value" : "Migration"
+    "value" : "버전이관"
   }, {
     "group" : "locale_ko_KR_0020",
     "name" : "T_FORM",
-    "value" : "Form Configuration"
+    "value" : "폼 설정"
   }, {
     "group" : "locale_ko_KR_0020",
     "name" : "L_MESSAGE",
-    "value" : "Message"
+    "value" : "메시지"
   } ]
 }

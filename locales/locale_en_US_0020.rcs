@@ -80,3 +80,4 @@ A;L_BPMN_TP;Terminate Processes
 A;L_REASON;Reason
 A;L_BPMN_MIG;Migration
 A;T_FORM;Form Configuration
+A;L_MESSAGE;Message

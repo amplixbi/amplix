@@ -8713,5 +8713,9 @@
     "group" : "locale_en_US_0020",
     "name" : "T_FORM",
     "value" : "Form Configuration"
+  }, {
+    "group" : "locale_en_US_0020",
+    "name" : "L_MESSAGE",
+    "value" : "Message"
   } ]
 }
