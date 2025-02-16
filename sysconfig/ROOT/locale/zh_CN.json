@@ -8601,5 +8601,33 @@
     "group" : "locale_zh_CN_0020",
     "name" : "L_C_LD_RCS",
     "value" : "Click confirm to continue loading Locale Resource file."
+  }, {
+    "group" : "locale_zh_CN_0020",
+    "name" : "L_PROC_ME",
+    "value" : "My Processes"
+  }, {
+    "group" : "locale_zh_CN_0020",
+    "name" : "L_PROC_ALL",
+    "value" : "All Processes"
+  }, {
+    "group" : "locale_zh_CN_0020",
+    "name" : "L_BPMN_TP",
+    "value" : "Terminate Processes"
+  }, {
+    "group" : "locale_zh_CN_0020",
+    "name" : "L_REASON",
+    "value" : "Reason"
+  }, {
+    "group" : "locale_zh_CN_0020",
+    "name" : "L_BPMN_MIG",
+    "value" : "Migration"
+  }, {
+    "group" : "locale_zh_CN_0020",
+    "name" : "T_FORM",
+    "value" : "Form Configuration"
+  }, {
+    "group" : "locale_zh_CN_0020",
+    "name" : "L_MESSAGE",
+    "value" : "Message"
   } ]
 }

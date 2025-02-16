@@ -216,3 +216,11 @@ A;B_SQL;SQL
 A;L_OUTER_RADIUS;Outer Radius
 
 A;L_MAX_POOL_WAIT_MILLS;Max Wait Mills
+
+A;L_PROC_ME;My Processes
+A;L_PROC_ALL;All Processes
+A;L_BPMN_TP;Terminate Processes
+A;L_REASON;Reason
+A;L_BPMN_MIG;Migration
+A;T_FORM;Form Configuration
+A;L_MESSAGE;Message

@@ -8682,5 +8682,33 @@
     "group" : "locale_ko_KR_0020",
     "name" : "L_C_LD_RCS",
     "value" : "언어 업데이트를 적용하시겠습니까?"
+  }, {
+    "group" : "locale_ko_KR_0020",
+    "name" : "L_PROC_ME",
+    "value" : "My Processes"
+  }, {
+    "group" : "locale_ko_KR_0020",
+    "name" : "L_PROC_ALL",
+    "value" : "All Processes"
+  }, {
+    "group" : "locale_ko_KR_0020",
+    "name" : "L_BPMN_TP",
+    "value" : "Terminate Processes"
+  }, {
+    "group" : "locale_ko_KR_0020",
+    "name" : "L_REASON",
+    "value" : "Reason"
+  }, {
+    "group" : "locale_ko_KR_0020",
+    "name" : "L_BPMN_MIG",
+    "value" : "Migration"
+  }, {
+    "group" : "locale_ko_KR_0020",
+    "name" : "T_FORM",
+    "value" : "Form Configuration"
+  }, {
+    "group" : "locale_ko_KR_0020",
+    "name" : "L_MESSAGE",
+    "value" : "Message"
   } ]
 }
