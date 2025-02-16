@@ -450,7 +450,7 @@ CREATE TABLE igcsc (
   crtdate #CHAR#(24) #NULL#,
   uptdate #CHAR#(24) #NULL#,
   pstatus #CHAR#(1) #NULL#,
-  a1 #VARCHARCHAR#(100),
+  a1 #VARCHAR#(100),
   a1a #VARCHAR#(10),
   a1b #VARCHAR#(100),
   a1c #VARCHAR#(200),
