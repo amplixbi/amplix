@@ -81,3 +81,33 @@ A;L_REASON;Reason
 A;L_BPMN_MIG;Migration
 A;T_FORM;Form Configuration
 A;L_MESSAGE;Message
+
+A;L_REG_M_WIDGET;Register Mainpage Widget
+A;B_SERVER;Server
+A;B_PASSWORD;Password
+A;L_TARGET_FOLDER;Target Folder
+A;L_NAME_MASK;Name Mask Pattern
+A;LR_IG_MENU_RPT_FIN;New Finance Report
+A;LR_IG_BBS;BBS Management
+A;LR_IG_MGR_BBS;BBS Manager
+A;LR_IG_MG_SCH;Schedule Manager
+A;LR_IG_N_HB;Hadoop Business Operations
+A;LR_IG_R_FRM_VR;Form Viewer
+A;LR_IG_R_FM;Formula Management
+A;LR_IG_PY_EDIT;Python Script Editor
+A;LR_IG_R_TREND;AI Trend
+A;LR_IG_RD_ENABLE;Enable Report Delivery
+A;LR_IG_RD_EMAIL;Enable Email Delivery
+A;LR_IG_RD_KAKAO;Enable Kakao Delivery
+A;LR_IG_RD_FTP;Enable FTP Delivery
+A;LR_IG_RD_SFTP;Enable SFTP Delivery
+A;LR_IG_SCI_MGR_LIC;Data Science License Management
+A;LR_IG_BPMN;Business Process Modeler
+A;LR_IG_BPMN_USR;Business Process User group menu
+A;LR_IG_BPMN_TASKS;Task List Assigned to user
+A;LR_IG_BPMN_MGR;BPMN Manager
+A;LR_IG_BPMN_MODELER;BPMN Modeling
+
+A;L_FIN_REPORT;Financial Report
+A;L_P_bpmn_confirm;BPMN Task Complete
+A;L_P_bpmn_resolve;BPMN Task Resolve

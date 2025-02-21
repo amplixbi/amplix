@@ -8717,5 +8717,117 @@
     "group" : "locale_en_US_0020",
     "name" : "L_MESSAGE",
     "value" : "Message"
+  }, {
+    "group" : "locale_en_US_0020",
+    "name" : "B_SERVER",
+    "value" : "Server"
+  }, {
+    "group" : "locale_en_US_0020",
+    "name" : "B_PASSWORD",
+    "value" : "Password"
+  }, {
+    "group" : "locale_en_US_0020",
+    "name" : "L_TARGET_FOLDER",
+    "value" : "Target Folder"
+  }, {
+    "group" : "locale_en_US_0020",
+    "name" : "L_NAME_MASK",
+    "value" : "Name Mask Pattern"
+  }, {
+    "group" : "locale_en_US_0020",
+    "name" : "LR_IG_MENU_RPT_FIN",
+    "value" : "New Finance Report"
+  }, {
+    "group" : "locale_en_US_0020",
+    "name" : "LR_IG_BBS",
+    "value" : "BBS Management"
+  }, {
+    "group" : "locale_en_US_0020",
+    "name" : "LR_IG_MGR_BBS",
+    "value" : "BBS Manager"
+  }, {
+    "group" : "locale_en_US_0020",
+    "name" : "LR_IG_MG_SCH",
+    "value" : "Schedule Manager"
+  }, {
+    "group" : "locale_en_US_0020",
+    "name" : "LR_IG_N_HB",
+    "value" : "Hadoop Business Operations"
+  }, {
+    "group" : "locale_en_US_0020",
+    "name" : "LR_IG_R_FRM_VR",
+    "value" : "Form Viewer"
+  }, {
+    "group" : "locale_en_US_0020",
+    "name" : "LR_IG_R_FM",
+    "value" : "Formula Management"
+  }, {
+    "group" : "locale_en_US_0020",
+    "name" : "LR_IG_PY_EDIT",
+    "value" : "Python Script Editor"
+  }, {
+    "group" : "locale_en_US_0020",
+    "name" : "LR_IG_R_TREND",
+    "value" : "AI Trend"
+  }, {
+    "group" : "locale_en_US_0020",
+    "name" : "LR_IG_RD_ENABLE",
+    "value" : "Enable Report Delivery"
+  }, {
+    "group" : "locale_en_US_0020",
+    "name" : "LR_IG_RD_EMAIL",
+    "value" : "Enable Email Delivery"
+  }, {
+    "group" : "locale_en_US_0020",
+    "name" : "LR_IG_RD_KAKAO",
+    "value" : "Enable Kakao Delivery"
+  }, {
+    "group" : "locale_en_US_0020",
+    "name" : "LR_IG_RD_FTP",
+    "value" : "Enable FTP Delivery"
+  }, {
+    "group" : "locale_en_US_0020",
+    "name" : "LR_IG_RD_SFTP",
+    "value" : "Enable SFTP Delivery"
+  }, {
+    "group" : "locale_en_US_0020",
+    "name" : "LR_IG_SCI_MGR_LIC",
+    "value" : "Data Science License Management"
+  }, {
+    "group" : "locale_en_US_0020",
+    "name" : "LR_IG_BPMN",
+    "value" : "Business Process Modeler"
+  }, {
+    "group" : "locale_en_US_0020",
+    "name" : "LR_IG_BPMN_USR",
+    "value" : "Business Process User group menu"
+  }, {
+    "group" : "locale_en_US_0020",
+    "name" : "LR_IG_BPMN_TASKS",
+    "value" : "Task List Assigned to user"
+  }, {
+    "group" : "locale_en_US_0020",
+    "name" : "LR_IG_BPMN_MGR",
+    "value" : "BPMN Manager"
+  }, {
+    "group" : "locale_en_US_0020",
+    "name" : "LR_IG_BPMN_MODELER",
+    "value" : "BPMN Modeling"
+  }, {
+    "group" : "locale_en_US_0020",
+    "name" : "L_FIN_REPORT",
+    "value" : "Financial Report"
+  }, {
+    "group" : "locale_en_US_0020",
+    "name" : "L_P_bpmn_confirm",
+    "value" : "BPMN Task Complete"
+  }, {
+    "group" : "locale_en_US_0020",
+    "name" : "L_P_bpmn_resolve",
+    "value" : "BPMN Task Resolve"
+  }, {
+    "group" : "locale_en_US_0020",
+    "name" : "L_REG_M_WIDGET",
+    "value" : "Register Mainpage Widget"
   } ]
 }

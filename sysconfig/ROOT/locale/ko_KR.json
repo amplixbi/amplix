@@ -8710,5 +8710,117 @@
     "group" : "locale_ko_KR_0020",
     "name" : "L_MESSAGE",
     "value" : "메시지"
+  }, {
+    "group" : "locale_ko_KR_0020",
+    "name" : "B_SERVER",
+    "value" : "서버"
+  }, {
+    "group" : "locale_ko_KR_0020",
+    "name" : "B_PASSWORD",
+    "value" : "비밀번호"
+  }, {
+    "group" : "locale_ko_KR_0020",
+    "name" : "L_TARGET_FOLDER",
+    "value" : "대상 폴더"
+  }, {
+    "group" : "locale_ko_KR_0020",
+    "name" : "L_NAME_MASK",
+    "value" : "이름 패턴"
+  }, {
+    "group" : "locale_ko_KR_0020",
+    "name" : "LR_IG_MENU_RPT_FIN",
+    "value" : "신규 재무 보고서"
+  }, {
+    "group" : "locale_ko_KR_0020",
+    "name" : "LR_IG_BBS",
+    "value" : "BBS 관리자"
+  }, {
+    "group" : "locale_ko_KR_0020",
+    "name" : "LR_IG_MGR_BBS",
+    "value" : "BBS 관리자"
+  }, {
+    "group" : "locale_ko_KR_0020",
+    "name" : "LR_IG_MG_SCH",
+    "value" : "스케쥴 관리자"
+  }, {
+    "group" : "locale_ko_KR_0020",
+    "name" : "LR_IG_N_HB",
+    "value" : "하둡 비즈니스 오퍼레이션"
+  }, {
+    "group" : "locale_ko_KR_0020",
+    "name" : "LR_IG_R_FRM_VR",
+    "value" : "폼 뷰어"
+  }, {
+    "group" : "locale_ko_KR_0020",
+    "name" : "LR_IG_R_FM",
+    "value" : "수식 관리자"
+  }, {
+    "group" : "locale_ko_KR_0020",
+    "name" : "LR_IG_PY_EDIT",
+    "value" : "파이선 스크립트 편집기"
+  }, {
+    "group" : "locale_ko_KR_0020",
+    "name" : "LR_IG_R_TREND",
+    "value" : "AI 트랜드 보기"
+  }, {
+    "group" : "locale_ko_KR_0020",
+    "name" : "LR_IG_RD_ENABLE",
+    "value" : "딜리버리 채널 사용하기"
+  }, {
+    "group" : "locale_ko_KR_0020",
+    "name" : "LR_IG_RD_EMAIL",
+    "value" : "이메일 딜리버리 채널"
+  }, {
+    "group" : "locale_ko_KR_0020",
+    "name" : "LR_IG_RD_KAKAO",
+    "value" : "카카오 딜리버리 채널"
+  }, {
+    "group" : "locale_ko_KR_0020",
+    "name" : "LR_IG_RD_FTP",
+    "value" : "FTP 딜리버리 채널"
+  }, {
+    "group" : "locale_ko_KR_0020",
+    "name" : "LR_IG_RD_SFTP",
+    "value" : "SFTP 딜리버리 채널"
+  }, {
+    "group" : "locale_ko_KR_0020",
+    "name" : "LR_IG_SCI_MGR_LIC",
+    "value" : "데이터 과학자 라이센스 관리자"
+  }, {
+    "group" : "locale_ko_KR_0020",
+    "name" : "LR_IG_BPMN",
+    "value" : "비즈니스 프로세스 자동화"
+  }, {
+    "group" : "locale_ko_KR_0020",
+    "name" : "LR_IG_BPMN_USR",
+    "value" : "비즈니스 프로세스 메뉴 그룹"
+  }, {
+    "group" : "locale_ko_KR_0020",
+    "name" : "LR_IG_BPMN_TASKS",
+    "value" : "사용자에게 할당된 타스크 목록 뷰어"
+  }, {
+    "group" : "locale_ko_KR_0020",
+    "name" : "LR_IG_BPMN_MGR",
+    "value" : "BPMN 관리자"
+  }, {
+    "group" : "locale_ko_KR_0020",
+    "name" : "LR_IG_BPMN_MODELER",
+    "value" : "BPMN 모델링"
+  }, {
+    "group" : "locale_ko_KR_0020",
+    "name" : "L_FIN_REPORT",
+    "value" : "재무 보고서"
+  }, {
+    "group" : "locale_ko_KR_0020",
+    "name" : "L_P_bpmn_confirm",
+    "value" : "BPMN 태스크 완료"
+  }, {
+    "group" : "locale_ko_KR_0020",
+    "name" : "L_P_bpmn_resolve",
+    "value" : "BPMN 태스크 리졸브"
+  }, {
+    "group" : "locale_ko_KR_0020",
+    "name" : "L_REG_M_WIDGET",
+    "value" : "메인페이지 위젯으로 등록"
   } ]
 }

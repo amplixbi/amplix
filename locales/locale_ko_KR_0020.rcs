@@ -84,3 +84,34 @@ A;L_REASON;사유
 A;L_BPMN_MIG;버전이관
 A;T_FORM;폼 설정
 A;L_MESSAGE;메시지
+
+A;L_REG_M_WIDGET;메인페이지 위젯으로 등록
+A;B_SERVER;서버
+A;B_PASSWORD;비밀번호
+A;L_TARGET_FOLDER;대상 폴더
+A;L_NAME_MASK;이름 패턴
+A;LR_IG_MENU_RPT_FIN;신규 재무 보고서
+A;LR_IG_BBS;BBS 관리자
+A;LR_IG_MGR_BBS;BBS 관리자
+A;LR_IG_MG_SCH;스케쥴 관리자
+A;LR_IG_N_HB;하둡 비즈니스 오퍼레이션
+A;LR_IG_R_FRM_VR;폼 뷰어
+A;LR_IG_R_FM;수식 관리자
+A;LR_IG_PY_EDIT;파이선 스크립트 편집기
+A;LR_IG_R_TREND;AI 트랜드 보기
+A;LR_IG_RD_ENABLE;딜리버리 채널 사용하기
+A;LR_IG_RD_EMAIL;이메일 딜리버리 채널
+A;LR_IG_RD_KAKAO;카카오 딜리버리 채널
+A;LR_IG_RD_FTP;FTP 딜리버리 채널
+A;LR_IG_RD_SFTP;SFTP 딜리버리 채널
+A;LR_IG_SCI_MGR_LIC;데이터 과학자 라이센스 관리자
+A;LR_IG_BPMN;비즈니스 프로세스 자동화
+A;LR_IG_BPMN_USR;비즈니스 프로세스 메뉴 그룹
+A;LR_IG_BPMN_TASKS;사용자에게 할당된 타스크 목록 뷰어
+A;LR_IG_BPMN_MGR;BPMN 관리자
+A;LR_IG_BPMN_MODELER;BPMN 모델링
+
+A;L_FIN_REPORT;재무 보고서
+A;L_P_bpmn_confirm;BPMN 태스크 완료
+A;L_P_bpmn_resolve;BPMN 태스크 리졸브
+
