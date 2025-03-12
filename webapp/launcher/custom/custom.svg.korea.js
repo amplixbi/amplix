@@ -464,13 +464,21 @@ IG$.cVis.koreamap = $s.extend(IG$.cVis.base, {
 					return 5 + (val - min) / (max - min) * 20;
 				},
 				encode: {
-					value: 2
+					value: 2,
+					name: 3
 				},
 				hoverAnimation: true,
 				label: {
-					formatter: '{b}',
+					formatter: function(params) {
+						return params.data[2];
+					},
 					position: 'right',
 					show: true
+				},
+				tooltip: {
+					formatter: function(params) {
+						return (params.data[3] || "") + " -> " + params.data[2];
+					}
 				},
 				itemStyle: {
 					color: '#f4e925',
