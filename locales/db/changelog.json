@@ -1,0 +1,381 @@
+[
+	{
+		"version": 3.62,
+		"description": "** Apply patch for bug 3.6.2 user sso module",
+		"scripts": [
+			{
+				"type": "alter_table",
+				"query": "ALTER TABLE igcusers ADD ssomod #VARCHAR#(20) #NULL#"
+			},
+			{
+				"type": "alter_table",
+				"query": "ALTER TABLE igcduty ADD ssomod #VARCHAR#(20) #NULL#"
+			},
+			{
+				"type": "alter_table",
+				"query": "ALTER TABLE igcdepts ADD ssomod #VARCHAR#(20) #NULL#"
+			}
+		]
+	},
+	{
+		"version": 3.63,
+		"description": "** Apply patch for bug 3.6.3 user sso module additional column",
+		"scripts": [
+			{
+				"type": "alter_table",
+				"query": "ALTER TABLE igcusers ADD ssodsr #VARCHAR#(20) #NULL#"
+			},
+			{
+				"type": "alter_table",
+				"query": "ALTER TABLE igcduty ADD ssodsr #VARCHAR#(20) #NULL#"
+			},
+			{
+				"type": "alter_table",
+				"query": "ALTER TABLE igcdepts ADD ssodsr #VARCHAR#(20) #NULL#"
+			},
+			{
+				"type": "alter_table",
+				"query": "ALTER TABLE igcusers ADD description #VARCHAR#(1000) #NULL#"
+			},
+			{
+				"query": "ALTER TABLE igcdepts ADD description #VARCHAR#(1000) #NULL#"
+			},
+			{
+				"type": "drop_index",
+				"table_name": "igcusers",
+				"index_name": "idx_igcusers_f2"
+			},
+			{
+				"type": "create_index",
+				"is_unique": true,
+				"index_name": "idx_igcusers_f2",
+				"table_name": "igcusers",
+				"column_names": "userid"
+			},
+			{
+				"type": "create_table",
+				"query": "CREATE TABLE igcsso (mtu #CHAR#(17) NOT NULL, muid #CHAR#(17) NOT NULL, ssomod #VARCHAR#(20) NOT NULL, fname #VARCHAR#(200) NOT NULL, seq #NUMBER#(4) NOT NULL, svalue #VARCHAR#(255) NOT NULL, mdate #LONG# NOT NULL, cdate #LONG# NOT NULL)"
+			},
+			{
+				"type": "create_index",
+				"is_unique": true,
+				"index_name": "idx_sso_01",
+				"table_name": "iscsso",
+				"column_names": "mtu, ssomod, fname, seq"
+			}
+		]
+	},
+	{
+		"version": 3.64,
+		"description": "** Apply patch for bug 3.6.4 join information table",
+		"scripts": [
+			{
+				"type": "create_table",
+				"query": "CREATE TABLE igcjoins (join_id #CHAR#(17) NOT NULL,fr_model #CHAR#(17) NOT NULL,fr_table #CHAR#(17) NOT NULL,fr_field #CHAR#(17) NOT NULL,to_model #CHAR#(17) NOT NULL,to_table #CHAR#(17) NOT NULL,to_field #CHAR#(17) NOT NULL,cardinal #VARCHAR#(50) NOT NULL,s_formula #VARCHAR#(255) #NULL#,t_formula #VARCHAR#(255) #NULL#,udate #LONG# NOT NULL)"
+			}, 
+			{
+				"type": "create_table",
+				"query": "CREATE UNIQUE INDEX idx_igcjoins_c01 ON igcjoins (join_id)"
+			},
+			{
+				"type": "create_table",
+				"query": "CREATE INDEX idx_igcjoins_c02 ON igcjoins (fr_model, fr_table, fr_field)"
+			}
+		]
+	},
+	{
+		"version": 3.65,
+		"description": "** Apply patch for bug 3.6.5 join table schema drop column",
+		"scripts": [
+			{
+				"type": "alter_table",
+				"query": "ALTER TABLE igctablejoin DROP COLUMN field_id"
+			}
+		]
+	},
+	{
+		"version": 3.66,
+		"description": "** Apply patch for bug 3.6.6 manage column reserved for sybase",
+		"scripts": [
+			{
+				"type": "rename_column",
+				"table name": "igcobjectauth", 
+				"column_name_from": "manage", 
+				"column_name_to": "c_manage", 
+				"column_type": "#CHAR#(1) DEFAULT 'F'"
+			},
+			{
+				"type": "rename_column",
+				"table_name": "igcudbauth", 
+				"column_name_from": "manage", 
+				"column_name_to": "c_manage", 
+				"column_type": "#CHAR#(1) DEFAULT 'F'"
+			}
+		]
+	},
+	{
+		"version": 3.67,
+		"description": "** Apply patch for bug 3.6.7 share report control",
+		"scripts": [
+			{
+				"type": "create_table",
+				"query": "CREATE TABLE igcshare (suid #CHAR#(17) NOT NULL,mtu #CHAR#(17) NOT NULL,muid #CHAR#(17) NOT NULL,p_status #CHAR#(1) NOT NULL,b_public #CHAR#(1) NOT NULL,acc_count #NUMBER#(8) NOT NULL,cdate #LONG# NOT NULL,mdate #LONG# NOT NULL,ldate #LONG# NOT NULL)"
+			},
+			{
+				"type": "create_index",
+				"is_unique": true,
+				"table_name": "igcshare",
+				"index_name": "idx_share_01",
+				"column_names": "suid"
+			},
+			{
+				"type": "create_index",
+				"is_unique": false,
+				"table_name": "igcshare",
+				"index_name": "idx_share_02",
+				"column_names": "mtu, muid"
+			}
+		]
+	},
+	{
+		"version": 4.11,
+		"description": "** Apply patch for enhancement 4.1.1 for robo agent",
+		"scripts": [
+			{
+				"type": "create_table",
+				"query": "CREATE TABLE igccudlog (suid #CHAR#(17) NOT NULL,nickname #VARCHAR#(255) NOT NULL,p_status #NUMBER#(4) NOT NULL,cdate #LONG# NOT NULL,mdate #LONG# NOT NULL)"
+			},
+			{
+				"type": "create_index",
+				"is_unique": true,
+				"index_name": "idx_cudlog_01",
+				"table_name": "igccudlog",
+				"column_names": "suid"
+			}
+		]
+	},
+	{
+		"version": 4.12,
+		"description": "** Apply patch for enhancement 4.1.2 on robo agent",
+		"scripts": [
+			{
+				"type": "create_table",
+				"query": "CREATE TABLE igccuddata (suid #CHAR#(17) NOT NULL,seq #NUMBER#(4) NOT NULL,cdate #LONG# NOT NULL,s_intent #VARCHAR#(255) NOT NULL,s_utter #VARCHAR#(255) NOT NULL,s_resp #VARCHAR#(255) NOT NULL)"
+			},
+			{
+				"type": "create_index",
+				"is_unique": true,
+				"index_name": "idx_cuddata_01",
+				"table_name": "igccuddata",
+				"column_names": "suid, seq"
+			}
+		]
+	},
+	{
+		"version": 4.13,
+		"description": "** Apply patch for fixing 4.1.3 on igcshare table (adding p_url)",
+		"scripts": [
+			{
+				"type": "alter_table",
+				"query": "ALTER TABLE igcshare ADD p_url #VARCHAR#(255) NOT NULL"
+			}
+		]
+	},
+	{
+		"version": 4.22,
+		"description": "** Apply patch for fixing 4.2.2 on support cubrid database",
+		"scripts": [
+			{
+				"type": "query_insert",
+				"query": "INSERT INTO igcdbh (seq, gid, tid, drvcls, drvname, surl, mstat) VALUES (?, ?, ?, ?, ?, ?, ?)",
+				"values": [
+					15,
+					1,
+					"cubrid",
+					"cubrid.jdbc.driver.CUBRIDDriver",
+					"CUBRID",
+					"jdbc:cubrid:<server>:<30000>:<dbname>:<public>::",
+					1
+				]
+			}
+		]
+	},
+	{
+		"version": 4.23,
+		"description": "** Apply patch for fixing 4.2.3 on igcfch table (file loader history)",
+		"scripts": [
+			{
+				"type": "create_table",
+				"query": "CREATE TABLE igcfh (mts #CHAR#(17),iuid #CHAR#(17),tuid #CHAR#(17),cname #VARCHAR#(100),fname #VARCHAR#(100),uname #VARCHAR#(30),muid #CHAR#(17),cdate #LONG#,mdate #LONG#,pstatus #SMALL_NUMBER#,umid #CHAR#(17),nrows #LONG#)"
+			},
+			{
+				"type": "create_index",
+				"is_unique": false,
+				"index_name": "idx_igcfh_01",
+				"table_name": "igcfh",
+				"column_names": "mts, tuid, umid"
+			}
+		]
+	},
+	{
+		"version": 4.24,
+		"description": "** Apply patch for fixing 4.2.4 on igcacclog for login history",
+		"scripts": [
+			{
+				"type": "create_table",
+				"query": "CREATE TABLE igcacclog (cdate #LONG#,lstat #CHAR#(1),lchannel #VARCHAR#(100),userid #VARCHAR#(100),mts_name #VARCHAR#(100),lhost #VARCHAR#(100),lhostip #VARCHAR#(100),lloc #VARCHAR#(10),lerrcode #NUMBER#(5))"
+			},
+			{
+				"type": "create_index",
+				"is_unique": false,
+				"index_name": "idx_igcacclog_01",
+				"table_name": "igcacclog",
+				"column_names": "cdate, userid"
+			}
+		]
+	},
+	{
+		"version": 4.32,
+		"description": "** Apply patch for fixing 4.3.2 on igcacclaud",
+		"scripts": [
+			{
+				"type": "create_table",
+				"query": "CREATE TABLE igcacclaud (cdate #LONG#,lstat #CHAR#(1),tuid #CHAR#(17),userid #VARCHAR#(100),muid #CHAR#(17),description #VARCHAR#(255),lhostip #VARCHAR#(100))"
+			},
+			{
+				"type": "create_index",
+				"is_unique": false,
+				"index_name": "idx_igcacclaud_01",
+				"table_name": "igcacclaud",
+				"column_names": "cdate, muid"
+			},
+			{
+				"type": "alter_table",
+				"query": "ALTER TABLE igcacclog ADD tuid #CHAR#(17) #NULL#"
+			}
+		]
+	},
+	{
+		"version": 4.33,
+		"description": "** Apply patch for fixing 4.3.3 on igcaccl session id",
+		"scripts": [
+			{
+				"type": "alter_table",
+				"query": "ALTER TABLE igcacclog ADD sessid #VARCHAR#(200) #NULL#"
+			},
+			{
+				"type": "alter_table",
+				"query": "ALTER TABLE igcacclog ADD ignore_err #CHAR#(1) #NULL#"
+			}
+		]
+	},
+	{
+		"version": 4.35,
+		"description": "** Apply patch for fixing 4.3.5 on igclimp blob file data",
+		"scripts": [
+			{
+				"type": "alter_table",
+				"query": "ALTER TABLE igclimp ADD COLUMN file_bin #BLOB#"
+			},
+			{
+				"type": "alter_table",
+				"query": "ALTER TABLE igclexp ADD COLUMN file_bin #BLOB#"
+			}
+		]
+	},
+	{
+		"version": 4.36,
+		"description": "** Apply patch for fixing 4.3.6 on trashbin recovery table",
+		"scripts": [
+			{
+				"type": "drop_table",
+				"query": "DROP TABLE igctrashbin"
+			},
+		
+			{
+				"type": "create_table",
+				"query": "CREATE TABLE igctrashbin (mts #CHAR#(17) NOT NULL,iuid #CHAR#(17) #NULL#,pid #CHAR#(17) #NULL#,mctype #NUMBER#(4) #NULL#,cname #VARCHAR#(100) #NULL#,mdate #LONG# #NULL#,pstatus #NUMBER#(4) NOT NULL,node #VARCHAR#(1000),description #VARCHAR#(1000),memo #VARCHAR#(100) #NULL#,sid #CHAR#(17),mid #CHAR#(17),objinfo #VARCHAR#(500) #NULL#,revise #NUMBER#(4) NOT NULL,mrevise #NUMBER#(4) NOT NULL,trid #CHAR#(17) #NULL#,qdes #VARCHAR#(100) #NULL#,attrb1 #VARCHAR#(100) #NULL#,attrb2 #VARCHAR#(100) #NULL#,attrb3 #VARCHAR#(100) #NULL#,attrb4 #VARCHAR#(100) #NULL#,attrb5 #VARCHAR#(100) #NULL#,is_sub #NUMBER#(4) NOT NULL)"
+			},
+			{
+				"type": "create_index",
+				"is_unique": false,
+				"index_name": "idx_igctrashbin_f1",
+				"table_name": "igctrashbin",
+				"column_names": "iuid"
+			},
+			{
+				"type": "create_index",
+				"is_unique": false,
+				"index_name": "idx_igctrashbin_f2",
+				"table_name": "igctrashbin",
+				"column_names": "pid, cname, mts, pstatus"
+			},
+			{
+				"type": "create_index",
+				"is_unique": true,
+				"index_name": "idx_igctrashbin_f3",
+				"table_name": "igctrashbin",
+				"column_names": "iuid, mts"
+			}
+		]
+	},
+	{
+		"version": 4.37,
+		"description": "** Apply patch for fixing 4.3.7 on igcms sort sequence",
+		"scripts": [
+			{
+				"type": "alter_table",
+				"query": "ALTER TABLE igcms ADD sortseq #NUMBER#(4) DEFAULT 0 NOT NULL"
+			},
+			{
+				"type": "alter_table",
+				"query": "ALTER TABLE igctrashbin ADD sortseq #NUMBER#(4) DEFAULT 0 NOT NULL"
+			}
+		]
+	},
+	{
+		"version": 4.38,
+		"description": "** Apply patch for fixing 4.3.8 mariadb database type",
+		"scripts": [
+			{
+				"type": "query_insert",
+				"query": "INSERT INTO igcdbh (seq, gid, tid, drvcls, drvname, surl, mstat) VALUES (?, ?, ?, ?, ?, ?, ?)",
+				"values": [2, 1, "mariadb", "org.mariadb.jdbc.Driver", "MariaDB Driver", "jdbc:mariadb://<hostname>[,<failoverhost>][:<3306>]/<dbname>[?<param1>=<value1>][&<param2>=<value2>]", 1]
+			}
+		]
+	},
+	{
+		"version": 4.51,
+		"description": "** Apply patch for fixing 4.5.1 on igcsj",
+		"scripts": [
+			{
+				"type": "alter_table",
+				"query": "ALTER TABLE igcsj ADD pickdate #CHAR#(24)"
+			}
+		]
+	},
+	{
+		"version": 5.02,
+		"description": "** Apply patch for fixing 5.0.2 on igcsc",
+		"scripts": [
+			{
+				"type": "alter_table",
+				"query": "ALTER TABLE igcsc ADD sccmd #VARCHAR#(24)"
+			}
+		]
+	},
+	{
+		"version": 5.03,
+		"description": "** Apply patch for fixing 5.0.3 on igcusers",
+		"scripts": [
+			{
+				"type": "alter_table",
+				"query": "ALTER TABLE igcusers ADD twofa #VARCHAR#(100) #NULL#"
+			},
+			{
+				"type": "alter_table",
+				"query": "ALTER TABLE igcusers ADD twofa_option #VARCHAR#(100) #NULL#"
+			}
+		]
+	}
+]
