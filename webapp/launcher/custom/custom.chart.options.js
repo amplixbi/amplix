@@ -1084,6 +1084,8 @@ IG$._customChartPanels = function() {
 					ctrl.store.loadData(dp);
 					ctrl.setValue(settings[k] || "");
 				});
+
+				me.down("[name=m_chart_designer]").setAllValues(settings);
 			}
 		},
 
@@ -1134,6 +1136,8 @@ IG$._customChartPanels = function() {
 					var ctrl = me.down("[name=" + k + "]");
 					settings[k] = ctrl.getValue();
 				});
+
+				me.down("[name=m_chart_designer]").getAllValues(settings);
 			}
 		},
 		invalidateFields: function(opt) {
@@ -1994,6 +1998,15 @@ IG$._customChartPanels = function() {
 						]
 					}
 				]
+			},
+			{
+				xtype: "container",
+				name: "m_chart_designer",
+				layout: {
+					type: "vbox",
+					align: "stretch"
+				},
+				items: []
 			}
 		],
 		listeners: {

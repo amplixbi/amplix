@@ -35,6 +35,9 @@
 		<layout class="ch.qos.logback.classic.PatternLayout">
 			<Pattern>%d{yyyy-MM-dd HH:mm:ss} %level %msg%n </Pattern>
 		</layout>
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>${LOG_LEVEL}</level>
+		</filter>
 		<target>System.err</target>
 	</appender>
 	<appender name="FILE_JOB" class="ch.qos.logback.classic.sift.SiftingAppender">

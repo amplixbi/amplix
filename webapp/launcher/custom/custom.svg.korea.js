@@ -15,6 +15,8 @@ IG$.cVis.koreaMapTypes = function() {
 
 	mtype.sido = [
 		{name: "서울특별시", subtype: "G11"},
+		{name: "인천광역시", subtype: "G28"},
+		{name: "경기도", subtype: "G41"},
 		{name: "경상남도", subtype: "G48"},
 		{name: "창원시", subtype: "4812"},
 		{name: "대전", subtype: "G30"},
@@ -231,11 +233,11 @@ IG$.cVis.koreamap = $s.extend(IG$.cVis.base, {
 							{
 								mchart.geo_alias_map[feature.properties.CTPRVN_CD] = fname;
 							}
-							else if (feature.properties.sig_cd)
+							if (feature.properties.sig_cd)
 							{
 								mchart.geo_alias_map[feature.properties.sig_cd] = fname;
 							}
-							else if (feature.properties.emd_cd)
+							if (feature.properties.emd_cd)
 							{
 								mchart.geo_alias_map[feature.properties.emd_cd] = fname;
 							}
@@ -602,9 +604,10 @@ IG$.cVis.koreamap = $s.extend(IG$.cVis.base, {
 
 					if (feature)
 					{
-						var cindex = 0;
+						var cindex = 0,
+							prop = feature.properties;
 
-						pdata = feature.properties.name;
+						pdata = prop.name;
 						
 						if (me._config.enable_drill)
 						{
@@ -615,8 +618,8 @@ IG$.cVis.koreamap = $s.extend(IG$.cVis.base, {
 						for (i=results.rowfix; i < rcnt; i++)
 						{
 							row = _tabledata[i];
-
-							if (row[cindex].code == pdata)
+							var cval = row[cindex].code;
+							if (cval == pdata || cval == prop.sig_cd)
 							{
 								row[cindex].r = i;
 								row[cindex].c = cindex;

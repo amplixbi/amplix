@@ -56,6 +56,9 @@ application.folder.datafiles							= ""
 application.folder.aliasmap								= ""
 application.folder.sysconfig							= ""
 application.folder.log_filename							= ""
+application.jwt.enabled									= true
+application.jwt.secret-key								= ""
+application.jwt.expiration-time							= 3600000
 
 [SCHEDULE_SERVER]
 ############################################################################

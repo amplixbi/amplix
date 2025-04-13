@@ -111,3 +111,5 @@ A;LR_IG_BPMN_MODELER;BPMN Modeling
 A;L_FIN_REPORT;Financial Report
 A;L_P_bpmn_confirm;BPMN Task Complete
 A;L_P_bpmn_resolve;BPMN Task Resolve
+
+A;L_CH_DIVERGING_BAR;Diverging Bar
