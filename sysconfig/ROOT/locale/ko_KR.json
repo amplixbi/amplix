@@ -8822,5 +8822,9 @@
     "group" : "locale_ko_KR_0020",
     "name" : "L_REG_M_WIDGET",
     "value" : "메인페이지 위젯으로 등록"
+  }, {
+    "group" : "locale_ko_KR_0020",
+    "name" : "L_CH_DIVERGING_BAR",
+    "value" : "디버징 바차트"
   } ]
 }

@@ -8749,5 +8749,9 @@
     "group" : "locale_zh_TW_0020",
     "name" : "L_REG_M_WIDGET",
     "value" : "Register Mainpage Widget"
+  }, {
+    "group" : "locale_zh_TW_0020",
+    "name" : "L_CH_DIVERGING_BAR",
+    "value" : "Diverging Bar"
   } ]
 }
