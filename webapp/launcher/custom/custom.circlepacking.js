@@ -40,5 +40,48 @@ IG$.cVis.circlepacking = $s.extend(IG$.cVis.base, {
 		}
 	},
 	updatedisplay: function(w, h) {
+	},
+	getEchartData: function(chart, pobj) {
+		var svgnode,
+			nodename,
+			svg;
+		
+		svgnode = IG$.getFstChld(chart.getDom());
+		if (IG$.XGetNodeName(svgnode).toUpperCase() == "DIV")
+		{
+			svgnode = IG$.getFstChld(svgnode);
+			nodename = IG$.XGetNodeName(svgnode).toUpperCase();
+			
+			if (nodename == "SVG")
+			{
+				IG$.XSetAttr(svgnode, "xmlns:xlink", "http://www.w3.org/1999/xlink");
+				IG$.XSetAttr(svgnode, "xmlns", "http://www.w3.org/2000/svg");
+				IG$.XSetAttr(svgnode, "version", "1.1");
+	
+				svg = IG$.toXMLString(svgnode);
+				pobj.image_type = "svg";
+				pobj.image_data = Base64.encode(svg); 
+			}
+			else
+			{
+				svg = chart.getDataURL({
+					type: "png",
+					pixelRatio: 2,
+					backgroundColor: "#fff"
+				});
+				pobj.image_type = "png";
+				pobj.image_data = svg;
+			}
+			
+			pobj.image_width = $(svgnode).width();
+			pobj.image_height = $(svgnode).height();
+		}
+	},
+	getExportData: function(pobj, callback) {
+		var me = this;
+
+		me.customchart && me.getEchartData(me.customchart, pobj);
+			
+		callback.execute(pobj);
 	}
 });

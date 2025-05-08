@@ -31,12 +31,20 @@
 	height = container.height();
 	jcontainer.width(width);
 	jcontainer.height(height);
+
+	var root = {
+		id: "root",
+		name: "ALL",
+		depth: 0,
+		value: 0,
+		index: 0,
+		pvalue: 0
+	};
+	var seriesData = [root];
 	
 	var tparent = {},
 		tval;
 
-	var displayRoot = stratify();
-	
 	for (i=rowfix; i < tabledata.length; i++)
 	{
 		rec = tabledata[i];
@@ -52,12 +60,17 @@
 				if (!tval)
 				{
 					tval = {
-						name: t,
+						id: "root." + t,
+						name: root.name + " > " + t,
 						$map: {},
+						depth: j,
+						value: 0,
+						index: i,
 						children: []
 					};
 					
 					data.children.push(tval);
+					seriesData.push(tval);
 					data.$map[t] = tval;
 				}
 			}
@@ -67,7 +80,11 @@
 				if (!tval)
 				{
 					tval = {
-						name: t,
+						id: tparent[j-1].id + "." + t,
+						value: 0,
+						depth: j,
+						index: i,
+						name: tparent[j-1].name + " > " + t,
 						$map: {}
 					};
 					
@@ -76,6 +93,7 @@
 					
 					tparent[j-1].children.push(tval);
 					tparent[j-1].$map[t] = tval;
+					seriesData.push(tval);
 				}
 			}
 			
@@ -83,11 +101,25 @@
 		}
 		
 		t = Number(rec[colfix].code);
-		tparent[colfix-1].value = isNaN(t) ? 0 : t;
+		if (!isNaN(t)) {
+			root.value += t;
+			if (colfix > 1) {
+				for (j=0; j < colfix - 1; j++) {
+					tparent[j].value += t;
+				}
+			}
+			tparent[colfix-1].value = t;
+		}
 	}
 
-	var seriesData = data;
+	for (i=0; i < seriesData.length; i++) {
+		var p = Math.round((seriesData[i].value / root.value) * 10000) / 100;
+		seriesData[i].pvalue = "" + p + "%";
+	}
+
 	maxDepth = colfix;
+
+	var displayRoot = stratify();
 
 	function stratify() {
 		return d3
@@ -101,8 +133,8 @@
 		  .sort(function (a, b) {
 			return b.value - a.value;
 		  });
-	  }
-	  function overallLayout(params, api) {
+	}
+	function overallLayout(params, api) {
 		var context = params.context;
 		d3
 		  .pack()
@@ -118,20 +150,20 @@
 		var context = params.context;
 		// Only do that layout once in each time `setOption` called.
 		if (!context.layout) {
-			context.layout = true;
-			overallLayout(params, api);
+		  context.layout = true;
+		  overallLayout(params, api);
 		}
 		var nodePath = api.value('id');
 		var node = context.nodes[nodePath];
 		if (!node) {
-			// Reder nothing.
-			return;
+		  // Reder nothing.
+		  return;
 		}
 		var isLeaf = !node.children || !node.children.length;
 		var focus = new Uint32Array(
-			node.descendants().map(function (node) {
-				return node.data.index;
-			})
+		  node.descendants().map(function (node) {
+			return node.data.index;
+		  })
 		);
 		var nodeName = isLeaf
 		  ? nodePath
@@ -184,70 +216,74 @@
 			}
 		  }
 		};
-	};
-	
-	option = option = {
-		dataset: {
-		  source: seriesData
-		},
-		tooltip: {},
-		visualMap: [
-		  {
-			show: false,
-			min: 0,
-			max: maxDepth,
-			dimension: 'depth',
-			inRange: {
-			  color: ['#006edd', '#e0ffff']
-			}
-		  }
-		],
-		hoverLayerThreshold: Infinity,
-		series: {
-		  type: 'custom',
-		  renderItem: renderItem,
-		  progressive: 0,
-		  coordinateSystem: 'none',
-		  encode: {
-			tooltip: 'value',
-			itemName: 'id'
-		  }
-		}
-	};
+	}
 	
 	if (window.echarts)
 	{
-		myChart = me.customchart = echarts.init(jcontainer[0], cop.echart_theme || ig$.echarts_theme || 'amplix', {
-			renderer: "svg"
-		});
+		option = {
+			dataset: {
+				source: seriesData
+			},
+			tooltip: {},
+			visualMap: [
+				{
+					show: false,
+					min: 0,
+					max: maxDepth,
+					dimension: 'depth',
+					inRange: {
+						color: ['#006edd', '#e0ffff']
+					}
+				}
+			],
+			hoverLayerThreshold: Infinity,
+			series: {
+				type: 'custom',
+				renderItem: renderItem,
+				progressive: 0,
+				coordinateSystem: 'none',
+				encode: {
+					tooltip: 'pvalue',
+					itemName: 'name'
+				}
+			}
+		};
 
-		me.customchart.setOption(hoption);
+		if (!me.customchart) {
+			myChart = me.customchart = echarts.init(jcontainer[0], cop.echart_theme || ig$.echarts_theme || 'amplix', {
+				renderer: "canvas"
+			});
+
+			me.customchart.setOption(option);
+
+			myChart.on('click', { seriesIndex: 0 }, function (params) {
+				drillDown(params.data.id);
+			});
+			function drillDown(targetNodeId) {
+				displayRoot = stratify();
+				if (targetNodeId != null) {
+				  displayRoot = displayRoot.descendants().find(function (node) {
+					return node.data.id === targetNodeId;
+				  });
+				}
+				// A trick to prevent d3-hierarchy from visiting parents in this algorithm.
+				displayRoot.parent = null;
+				myChart.setOption({
+				  dataset: {
+					source: seriesData
+				  }
+				});
+			}
+			  // Reset: click on the blank area.
+			myChart.getZr().on('click', function (event) {
+				if (!event.target) {
+				  drillDown();
+				}
+			});
+		} else {
+			me.customchart.setOption(option);
+		}
 	}
-
-	myChart.on('click', { seriesIndex: 0 }, function (params) {
-		drillDown(params.data.id);
-	  });
-	  function drillDown(targetNodeId) {
-		displayRoot = stratify();
-		if (targetNodeId != null) {
-		  displayRoot = displayRoot.descendants().find(function (node) {
-			return node.data.id === targetNodeId;
-		  });
-		}
-		// A trick to prevent d3-hierarchy from visiting parents in this algorithm.
-		displayRoot.parent = null;
-		myChart.setOption({
-		  dataset: {
-			source: seriesData
-		  }
-		});
-	  }
-	  // Reset: click on the blank area.
-	  myChart.getZr().on('click', function (event) {
-		if (!event.target) {
-		  drillDown();
-		}
-	  });
 }
 
 IG$.cVis.circlepacking.prototype.draw = function(results) {
@@ -263,7 +299,8 @@ IG$.cVis.circlepacking.prototype.updatedisplay = function(w, h) {
 	
 	if (me.customchart && me.results)
 	{
-		me.drawCirclePacking();
+		// me.drawCirclePacking();
+		me.customchart.resize();
 	}
 };
 
