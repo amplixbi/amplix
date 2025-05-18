@@ -8826,5 +8826,9 @@
     "group" : "locale_ko_KR_0020",
     "name" : "L_CH_DIVERGING_BAR",
     "value" : "디버징 바차트"
+  }, {
+    "group" : "locale_ko_KR_0020",
+    "name" : "L_ALL",
+    "value" : "상위 보기"
   } ]
 }

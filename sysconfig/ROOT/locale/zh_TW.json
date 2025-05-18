@@ -8753,5 +8753,9 @@
     "group" : "locale_zh_TW_0020",
     "name" : "L_CH_DIVERGING_BAR",
     "value" : "Diverging Bar"
+  }, {
+    "group" : "locale_zh_TW_0020",
+    "name" : "L_ALL",
+    "value" : "Drill Up"
   } ]
 }

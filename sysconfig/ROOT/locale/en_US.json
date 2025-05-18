@@ -8833,5 +8833,9 @@
     "group" : "locale_en_US_0020",
     "name" : "L_CH_DIVERGING_BAR",
     "value" : "Diverging Bar"
+  }, {
+    "group" : "locale_en_US_0020",
+    "name" : "L_ALL",
+    "value" : "Drill Up"
   } ]
 }

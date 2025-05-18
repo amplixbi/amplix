@@ -116,3 +116,4 @@ A;L_P_bpmn_confirm;BPMN 태스크 완료
 A;L_P_bpmn_resolve;BPMN 태스크 리졸브
 
 A;L_CH_DIVERGING_BAR;디버징 바차트
+A;L_ALL;상위 보기
