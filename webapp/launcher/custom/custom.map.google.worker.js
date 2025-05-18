@@ -114,7 +114,7 @@ IG$.cVis.googlemap.prototype.draw = function(results) {
 		me.clusters = [];
 	}
 
-	map_inst.data.loadGeoJson("./data/geojson/kr/4812.json");
+	map_inst.data.loadGeoJson((ig$.datafolder || "./") + "data/geojson/kr/4812.json");
 	map_inst.data.setStyle(function(feature) {
 		return {
 		  	strokeWeight: 1
@@ -157,7 +157,7 @@ IG$.cVis.googlemap.prototype.setData = function(chartview, results) {
 	
 	for (i = 1; i <= 5; ++i) {
 		styles_.push({
-			'url': "./images/m" + i + ".png",
+			'url': (ig$.datafolder || "./") + "images/m" + i + ".png",
 			'height': sizes[i - 1],
 			'width': sizes[i - 1]
 		});
@@ -294,7 +294,7 @@ IG$.cVis.googlemap.prototype.setData = function(chartview, results) {
 		markers = [],
 		cluster_marker_styles = [
 			MarkerClusterer.withDefaultStyle({
-				url: "./images/m1.png",
+				url: (ig$.datafolder || "./") + "images/m1.png",
 				width: 53,
 				height: 52,
 				anchorText: [0, 0],
@@ -303,7 +303,7 @@ IG$.cVis.googlemap.prototype.setData = function(chartview, results) {
 				textSize: 10,
 			}),
 			MarkerClusterer.withDefaultStyle({
-				url: "./images/m2.png",
+				url: (ig$.datafolder || "./") + "images/m2.png",
 				width: 53,
 				height: 52,
 				anchorText: [0, 0],
@@ -312,7 +312,7 @@ IG$.cVis.googlemap.prototype.setData = function(chartview, results) {
 				textSize: 11,
 			}),
 			MarkerClusterer.withDefaultStyle({
-				url: "./images/m3.png",
+				url: (ig$.datafolder || "./") + "images/m3.png",
 				width: 53,
 				height: 52,
 				anchorText: [0, 0],
@@ -321,7 +321,7 @@ IG$.cVis.googlemap.prototype.setData = function(chartview, results) {
 				textSize: 12,
 			}),
 			MarkerClusterer.withDefaultStyle({
-				url: "./images/m4.png",
+				url: (ig$.datafolder || "./") + "images/m4.png",
 				width: 53,
 				height: 52,
 				anchorText: [0, 0],
@@ -330,7 +330,7 @@ IG$.cVis.googlemap.prototype.setData = function(chartview, results) {
 				textSize: 12,
 			}),
 			MarkerClusterer.withDefaultStyle({
-				url: "./images/m5.png",
+				url: (ig$.datafolder || "./") + "images/m5.png",
 				width: 53,
 				height: 52,
 				anchorText: [0, 0],

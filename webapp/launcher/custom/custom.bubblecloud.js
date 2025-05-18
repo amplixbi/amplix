@@ -24,7 +24,7 @@ IG$.cVis.bubblecloud = $s.extend(IG$.cVis.base, {
 		if (!IG$.cVis.bubblecloud._loaded)
 		{
 			var js = [
-					"./custom/custom.bubblecloud.worker.js"
+					(ig$.datafolder || "./") + "custom/custom.bubblecloud.worker.js"
 				];
 			
 			IG$.cVis.bubblecloud._loading = 1;

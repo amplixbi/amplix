@@ -1171,7 +1171,7 @@ IG$._customChartPanels = function() {
 							if (!window.IG$.kpi_1/* dlg_vindicator */)
 							{
 								var me = this, 
-									js = [ "./custom/custom.kpi.worker.js" ], 
+									js = [ (ig$.datafolder || "./") + "custom/custom.kpi.worker.js" ], 
 									ltest = 0; 
 								
 								var cindopt = chartoption.cindicator ? JSON.parse(IG$._decodeVal(chartoption.cindicator)) : {};

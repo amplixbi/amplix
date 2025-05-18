@@ -24,7 +24,7 @@ IG$.cVis.weekday = $s.extend(IG$.cVis.base, {
 		if (!IG$.cVis.weekday._loaded)
 		{
 			var js = [
-					"./custom/custom.weekday.worker.js"
+					(ig$.datafolder || "./") + "custom/custom.weekday.worker.js"
 				];
 			
 			IG$.cVis.weekday._loading = 1;

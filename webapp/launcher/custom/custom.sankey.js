@@ -27,7 +27,7 @@ IG$.cVis.sankey = $s.extend(IG$.cVis.base, {
 		if (!IG$.cVis.sankey._loaded)
 		{
 			var js = [
-					"./custom/custom.sankey.worker.js"
+					(ig$.datafolder || "./") + "custom/custom.sankey.worker.js"
 				];
 
 			IG$.cVis.sankey._loading = 1;

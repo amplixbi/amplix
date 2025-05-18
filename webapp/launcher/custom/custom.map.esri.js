@@ -57,7 +57,7 @@ IG$.cVis.esri = $s.extend(IG$.cVis.base, {
 				js = [
 					ig$.arcgis_css || "https://js.arcgis.com/4.16/esri/themes/light/main.css",
 					ig$.arcgis_js || "https://js.arcgis.com/4.16/",
-					"./custom/custom.map.esri.worker.v4.js"
+					(ig$.datafolder || "./") + "custom/custom.map.esri.worker.v4.js"
 				];
 			}
 			/*
@@ -66,7 +66,7 @@ IG$.cVis.esri = $s.extend(IG$.cVis.base, {
 				js = [
 					ig$.arcgis_css || "https://js.arcgis.com/3.17/esri/css/esri.css",
 					ig$.arcgis_js || "https://js.arcgis.com/3.17/",
-					"./custom/custom.map.esri.worker.v3.17.js"
+					(ig$.datafolder || "./") + "custom/custom.map.esri.worker.v3.17.js"
 				];
 			}
 			*/
@@ -75,7 +75,7 @@ IG$.cVis.esri = $s.extend(IG$.cVis.base, {
 				js = [
 					ig$.arcgis_css || "https://js.arcgis.com/3.33/esri/css/esri.css",
 					ig$.arcgis_js || "https://js.arcgis.com/3.33/",
-					"./custom/custom.map.esri.worker.js"
+					(ig$.datafolder || "./") + "custom/custom.map.esri.worker.js"
 				];
 			}
 			

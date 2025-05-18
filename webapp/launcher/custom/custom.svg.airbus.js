@@ -21,7 +21,7 @@ IG$.cVis.airbusseat = $s.extend(IG$.cVis.base, {
 
 		svgmap.container.unbind("svgloaded");
 
-		svgmap.load("./data/Airbus_A380_seatmap.svg");
+		svgmap.load((ig$.datafolder || "./") + "data/Airbus_A380_seatmap.svg");
 
 		svgmap.container.bind("svgloaded", function() {
 			var i,

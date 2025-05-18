@@ -60,7 +60,7 @@ IG$.kpi_3/*dlg_vsyntax*/ = $s.extend($s.window, {
 			
 		if (!IG$.__chartoption.chartext.kpi_templates)
 		{
-			IG$.lDF("./custom/custom.kpi.template.json", new IG$.callBackObj(me, function(data) {
+			IG$.lDF((ig$.datafolder || "./") + "custom/custom.kpi.template.json", new IG$.callBackObj(me, function(data) {
 				IG$.__chartoption.chartext.kpi_templates = data.templates;
 				do_proc();
 			}));

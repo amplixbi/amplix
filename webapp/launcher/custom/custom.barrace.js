@@ -24,7 +24,7 @@ IG$.cVis.barrace = $s.extend(IG$.cVis.base, {
         if (!IG$.cVis.barrace._loaded)
         {
             var js = [
-                    "./custom/custom.barrace.worker.js"
+                    (ig$.datafolder || "./") + "custom/custom.barrace.worker.js"
                 ];
             
 			IG$.cVis.barrace._loading = 1;

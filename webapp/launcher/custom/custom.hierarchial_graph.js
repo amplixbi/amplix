@@ -24,7 +24,7 @@ IG$.cVis.hierarchialgraph = $s.extend(IG$.cVis.base, {
 		if (!IG$.cVis.hierarchialgraph._loaded)
 		{
 			var js = [
-					"./custom/custom.hierarchial_graph.worker.js"
+					(ig$.datafolder || "./") + "custom/custom.hierarchial_graph.worker.js"
 				];
 			
 			IG$.cVis.hierarchialgraph._loading = 1;

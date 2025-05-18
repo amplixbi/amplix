@@ -138,7 +138,7 @@ IG$.cVis.openstreetmap.prototype.setData = function(chartview, results) {
 	
 	for (i = 1; i <= 5; ++i) {
 		styles_.push({
-			'url': "./images/m" + i + ".png",
+			'url': (ig$.datafolder || "./") + "images/m" + i + ".png",
 			'height': sizes[i - 1],
 			'width': sizes[i - 1]
 		});

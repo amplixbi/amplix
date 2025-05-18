@@ -25,7 +25,7 @@ IG$.cVis.kpi = $s.extend(IG$.cVis.base, {
 		if (!IG$.cVis.kpi._loaded)
 		{
 			var js = [
-					"./custom/custom.kpi.worker.js"
+					(ig$.datafolder || "./") + "custom/custom.kpi.worker.js"
 				];
 
 			IG$.cVis.kpi._loading = true;

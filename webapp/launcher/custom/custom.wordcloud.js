@@ -24,7 +24,7 @@ IG$.cVis.wordcloud = $s.extend(IG$.cVis.base, {
 		if (!IG$.cVis.wordcloud._loaded)
 		{
 			var js = [
-					"./custom/custom.wordcloud.worker.js"
+					(ig$.datafolder || "./") + "custom/custom.wordcloud.worker.js"
 				];
 			
 			IG$.cVis.wordcloud._loading = 1;

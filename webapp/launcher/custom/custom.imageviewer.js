@@ -26,7 +26,7 @@ IG$.cVis.imgviewer = $s.extend(IG$.cVis.base, {
 		if (!IG$.cVis.imgviewer._loaded)
 		{
 			var js = [
-					"./custom/custom.imageviewer.worker.js"
+					(ig$.datafolder || "./") + "custom/custom.imageviewer.worker.js"
 				];
 
 			IG$.cVis.imgviewer._loading = 1;

@@ -24,7 +24,7 @@ IG$.cVis.scatter3d = $s.extend(IG$.cVis.base, {
 		if (!IG$.cVis.scatter3d._loaded)
 		{
 			var js = [
-					"./custom/custom.scatter3d.worker.js"
+					(ig$.datafolder || "./") + "custom/custom.scatter3d.worker.js"
 				];
 			
 			IG$.cVis.scatter3d._loading = 1;

@@ -21,7 +21,7 @@ IG$.cVis.navermap = $s.extend(IG$.cVis.base, {
 		var me = this,
 			js = [
 				"https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=" + ig$.naver_map_api_key,
-				"./custom/custom.map.naver.worker.js"
+				(ig$.datafolder || "./") + "custom/custom.map.naver.worker.js"
 			];
 
 		if (IG$.cVis.navermap._loading)

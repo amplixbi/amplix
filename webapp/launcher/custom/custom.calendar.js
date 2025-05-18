@@ -24,7 +24,7 @@ IG$.cVis.calendar = $s.extend(IG$.cVis.base, {
 		if (!IG$.cVis.calendar._loaded)
 		{
 			var js = [
-					"./custom/custom.calendar.worker.js"
+					(ig$.datafolder || "./") + "custom/custom.calendar.worker.js"
 				];
 			
 			IG$.cVis.calendar._loading = 1;

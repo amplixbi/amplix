@@ -25,7 +25,7 @@ IG$.cVis.hstock = $s.extend(IG$.cVis.base, {
 		if (!IG$.cVis.hstock._loaded)
 		{
 			var js = [
-					"./custom/custom.hstock.worker.js"
+					(ig$.datafolder || "./") + "custom/custom.hstock.worker.js"
 				];
 			
 			IG$.cVis.hstock._loading = 1;
