@@ -1056,6 +1056,7 @@ IG$._customChartPanels = function() {
 				me.down("[name=m_run_target]").setValue(settings.m_run_target);
 				me.down("[name=m_run_ucl]").setValue(settings.m_run_ucl);
 				me.down("[name=m_run_lcl]").setValue(settings.m_run_lcl);
+				me.down("[name=diverging_show_both]").setValue(settings.diverging_show_both == "T");
 				
 				if (!settings.m_rngclr_0 && !settings.m_rngclr_1 && !settings.m_rngclr_2 && !settings.m_rngclr_3 && !settings.m_rngclr_4)
 				{
@@ -1129,6 +1130,7 @@ IG$._customChartPanels = function() {
 				settings.m_run_target = me.down("[name=m_run_target]").getValue();
 				settings.m_run_ucl = me.down("[name=m_run_ucl]").getValue();
 				settings.m_run_lcl = me.down("[name=m_run_lcl]").getValue();
+				settings.diverging_show_both = me.down("[name=diverging_show_both]").getValue() ? "T" : "F";
 				
 				me.down("[name=m_color_range]").getAllValues(settings);
 				
@@ -1151,6 +1153,7 @@ IG$._customChartPanels = function() {
 			me.down("[name=m_imgviewer_options]").setVisible(subtype == "imgviewer");
 			me.down("[name=m_html_options]").setVisible(subtype == "htmltable" || subtype == "html_ranktable");
 			me.down("[name=m_color_range]").setVisible(subtype == "weekday");
+			me.down("[name=diverging_column]").setVisible(subtype == "diverging_column");
 		},
 		items: [
 			{
@@ -1996,6 +1999,23 @@ IG$._customChartPanels = function() {
 								}
 							}
 						]
+					}
+				]
+			},
+			{
+				xtype: "fieldset",
+				title: "Diverging Column",
+				name: "diverging_column",
+				layout: {
+					type: "vbox",
+					align: "stretch"
+				},
+				items: [
+					{
+						xtype: "checkbox",
+						name: "diverging_show_both",
+						fieldLabel: "Show X Both Side",
+						boxLabel: "Enabled"
 					}
 				]
 			},
