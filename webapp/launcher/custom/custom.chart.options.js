@@ -121,6 +121,11 @@ IG$._customChartPanels = function() {
 				me.down("[name=m_mid_color]").setValue(settings.m_mid_color || "#00e600"); // blue
 				me.down("[name=m_mid_a_color]").setValue(settings.m_mid_a_color || "#51FFFF"); // red
 				me.down("[name=m_max_color]").setValue(settings.m_max_color || "#0000e6"); // green
+				me.down("[name=m_rng_val1]").setValue(settings.m_rng_val1);
+				me.down("[name=m_rng_val2]").setValue(settings.m_rng_val2);
+				me.down("[name=m_rng_val3]").setValue(settings.m_rng_val3);
+				me.down("[name=m_rng_val4]").setValue(settings.m_rng_val4);
+				me.down("[name=m_rng_val5]").setValue(settings.m_rng_val5);
 				me.down("[name=cdata_m_tmpl]").setValue(option.cdata_m_tmpl);
 				me.down("[name=m_xypos]").setValue(option.m_xypos || "");
 				me.down("[name=m_map_center]").setValue(settings.m_map_center || "");
@@ -262,6 +267,11 @@ IG$._customChartPanels = function() {
 				settings.m_mid_color = me.down("[name=m_mid_color]").getValue();
 				settings.m_mid_a_color = me.down("[name=m_mid_a_color]").getValue();
 				settings.m_max_color = me.down("[name=m_max_color]").getValue();
+				settings.m_rng_val1 = me.down("[name=m_rng_val1]").getValue();
+				settings.m_rng_val2 = me.down("[name=m_rng_val2]").getValue();
+				settings.m_rng_val3 = me.down("[name=m_rng_val3]").getValue();
+				settings.m_rng_val4 = me.down("[name=m_rng_val4]").getValue();
+				settings.m_rng_val5 = me.down("[name=m_rng_val5]").getValue();
 				option.cdata_m_tmpl = IG$._encodeVal(me.down("[name=cdata_m_tmpl]").getValue());
 				option.m_xypos = me.down("[name=m_xypos]").getValue();
 				settings.m_arc_basemap = me.down("[name=m_arc_basemap]").getValue();
@@ -626,6 +636,13 @@ IG$._customChartPanels = function() {
 												}
 											},
 											{
+												xtype: "textfield",
+												name: "m_rng_val1",
+												width: 220,
+												labelAlign: "right",
+												fieldLabel: "Range"
+											},
+											{
 												xtype: "container",
 												flex: 1
 											}
@@ -667,6 +684,13 @@ IG$._customChartPanels = function() {
 														"-"
 													]
 												}
+											},
+											{
+												xtype: "textfield",
+												name: "m_rng_val2",
+												width: 220,
+												labelAlign: "right",
+												fieldLabel: "Range"
 											},
 											{
 												xtype: "container",
@@ -712,6 +736,13 @@ IG$._customChartPanels = function() {
 												}
 											},
 											{
+												xtype: "textfield",
+												name: "m_rng_val3",
+												width: 220,
+												labelAlign: "right",
+												fieldLabel: "Range"
+											},
+											{
 												xtype: "container",
 												flex: 1
 											}
@@ -755,6 +786,13 @@ IG$._customChartPanels = function() {
 												}
 											},
 											{
+												xtype: "textfield",
+												name: "m_rng_val4",
+												width: 220,
+												labelAlign: "right",
+												fieldLabel: "Range"
+											},
+											{
 												xtype: "container",
 												flex: 1
 											}
@@ -796,6 +834,13 @@ IG$._customChartPanels = function() {
 														"-"
 													]
 												}
+											},
+											{
+												xtype: "textfield",
+												name: "m_rng_val5",
+												width: 220,
+												labelAlign: "right",
+												fieldLabel: "Range"
 											},
 											{
 												xtype: "container",
