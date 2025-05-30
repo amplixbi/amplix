@@ -1102,6 +1102,7 @@ IG$._customChartPanels = function() {
 				me.down("[name=m_run_ucl]").setValue(settings.m_run_ucl);
 				me.down("[name=m_run_lcl]").setValue(settings.m_run_lcl);
 				me.down("[name=diverging_show_both]").setValue(settings.diverging_show_both == "T");
+				me.down("[name=diverging_all_label]").setValue(settings.diverging_all_label == "T");
 				
 				if (!settings.m_rngclr_0 && !settings.m_rngclr_1 && !settings.m_rngclr_2 && !settings.m_rngclr_3 && !settings.m_rngclr_4)
 				{
@@ -1176,6 +1177,7 @@ IG$._customChartPanels = function() {
 				settings.m_run_ucl = me.down("[name=m_run_ucl]").getValue();
 				settings.m_run_lcl = me.down("[name=m_run_lcl]").getValue();
 				settings.diverging_show_both = me.down("[name=diverging_show_both]").getValue() ? "T" : "F";
+				settings.diverging_all_label = me.down("[name=diverging_all_label]").getValue() ? "T" : "F";
 				
 				me.down("[name=m_color_range]").getAllValues(settings);
 				
@@ -2060,6 +2062,12 @@ IG$._customChartPanels = function() {
 						xtype: "checkbox",
 						name: "diverging_show_both",
 						fieldLabel: "Show X Both Side",
+						boxLabel: "Enabled"
+					},
+					{
+						xtype: "checkbox",
+						name: "diverging_all_label",
+						fieldLabel: "Show All Labels",
 						boxLabel: "Enabled"
 					}
 				]
