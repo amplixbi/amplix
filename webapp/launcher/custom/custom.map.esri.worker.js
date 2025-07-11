@@ -406,7 +406,7 @@ IG$.cVis.esri.prototype.draw = function(results) {
 			
 			if (!me.mapcontainer)
 			{
-				me.mapcontainer = $("<div class='igc-map-container'></div>")
+				me.mapcontainer = $("<div class='amp-map-container'></div>")
 					.appendTo(chartview.container);
 				me.mapcontainer.css({
 					width: "100%",
@@ -425,7 +425,7 @@ IG$.cVis.esri.prototype.draw = function(results) {
 				
 				if (!me.map_legend$)
 				{
-					me.map_legend$ = $("<div class='igc-map-legend'><div id='legend-map'></div></div>")
+					me.map_legend$ = $("<div class='amp-map-legend'><div id='legend-map'></div></div>")
 						.appendTo(chartview.container);
 				}
 				
@@ -433,7 +433,7 @@ IG$.cVis.esri.prototype.draw = function(results) {
 				
 				// if (cop.settings.m_map_legend)
 				// {
-					//$("<div class='igc-map-legend-bg'></div>").appendTo(me.map_legend$);
+					//$("<div class='amp-map-legend-bg'></div>").appendTo(me.map_legend$);
 					// $(cop.settings.m_map_legend).appendTo(me.map_legend$);
 				// }
 				
@@ -1049,7 +1049,7 @@ IG$.cVis.esri.prototype.setData = function(chartview, results) {
 							charts.push(copt);
 							
 							copt.div = "mchart_" + charts.length;
-							v = "<div id='mchart_" + charts.length + "' class='igc-legend-chart'></div>";
+							v = "<div id='mchart_" + charts.length + "' class='amp-legend-chart'></div>";
 						}
 						else if (cmd && (cmd == "measure" || cmd == "row"))
 						{

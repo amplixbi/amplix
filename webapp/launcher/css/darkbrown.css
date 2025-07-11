@@ -3901,14 +3901,14 @@ a:active .webix_custom_radio {
 	background: transparent;
 }
 
-.igc-grid-row-hover {
+.amp-grid-row-hover {
 }
 
 div.webix_item_tab.webix_selected {
 	color: #000;
 }
 
-.igc-wb-header {
+.amp-wb-header {
 	background: #3498db !important;
 }
 
@@ -3925,7 +3925,7 @@ div.webix_item_tab.webix_selected {
 .idv-dk-main {
 }
 
-.igc_view_mode .dock_title {
+.amp_view_mode .dock_title {
 }
 
 .dock_title {

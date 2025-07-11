@@ -18,8 +18,8 @@
 		height, vmin, vmax, fmin = 10, fmax = 90, fratio;
 	
 	container.empty();
-	tplay = $("<div class='igc-tg-play'></div>").appendTo(container);
-	jcontainer = $("<div class='igc-tg-gr' style='width:100%;height:100%;'></div>").appendTo(container);
+	tplay = $("<div class='amp-tg-play'></div>").appendTo(container);
+	jcontainer = $("<div class='amp-tg-gr' style='width:100%;height:100%;'></div>").appendTo(container);
 	
 	width = container.width();
 	height = container.height() - 30;

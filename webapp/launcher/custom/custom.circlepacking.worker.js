@@ -25,7 +25,7 @@
 		option;
 	
 	container.empty();
-	jcontainer = $("<div class='igc-tg-gr'></div>").appendTo(container);
+	jcontainer = $("<div class='amp-tg-gr'></div>").appendTo(container);
 	
 	width = container.width();
 	height = container.height();

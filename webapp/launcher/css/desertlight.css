@@ -2818,7 +2818,7 @@ a:active .webix_custom_radio {
 	background: transparent;
 }
 
-.igc-grid-row-hover {
+.amp-grid-row-hover {
 	border-color: #666666;
     background-color: #666666;
 }
@@ -2836,7 +2836,7 @@ a:active .webix_custom_radio {
 	background-color: #666666;
 }
 
-.igc_view_mode .dock_title {
+.amp_view_mode .dock_title {
 	background-color: initial;
 }
 
@@ -2901,11 +2901,11 @@ a:active .webix_custom_radio {
 	background-color: #393939;
 }
 
-.igc-smenu-main .igc-nav-item {
+.amp-smenu-main .amp-nav-item {
 	border-color: #5d5d5d;
 }
 
-.igc-navbar {
+.amp-navbar {
 	border: 0px solid transparent;
 	border-color: #e7e7e7;
 	background: #5d5d5d;
@@ -2928,16 +2928,16 @@ a:active .webix_custom_radio {
 	color: #eaeaea;
 }
 
-.igc-p-color {
+.amp-p-color {
     border: 1px solid #C1C1C1;
     background-color: #393939;
 }
 
-.igc-toolbar-more {
+.amp-toolbar-more {
 	background-color: #393939;
 }
 
-.igc-more-drop-menu {
+.amp-more-drop-menu {
 	background-color: #393939;
 	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
@@ -2963,15 +2963,15 @@ a:active .webix_custom_radio {
 	color: #71ff6f;
 }
 
-.igc_design_mode .df-title {
+.amp_design_mode .df-title {
 	color: #71ff6f;
 }
 
-.igc-cubemodelviewer {
+.amp-cubemodelviewer {
 	background-color: #565656;
 }
 
-.igc-cm-join {
+.amp-cm-join {
 	background-color: #000;
 }
 
@@ -3004,21 +3004,21 @@ a:active .webix_custom_radio {
 	color: #ff6363;
 }
 
-.igc-td-link {
+.amp-td-link {
 	color: #00ff08;
 }
 
 /*loading */
-.igc-loading-box {
+.amp-loading-box {
 	background-color: #505050;
 	border-color: #131313;
 }
 
-.igc-loading-proc .spinner > div {
+.amp-loading-proc .spinner > div {
   background-color: #848484;
 }
 
-.igc-loading-box .igc-loading-msg button {
+.amp-loading-box .amp-loading-msg button {
 	border: 0px solid #efefef;
     background-color: #6b6b6b;
     color: #fff;
@@ -3100,7 +3100,7 @@ a:active .webix_custom_radio {
 	background-color: initial;
 }
 
-.igc-disabled {
+.amp-disabled {
     color: #676767;
 }
 
@@ -3190,7 +3190,7 @@ md-list-item.selected {
   --md-outlined-field-supporting-text-weight: 300;
 }
 
-.igc-md-ctrl {
+.amp-md-ctrl {
   --md-outlined-field-content-color: #fff;
   --md-outlined-field-content-weight: 300;
   --md-outlined-field-focus-content-color: #fff;
@@ -3213,7 +3213,7 @@ md-list-item.selected {
   --md-outlined-field-supporting-text-weight: 300;
 }
 
-.igc-md-btn {
+.amp-md-btn {
   --md-outlined-field-content-color: #fff;
   --md-outlined-field-focus-content-color: #fff;
 }

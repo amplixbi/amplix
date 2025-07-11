@@ -17,7 +17,7 @@
 	    </div>
 	    <div class="intro-right">
 	    	<div class="intro-block">
-	    		<div class="igc-last-login" id="last_login">
+	    		<div class="amp-last-login" id="last_login">
 		        	<span class="title"><%= getLocale(lang, "USER.NAME") %></span>
 		        	<span class="cur_login_user_id">-</span> (<span class="cur_login_user_nm">-</span>)
 		        	<br />

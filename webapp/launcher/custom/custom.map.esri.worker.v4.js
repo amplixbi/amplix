@@ -876,7 +876,7 @@ IG$.cVis.esri.prototype.setData = function(chartview, results) {
 			sep = IG$._separator,
 			mvalues = {},
 			charts = [],
-			mval = "<div class='igc-legend-container'>";
+			mval = "<div class='amp-legend-container'>";
 			
 		if (me._info_timer)
 		{
@@ -1006,7 +1006,7 @@ IG$.cVis.esri.prototype.setData = function(chartview, results) {
 							charts.push(copt);
 							
 							copt.div = "mchart_" + charts.length;
-							v = "<div id='mchart_" + charts.length + "' class='igc-legend-chart'></div>";
+							v = "<div id='mchart_" + charts.length + "' class='amp-legend-chart'></div>";
 						}
 						else if (cmd && (cmd == "measure" || cmd == "row"))
 						{

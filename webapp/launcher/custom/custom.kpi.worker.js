@@ -559,16 +559,16 @@ IG$.cVis.kpi.prototype.draw = function(results) {
 
 	me.$cobj = null;
 	
-	me.plotarea = $("<div class='igc-kpi-cnt'></div>").appendTo(container);
+	me.plotarea = $("<div class='amp-kpi-cnt'></div>").appendTo(container);
 	me.plotarea.width(container.width()).height(container.height());
 	
-	me.plotinner = $("<div class='igc-kpi-inner text-center'></div>").appendTo(me.plotarea);
+	me.plotinner = $("<div class='amp-kpi-inner text-center'></div>").appendTo(me.plotarea);
 	
 	me.cindopt = cindopt = cop.cindicator ? JSON.parse(IG$._decodeVal(cop.cindicator)) : {};
 	
 	if (!me.btn_cfg)
 	{
-		me.btn_cfg = $("<div class='igc-kpi-cfg'></div>").appendTo(container);
+		me.btn_cfg = $("<div class='amp-kpi-cfg'></div>").appendTo(container);
 		me.btn_cfg.bind("click", function() {
 			var dlg = new IG$.kpi_1/*dlg_vindicator*/({
 				instance: me.instance,
@@ -669,7 +669,7 @@ IG$.cVis.kpi.prototype.draw = function(results) {
 				cnode = $("<div class='row'></div>").appendTo(pnode);
 			}
 			
-			chartdiv = $("<div class='igc-kpi-blk col-lg-" + span + " col-md-6 mb-5 mb-md-5 mb-lg-0 position-relative'></div>").appendTo(cnode);
+			chartdiv = $("<div class='amp-kpi-blk col-lg-" + span + " col-md-6 mb-5 mb-md-5 mb-lg-0 position-relative'></div>").appendTo(cnode);
 			
 			var tmpl = [
 

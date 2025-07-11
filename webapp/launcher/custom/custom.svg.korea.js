@@ -42,13 +42,13 @@ IG$.cVis.koreamap = $s.extend(IG$.cVis.base, {
 		me.chartmap = me.chartmap || {};
 		me._config = me._config || {};
 
-		me._title_div = $("<div class='igc-map-title'></div>")
+		me._title_div = $("<div class='amp-map-title'></div>")
 			.hide()
 			.appendTo(container);
 
 		if (me._config.enable_drill)
 		{
-			me.back_button = $("<div class='igc-map-backbutton'></div>")
+			me.back_button = $("<div class='amp-map-backbutton'></div>")
 				.hide()
 				.appendTo(me.container);
 
@@ -201,7 +201,7 @@ IG$.cVis.koreamap = $s.extend(IG$.cVis.base, {
 					console.log("complete downloading");
 				},
 				success: function(data) {
-					var drect = $("<div class='igc-map-json'></div>").appendTo(container);
+					var drect = $("<div class='amp-map-json'></div>").appendTo(container);
 					var mchart = me.chartmap[jsonurl] = {
 						jsonurl: jsonurl,
 						html: drect,
